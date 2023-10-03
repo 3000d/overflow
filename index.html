@@ -40,18 +40,35 @@
         }
 
         h1 {
+            animation: variablefont ease-in-out 60s alternate infinite;
             font-size: 10vw;
             font-weight: 200;
-            margin-bottom: 1rem;
+            margin: 1rem 0;
             ;
         }
 
-        p {
+        p,
+        address {
             letter-spacing: .21vw;
+        }
+
+        address {
+            font-style: normal;
+            margin-bottom: 1rem;
         }
 
         a {
             color: white;
+        }
+
+        @keyframes variablefont {
+            from {
+                font-weight: 100;
+            }
+
+            to {
+                font-weight: 900;
+            }
         }
     </style>
 </head>
@@ -62,26 +79,12 @@
         <h1>
             O V E R F L O W
         </h1>
+        <address>
+            Rue Hongrée 6B — 4000 Liège
+        </address>
         <p>
             <a href="mailto:drop@overflow.gallery">drop@overflow.gallery</a>
         </p>
     </main>
-    <script>
-        const h1 = document.querySelector('h1');
-        let fontWeight = 100;
-        let up = true;
-
-        const loop = setInterval(() => {
-            h1.style.fontWeight = fontWeight;
-            if (up) {
-                if (fontWeight > 900) up = false;
-                fontWeight = fontWeight + 1;
-            } else {
-                if (fontWeight < 100) up = true;
-                fontWeight = fontWeight - 1;
-            }
-        }, 100);
-    </script>
 </body>
-
 </html>
