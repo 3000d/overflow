@@ -1,0 +1,31 @@
+
+.pretix-widget-item-title-and-description {
+  text-align: left;
+}
+
+.pretix-widget-wrapper{
+  max-width: 1000px;
+  margin: 5vh auto;
+}
+
+.pretix-widget{
+  width: 100%;
+  height: auto;
+}
+
+.resize-observer{
+  display: none !important;
+}
+
+.pretix-widget-attribution a{
+  color: #fff;
+}
+
+.pretix-widget-attribution a:hover{
+  color: #fff;
+}
+
+.pretix-widget-action button:enabled{
+  border-color: #fff;
+  border-width: 1px;
+}
