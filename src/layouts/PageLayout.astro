@@ -1,0 +1,26 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import LongFormContent from '../components/LongFormContent.astro';
+import Hero from '../components/Hero.astro';
+const { pageCover, pageTitle, ...props } = Astro.props;
+---
+
+<style lang="scss">
+  @use '../styles/mq';
+
+  /*.page {*/
+  /*  margin: var(--spacing-l);*/
+
+  /*  @include mq.tablet {*/
+  /*    margin: var(--spacing-xl);*/
+  /*  }*/
+  /*}*/
+</style>
+
+<BaseLayout pageTitle={pageTitle} pageCover={pageCover ?? null} {...props}>
+  <Hero title="Visit us" bg={pageCover} />
+
+  <LongFormContent>
+    <slot />
+  </LongFormContent>
+</BaseLayout>

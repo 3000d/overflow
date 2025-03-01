@@ -1,0 +1,130 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import SectionTitle from './SectionTitle.astro';
+
+interface Props {
+  events: CollectionEntry<'events'>;
+}
+
+const { events, title, fallback } = Astro.props;
+const getEventLink = (id) => `/events/${id}`;
+---
+
+<style lang="scss">
+  @use '../styles/mq';
+
+  .event-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    @include mq.tablet {
+      gap: var(--spacing-l);
+    }
+  }
+
+  .event {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    position: relative;
+
+    @include mq.tablet {
+      flex-direction: row;
+      gap: var(--spacing-l);
+      padding-right: 0;
+    }
+  }
+
+  .event-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-s);
+    margin-top: var(--spacing-m);
+
+    @include mq.tablet {
+      gap: var(--spacing-m);
+      margin-top: 0;
+    }
+  }
+
+  .event-date {
+    color: var(--color-text-accent);
+
+    @include mq.desktop {
+      font-size: var(--typography-fontsize-l);
+    }
+  }
+
+  .event-title {
+    font-weight: 400;
+    line-height: 1.1;
+    font-size: var(--typography-fontsize-l);
+
+    @include mq.desktop {
+      font-size: var(--typography-fontsize-xl);
+    }
+
+    a {
+      color: var(--color-text-base);
+      text-decoration: none;
+    }
+  }
+
+  .event-cover {
+    @include mq.tablet {
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .event-type {
+    position: absolute;
+    top: var(--spacing-m);
+    right: var(--spacing-m);
+    background-color: var(--color-bg-accent);
+    color: var(--color-text-inverse);
+    padding: 0 var(--spacing-2xs);
+    pointer-events: none;
+  }
+</style>
+
+<section class="event-list">
+  <SectionTitle>
+    {title}
+  </SectionTitle>
+
+  {
+    events.map((event) => (
+      <div class="event with-spacing">
+        <div class="event-content">
+          <p class="event-date">
+            {event.data.startDate.toLocaleDateString('fr-BE')}
+            {event.data.endDate && `→ ${event.data.endDate.toLocaleDateString('fr-BE')}`}
+          </p>
+          <h4 class="event-title">
+            <a href={getEventLink(event.id)}>{event.data.title}</a>
+          </h4>
+          <p>{event.data.artists.join(' / ')}</p>
+        </div>
+
+        <p class="event-cover">
+          <a href={getEventLink(event.id)}>
+            <Image src={event.data.cover} alt="" height="350" />
+          </a>
+        </p>
+
+        {event.data.type && <span class="event-type">{event.data.type}</span>}
+      </div>
+    ))
+  }
+
+  {!events.length && fallback && <p class="fallback with-spacing-left">{fallback}</p>}
+</section>

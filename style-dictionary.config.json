@@ -1,0 +1,25 @@
+{
+  "source": ["src/tokens/**/*.json"],
+  "platforms": {
+    "css": {
+      "buildPath": "src/styles/",
+      "transforms": ["name/kebab", "color/css", "size/px"],
+      "files": [
+        {
+          "destination": "vars.css",
+          "format": "css/variables"
+        }
+      ]
+    },
+    "scss": {
+      "buildPath": "src/styles/",
+      "transforms": ["name/kebab", "color/css", "size/px"],
+      "files": [
+        {
+          "destination": "_vars.scss",
+          "format": "scss/variables"
+        }
+      ]
+    }
+  }
+}

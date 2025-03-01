@@ -1,0 +1,29 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-bg-accent: #5cff85;
+  --color-bg-inverse: #ffffff;
+  --color-bg-base: #000000;
+  --color-text-base: #ffffff;
+  --color-text-inverse: #000000;
+  --color-text-subtle: rgba(255, 255, 255, 0.5);
+  --color-text-accent: #5cff85;
+  --color-border-base: rgba(255, 255, 255, 0.3);
+  --color-palette-accent: #5cff85;
+  --spacing-2xl: 128px;
+  --spacing-xl: 64px;
+  --spacing-l: 32px;
+  --spacing-xs: 4px;
+  --spacing-m: 16px;
+  --spacing-s: 8px;
+  --spacing-2xs: 2px;
+  --typography-fontsize-m: 16px;
+  --typography-fontsize-l: 24px;
+  --typography-fontsize-xl: 48px;
+  --typography-fontsize-2xl: 96px;
+  --breakpoint-tablet: 577px;
+  --breakpoint-desktop: 1025px;
+  --breakpoint-large: 1400px;
+}

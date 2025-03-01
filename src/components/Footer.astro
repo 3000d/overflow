@@ -1,0 +1,63 @@
+---
+import glidePictos from '../assets/glides.svg';
+import instagramPicto from '../assets/instagram.svg';
+import facebookPicto from '../assets/facebook.svg';
+import { Image } from 'astro:assets';
+---
+
+<style lang="scss">
+  @use '../styles/mq';
+
+  .main-footer {
+    margin: var(--spacing-xl) auto;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    gap: var(--spacing-m);
+    flex-direction: column;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    address {
+      font-style: normal;
+    }
+
+    .pictos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 80%;
+      margin: auto;
+    }
+
+    .social {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-l);
+    }
+  }
+</style>
+
+<footer class="main-footer with-spacing">
+  <figure class="pictos">
+    <Image src={glidePictos} alt="" />
+  </figure>
+  <address>Rue Hongrée 6B — 4000 Liège</address>
+  <p>
+    <a href="mailto:drop@overflow.gallery">drop@overflow.gallery</a>
+  </p>
+  <ul class="social">
+    <li>
+      <a href="https://www.instagram.com/overflow.gallery/" title="Visit our Instagram page">
+        <Image src={instagramPicto} alt="Instagram" width="24" height="24" />
+      </a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/overflowgallery" title="Visit our Facebook page">
+        <Image src={facebookPicto} alt="Facebook" width="24" height="24" />
+      </a>
+    </li>
+  </ul>
+</footer>

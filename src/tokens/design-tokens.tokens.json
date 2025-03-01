@@ -1,0 +1,121 @@
+{
+  "color": {
+    "bg": {
+      "accent": {
+        "description": "",
+        "type": "color",
+        "value": "{color.palette.accent}"
+      },
+      "inverse": {
+        "type": "color",
+        "value": "#ffffffff",
+        "blendMode": "normal"
+      },
+      "base": {
+        "type": "color",
+        "value": "#000000ff",
+        "blendMode": "normal"
+      }
+    },
+    "text": {
+      "base": {
+        "type": "color",
+        "value": "#ffffffff",
+        "blendMode": "normal"
+      },
+      "inverse": {
+        "type": "color",
+        "value": "#000000ff",
+        "blendMode": "normal"
+      },
+      "subtle": {
+        "type": "color",
+        "value": "#ffffff80",
+        "blendMode": "normal"
+      },
+      "accent": {
+        "description": "",
+        "type": "color",
+        "value": "{color.palette.accent}"
+      }
+    },
+    "border": {
+      "base": {
+        "type": "color",
+        "value": "#ffffff4d",
+        "blendMode": "normal"
+      }
+    },
+    "palette": {
+      "accent": {
+        "type": "color",
+        "value": "#5cff85ff",
+        "blendMode": "normal"
+      }
+    }
+  },
+  "spacing": {
+    "2xl": {
+      "type": "dimension",
+      "value": 128
+    },
+    "xl": {
+      "type": "dimension",
+      "value": 64
+    },
+    "l": {
+      "type": "dimension",
+      "value": 32
+    },
+    "xs": {
+      "type": "dimension",
+      "value": 4
+    },
+    "m": {
+      "type": "dimension",
+      "value": 16
+    },
+    "s": {
+      "type": "dimension",
+      "value": 8
+    },
+    "2xs": {
+      "type": "dimension",
+      "value": 2
+    }
+  },
+  "typography": {
+    "fontsize": {
+      "m": {
+        "type": "dimension",
+        "value": 16
+      },
+      "l": {
+        "type": "dimension",
+        "value": 24
+      },
+      "xl": {
+        "type": "dimension",
+        "value": 48
+      },
+      "2xl": {
+        "type": "dimension",
+        "value": 96
+      }
+    }
+  },
+  "breakpoint": {
+    "tablet": {
+      "type": "dimension",
+      "value": 577
+    },
+    "desktop": {
+      "type": "dimension",
+      "value": 1025
+    },
+    "large": {
+      "type": "dimension",
+      "value": 1400
+    }
+  }
+}

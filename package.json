@@ -1,0 +1,21 @@
+{
+  "name": "extraterrestrial-earth",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "npm run tokens && astro dev",
+    "build": "npm run tokens && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "tokens": "style-dictionary build -c style-dictionary.config.json"
+  },
+  "dependencies": {
+    "astro": "^5.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "sass": "^1.85.1",
+    "style-dictionary": "^4.3.3"
+  }
+}
