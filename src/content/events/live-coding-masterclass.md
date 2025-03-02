@@ -4,7 +4,7 @@ type: workshop
 artists: ['Flor de Fuego']
 startDate: 2025-03-29
 schedule: 1PM
-cover: ./covers/masterclass-hydra.jpg
+cover: ./covers/masterclass-hydra.webp
 artistWebsite: https://flordefuego.xyz/
 ticket: https://pretix.3kd.io/overflow/overview/
 ---
