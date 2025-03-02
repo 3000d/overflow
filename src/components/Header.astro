@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.svg';
+import Nav from './Nav.astro';
+---
+
+<style lang="scss">
+  @use '../styles/mq';
+
+  .header {
+    align-items: center;
+    display: flex;
+    gap: var(--spacing-l);
+    justify-content: space-between;
+    padding-top: var(--spacing-m);
+    padding-bottom: var(--spacing-m);
+    position: relative;
+  }
+
+  .home-link {
+    display: block;
+  }
+
+  .logo {
+    min-height: 20px;
+  }
+</style>
+
+<header class="header with-spacing">
+  <a href="/" title="Return home" class="home-link">
+    <Image class="logo" src={logo} alt="O V E R F L O W" height="20" />
+  </a>
+  <Nav />
+</header>

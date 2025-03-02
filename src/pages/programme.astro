@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/BaseLayout.astro';
+import EventList from '../components/EventList.astro';
+
+const today = new Date();
+
+const events = await getCollection('events', ({ data }) => {
+  const date = data.endDate ?? data.startDate;
+  return date >= today;
+});
+---
+
+<Layout pageTitle="Programme">
+  <EventList title="Programme" events={events} />
+</Layout>

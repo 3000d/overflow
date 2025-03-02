@@ -1,0 +1,76 @@
+<!-- Global styles needed for content coming from Markdown -->
+<style lang="scss" is:global>
+  @use '../styles/mq';
+
+  .long-form-content {
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg-base);
+    max-width: 40em;
+    padding: var(--spacing-m) 0;
+
+    h1 {
+      color: pink;
+      background-color: red;
+
+      &::before {
+        content: 'DO NOT USE first level headings (`#`) ~~ ';
+      }
+    }
+
+    h2 {
+      align-self: start;
+      background-color: var(--color-bg-inverse);
+      color: var(--color-text-inverse);
+      display: inline-block;
+      font-size: var(--typography-fontsize-m);
+      padding: var(--spacing-xs) var(--spacing-m);
+      margin-left: calc(var(--spacing-m) * -1);
+      margin-bottom: var(--spacing-l);
+
+      @include mq.tablet {
+        font-size: var(--typography-fontsize-l);
+        margin-left: calc(var(--spacing-l) * -1);
+        padding-left: var(--spacing-l);
+      }
+
+      @include mq.desktop {
+        margin-left: calc(var(--spacing-xl) * -1);
+        padding-left: var(--spacing-xl);
+      }
+    }
+
+    h3 {
+      @include mq.tablet {
+        font-size: var(--typography-fontsize-l);
+      }
+    }
+
+    h2,
+    h3,
+    h4 {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      line-height: 1.2;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+    }
+
+    p,
+    ul,
+    ol,
+    hr {
+      margin-bottom: 1em;
+    }
+
+    hr {
+      border-top: none;
+    }
+  }
+</style>
+
+<div class="long-form-content">
+  <slot />
+</div>

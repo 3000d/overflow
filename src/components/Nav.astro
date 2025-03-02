@@ -1,0 +1,109 @@
+---
+import BurgerIcon from '../assets/burger-icon.svg';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<style lang="scss">
+  @use '../styles/mq';
+
+  .main-nav {
+    display: flex;
+
+    .mobile-menu-btn {
+      background-color: transparent;
+      border: none;
+      color: var(--color-text-base);
+      font-size: 30px;
+      line-height: 1;
+      transform-origin: center center;
+      cursor: pointer;
+      transition: transform 0.3s ease-out;
+
+      @include mq.desktop {
+        display: none;
+      }
+    }
+
+    #mobile-menu-toggle {
+      display: none;
+    }
+
+    .menu {
+      list-style: none;
+      padding: 0;
+      gap: var(--spacing-l);
+      display: none;
+
+      @include mq.desktop {
+        display: flex;
+      }
+    }
+
+    a {
+      color: var(--color-text);
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      padding: var(--spacing-2xs) var(--spacing-xs);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    li.active {
+      a {
+        background-color: var(--color-bg-accent);
+        color: var(--color-text-inverse);
+      }
+    }
+
+    /* interactivity */
+    &.is-open {
+      .mobile-menu-btn {
+        transform: rotate(180deg);
+      }
+
+      .menu {
+        background-color: var(--color-bg-base);
+        padding: var(--spacing-m);
+        position: absolute;
+        right: 40px;
+        gap: var(--spacing-m);
+        top: 50px;
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+      }
+    }
+  }
+</style>
+
+<script>
+  const $btn = document.querySelector('.main-nav .mobile-menu-btn');
+  const $nav = document.querySelector('.main-nav');
+
+  $btn.addEventListener('click', () => {
+    $nav.classList.toggle('is-open');
+  });
+</script>
+
+<nav class="main-nav">
+  <button class="mobile-menu-btn">
+    <BurgerIcon />
+  </button>
+
+  <ul class="menu">
+    <li class={currentPath === 'programme/' ? 'active' : ''}>
+      <a href="/programme/" title="See our future events">Programme</a>
+    </li>
+    <li class={currentPath === 'archives/' ? 'active' : ''}>
+      <a href="/archives/" title="See our past events">Archives</a>
+    </li>
+    <!--<li class={currentPath === 'about' ? 'active' : ''}>-->
+    <!--  <a href="/about" title="Learn more about us">About</a>-->
+    <!--</li>-->
+    <li class={currentPath === 'visit/' ? 'active' : ''}>
+      <a href="/visit/" title="Visit us">Visit us</a>
+    </li>
+  </ul>
+</nav>

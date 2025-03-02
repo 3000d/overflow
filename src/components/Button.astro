@@ -1,0 +1,29 @@
+---
+const { large, full, ...props } = Astro.props;
+---
+
+<style lang="scss">
+  .button {
+    text-transform: uppercase;
+    background-color: var(--color-bg-accent);
+    color: var(--color-text-inverse);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    font-size: var(--typography-fontsize-m);
+    padding: var(--spacing-xs) var(--spacing-s);
+    display: inline-block;
+    text-align: center;
+
+    &.is-full {
+      width: 100%;
+    }
+
+    &.is-large {
+      padding: var(--spacing-s) var(--spacing-m);
+    }
+  }
+</style>
+
+<a class:list={['button', { 'is-large': large }, { 'is-full': full }]} {...props}>
+  <slot />
+</a>

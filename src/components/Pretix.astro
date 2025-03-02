@@ -1,0 +1,60 @@
+---
+const { url } = Astro.props;
+---
+
+<style is:global lang="scss">
+  .pretix-widget-wrapper {
+    .pretix-widget {
+      border: none !important;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+
+      .pretix-widget-category-name {
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .resize-observer {
+        height: 0;
+      }
+
+      .pretix-widget-action button {
+        background-color: var(--color-bg-accent);
+        border: none;
+        border-radius: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-text-inverse);
+      }
+
+      .pretix-widget-attribution a {
+        color: var(--color-text-base);
+      }
+    }
+
+    .pretix-widget-item-count-multiple {
+      max-width: 75px;
+    }
+  }
+</style>
+
+<link
+  is:inline
+  rel="stylesheet"
+  type="text/css"
+  href="https://pretix.3kd.io/overflow/overview/widget/v1.css"
+  crossorigin
+/>
+<script is:inline type="text/javascript" src="https://pretix.3kd.io/widget/v1.en.js" async crossorigin></script>
+
+<pretix-widget class="copy" event={url} single-item-select="button"></pretix-widget>
+<noscript>
+  <div class="pretix-widget">
+    <div class="pretix-widget-info-message">
+      Javascript is disabled.
+      <a href={url} rel="noopener" target="_blank">Access the ticket on our external website</a>.
+    </div>
+  </div>
+</noscript>

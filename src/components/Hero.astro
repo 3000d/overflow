@@ -1,0 +1,105 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  above?: string;
+  below?: string;
+  bg?: object;
+}
+
+const { above, title, below, bg } = Astro.props;
+---
+
+<style lang="scss">
+  @use '../styles/mq';
+
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+
+    @include mq.tablet {
+      padding-top: var(--spacing-xl);
+    }
+
+    @include mq.desktop {
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    &--above {
+      color: var(--color-text-accent);
+
+      @include mq.tablet {
+        font-size: var(--typography-fontsize-l);
+      }
+    }
+
+    &--title h1 {
+      font-size: var(--typography-fontsize-xl);
+      letter-spacing: 0.1em;
+      line-height: 1;
+      font-weight: 400;
+
+      @include mq.desktop {
+        font-size: var(--typography-fontsize-2xl);
+      }
+    }
+
+    &--above p,
+    &--below p,
+    &--title h1 {
+      background-color: var(--color-bg-base);
+      display: inline;
+    }
+
+    &--cover {
+      /*margin-top: var(--spacing-l);*/
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+
+      @include mq.desktop {
+        /*margin-top: 0;*/
+      }
+
+      img {
+        aspect-ratio: 3/2;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+</style>
+
+<section class="hero">
+  {
+    bg && (
+      <picture class="hero--cover">
+        <Image src={bg} alt="" width="800" />
+      </picture>
+    )
+  }
+
+  {
+    above && (
+      <div class="hero--above">
+        <p>{above}</p>
+      </div>
+    )
+  }
+  <div class="hero--title"><h1>{title}</h1></div>
+  {
+    below && (
+      <div class="hero--below">
+        <p>{below}</p>
+      </div>
+    )
+  }
+</section>
