@@ -28,11 +28,12 @@ const getEventLink = (id) => `/events/${id}`;
 
   .event {
     display: flex;
-    justify-content: space-between;
     flex-direction: column-reverse;
+    justify-content: space-between;
     position: relative;
 
     @include mq.tablet {
+      height: 320px;
       flex-direction: row;
       gap: var(--spacing-l);
       padding-right: 0;
@@ -48,6 +49,11 @@ const getEventLink = (id) => `/events/${id}`;
     @include mq.tablet {
       gap: var(--spacing-m);
       margin-top: 0;
+      width: 50%;
+    }
+
+    @include mq.desktop {
+      width: 60%;
     }
   }
 
@@ -75,12 +81,23 @@ const getEventLink = (id) => `/events/${id}`;
   }
 
   .event-cover {
+    overflow: hidden;
+
     @include mq.tablet {
+      width: 50%;
+    }
+
+    @include mq.desktop {
+      width: 40%;
+    }
+
+    a {
+      display: block;
+      height: 100%;
     }
 
     img {
-      max-width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
     }
   }
