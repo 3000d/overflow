@@ -19,6 +19,8 @@ Il est gratuit, open-source et accessible aux débutants commes aux experts.
 Pour participer à l'atelier vous avez besoin d'un ordinateur portable. Si vous n'en avez pas, contactez nous, et on
 cherchera une solution ensemble.
 
+🇬🇧 LE WORKSHOP SERA DONNÉ EN ANGLAIS.
+
 Tout le monde est le bienvenue (le respect est de rigeur)
 
 ## EN
