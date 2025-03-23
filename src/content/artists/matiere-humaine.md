@@ -1,5 +1,6 @@
 ---
 name: Matière Humaine
+subname: aka. Vincent Evrard
 events:
   - memory-lane
   - overview
