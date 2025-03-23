@@ -66,7 +66,9 @@ const { above, title, below, bg } = Astro.props;
       z-index: -1;
 
       @include mq.desktop {
-        /*margin-top: 0;*/
+        /*position: fixed;*/
+        /*top: var(--spacing-2xl);*/
+        /*right: var(--spacing-l);*/
       }
 
       img {

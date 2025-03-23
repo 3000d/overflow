@@ -1,0 +1,23 @@
+---
+import { CollectionEntry, getCollection, getEntries } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import List from '../components/List.astro';
+import ListItem from '../components/ListItem.astro';
+import Hero from '../components/Hero.astro';
+
+const artists = await getCollection('artists');
+const orderedArtists = artists.sort((artistA, artistB) => artistA.data.name < artistB.data.name);
+---
+
+<BaseLayout pageTitle="Artists">
+  <Hero title="Artists" />
+  <List class="with-spacing">
+    {
+      orderedArtists.map((artist) => (
+        <ListItem>
+          <a href={`/artists/${artist.id}`}>{artist.data.name}</a>
+        </ListItem>
+      ))
+    }
+  </List>
+</BaseLayout>

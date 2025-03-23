@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const events = defineCollection({
@@ -17,4 +17,16 @@ const events = defineCollection({
     }),
 });
 
-export const collections = { events };
+const artists = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/artists' }),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      subname: z.string().optional(),
+      cover: image(),
+      links: z.array(z.object({ url: z.string().url(), label: z.string() })).optional(),
+      events: z.array(reference('events')),
+    }),
+});
+
+export const collections = { events, artists };

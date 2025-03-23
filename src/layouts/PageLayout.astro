@@ -2,12 +2,12 @@
 import BaseLayout from './BaseLayout.astro';
 import LongFormContent from '../components/LongFormContent.astro';
 import Hero from '../components/Hero.astro';
-const { pageCover, pageTitle, ...props } = Astro.props;
+let { pageCover, pageTitle, frontmatter, below, ...props } = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle} pageCover={pageCover ?? null} {...props}>
   <div class="with-spacing">
-    <Hero title="Visit us" bg={pageCover} />
+    <Hero title={pageTitle} bg={pageCover} below={below} />
 
     <LongFormContent>
       <slot />

@@ -1,0 +1,62 @@
+---
+import {getCollection, getEntries, render} from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+import LongFormContent from "../../components/LongFormContent.astro";
+import Hero from "../../components/Hero.astro";
+import List from "../../components/List.astro";
+import ListItem from "../../components/ListItem.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection('artists');
+    return posts.map((artist) => ({
+        params: {id: artist.id},
+        props: {artist},
+    }));
+}
+
+const {artist} = Astro.props;
+const {Content} = await render(artist);
+const events = await getEntries(artist.data.events);
+---
+<style lang="scss">
+    .content {
+      margin-bottom: var(--spacing-l);
+    }
+</style>
+
+<BaseLayout pageTitle={artist.data.name} pageCover={artist.data.cover}>
+    <Hero title={artist.data.name} bg={artist.data.cover} below={artist.data.subname} />
+    
+    <div class="content with-spacing">
+        <LongFormContent>
+            <Content/>
+        </LongFormContent>
+    </div>
+
+    {events.length && (
+            <SectionTitle>Participations</SectionTitle>
+
+            <List class="with-spacing">
+                {
+                    events.map((event) => (
+                            <ListItem>
+                                <a href={`/events/${event.id}`}>{event.data.startDate.getFullYear()} — {event.data.title}</a>
+                            </ListItem>
+                    ))
+                }
+            </List>
+    )}
+
+    {artist.data.links.length && (
+            <SectionTitle>Links</SectionTitle>
+
+            <List class="with-spacing">
+                {artist.data.links.map((link) => (
+                        <ListItem>
+                            <a target="_blank" href={link.url}>{link.label}</a>
+                        </ListItem>
+                ))}
+            </List>
+    )}
+</BaseLayout>
