@@ -27,4 +27,4 @@ Soon :)
 There are multiple paid parking options nearby. The closest is [Parking Saint-Georges](https://www.interparking.be/en/parkings/liege/saint-georges/).
 
 ## Opening hours
-We open only for [events](/events), but feel free to reach out if you would like to meet and visit us!
+We open only for [events](/programme), but feel free to reach out if you would like to meet and visit us!
