@@ -6,7 +6,8 @@ import EventList from '../components/EventList.astro';
 const today = new Date();
 
 const events = await getCollection('events', ({ data }) => {
-  return data.endDate < today;
+  const date = data.endDate ?? data.startDate;
+  return date < today;
 });
 ---
 
