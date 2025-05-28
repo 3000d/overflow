@@ -22,8 +22,8 @@ Rue Hongrée 6B \
 
 ### Tram
 
-Direction **Guillemins-Standard**: arrêt **Feronstrée**
-Direction **Coronmeuse/Expo**: arrêt **Curtius**
+Direction **Guillemins-Standard**: **Feronstrée** stop \
+Direction **Coronmeuse/Expo**: **Curtius** stop
 
 ### Car
 There are multiple paid parking options nearby. The closest is [Parking Saint-Georges](https://www.interparking.be/en/parkings/liege/saint-georges/).
