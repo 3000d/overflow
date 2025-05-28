@@ -21,7 +21,9 @@ Rue Hongrée 6B \
 700M from Saint-Lambert square, where most of the bus lines stop at. Visit [letec.be](https://www.letec.be/).
 
 ### Tram
-Soon :)
+
+Direction **Guillemins-Standard**: arrêt **Feronstrée**
+Direction **Coronmeuse/Expo**: arrêt **Curtius**
 
 ### Car
 There are multiple paid parking options nearby. The closest is [Parking Saint-Georges](https://www.interparking.be/en/parkings/liege/saint-georges/).
