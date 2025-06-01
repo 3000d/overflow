@@ -1,11 +1,15 @@
 ---
-const { large, full, ...props } = Astro.props;
+const { large, full, type, ...props } = Astro.props;
+
+const Element = type === 'submit' ? 'button' : 'a';
 ---
 
 <style lang="scss">
   .button {
     text-transform: uppercase;
     background-color: var(--color-bg-accent);
+    border: none;
+    cursor: pointer;
     color: var(--color-text-inverse);
     text-decoration: none;
     letter-spacing: 0.1em;
@@ -24,6 +28,6 @@ const { large, full, ...props } = Astro.props;
   }
 </style>
 
-<a class:list={['button', { 'is-large': large }, { 'is-full': full }]} {...props}>
+<Element class:list={['button', { 'is-large': large }, { 'is-full': full }]} type={type} {...props}>
   <slot />
-</a>
+</Element>
