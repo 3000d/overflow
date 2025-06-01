@@ -1,0 +1,25 @@
+---
+const props = Astro.props;
+---
+
+<style lang="scss">
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    width: 100%;
+
+    :global(label) {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    :global(input) {
+      border: none;
+      padding: var(--spacing-s);
+    }
+  }
+</style>
+<div class:list={[props.class, 'form-control']}>
+  <slot />
+</div>

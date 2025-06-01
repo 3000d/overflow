@@ -3,61 +3,123 @@ import glidePictos from '../assets/glides.svg';
 import instagramPicto from '../assets/instagram.svg';
 import facebookPicto from '../assets/facebook.svg';
 import { Image } from 'astro:assets';
+import FormControl from './FormControl.astro';
+import Button from './Button.astro';
 ---
 
 <style lang="scss">
   @use '../styles/mq';
 
   .main-footer {
-    margin: var(--spacing-xl) auto;
-    text-align: center;
-    width: 100%;
+    border-top: solid 1px var(--color-border-base);
+    margin: var(--spacing-2xl) auto 0;
     display: flex;
-    gap: var(--spacing-m);
     flex-direction: column;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    align-items: center;
 
-    address {
-      font-style: normal;
+    @include mq.desktop {
+      flex-direction: row;
     }
 
-    .pictos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 80%;
-      margin: auto;
+    & > * {
+      flex: 1 1 0;
+      padding: var(--spacing-xl);
     }
 
-    .social {
-      list-style: none;
-      padding: 0;
+    .mailing-list {
+      align-items: baseline;
+      border: solid var(--color-border-base);
+      border-width: 0;
+      border-bottom-width: 1px;
       display: flex;
-      justify-content: center;
-      gap: var(--spacing-l);
+      flex-direction: column;
+      gap: var(--spacing-m);
+
+      .title {
+        font-weight: normal;
+        font-size: var(--typography-fontsize-l);
+
+        @include mq.desktop {
+          font-size: var(--typography-fontsize-xl);
+        }
+      }
+
+      @include mq.desktop {
+        border-bottom-width: 0;
+        border-right-width: 1px;
+      }
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-m);
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.1em;
+
+      address {
+        font-style: normal;
+      }
+
+      .pictos {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 80%;
+      }
+
+      .social {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-l);
+      }
     }
   }
 </style>
 
-<footer class="main-footer with-spacing">
-  <figure class="pictos">
-    <Image src={glidePictos} alt="" />
-  </figure>
-  <address>Rue Hongrée 6B — 4000 Liège</address>
-  <p>
-    <a href="mailto:drop@overflow.gallery">drop@overflow.gallery</a>
-  </p>
-  <ul class="social">
-    <li>
-      <a href="https://www.instagram.com/overflow.gallery/" title="Visit our Instagram page">
-        <Image src={instagramPicto} alt="Instagram" width="24" height="24" />
-      </a>
-    </li>
-    <li>
-      <a href="https://www.facebook.com/overflowgallery" title="Visit our Facebook page">
-        <Image src={facebookPicto} alt="Facebook" width="24" height="24" />
-      </a>
-    </li>
-  </ul>
+<footer class="main-footer">
+  <form class="mailing-list" action="https://app.keila.io/forms/nfrm_aoRx8LRA" method="post">
+    <h3 class="title">Mailing list</h3>
+    <p>
+      <strong>Stay informed of our upcoming events.</strong> Expect an email once every few weeks at most. We don’t sell
+      your data, and we don’t use a service that does.
+    </p>
+    <FormControl>
+      <label for="contact_email"> Email </label>
+      <input
+        id="contact_email"
+        name="contact[email]"
+        style="background-color:#ffffff!important;border-color:#6b7280!important;color:#111827!important"
+        type="email"
+      />
+    </FormControl>
+    <input aria-hidden="true" autocomplete="off" name="h[url]" novalidate="" style="display: none" />
+    <Button type="submit" large>Subscribe</Button>
+  </form>
+
+  <section class="contact">
+    <figure class="pictos">
+      <Image src={glidePictos} alt="" />
+    </figure>
+    <address>Rue Hongrée 6B — 4000 Liège</address>
+    <p>
+      <a href="mailto:drop@overflow.gallery">drop@overflow.gallery</a>
+    </p>
+    <ul class="social">
+      <li>
+        <a href="https://www.instagram.com/overflow.gallery/" title="Visit our Instagram page">
+          <Image src={instagramPicto} alt="Instagram" width="24" height="24" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/overflowgallery" title="Visit our Facebook page">
+          <Image src={facebookPicto} alt="Facebook" width="24" height="24" />
+        </a>
+      </li>
+    </ul>
+  </section>
 </footer>
