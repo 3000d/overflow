@@ -10,7 +10,7 @@
     "tokens": "style-dictionary build -c style-dictionary.config.json"
   },
   "dependencies": {
-    "astro": "^5.3.1"
+    "astro": "^5.9.2"
   },
   "devDependencies": {
     "prettier": "^3.5.2",
