@@ -97,6 +97,10 @@ import Button from './Button.astro';
         type="email"
       />
     </FormControl>
+    <div class="flex flex-col">
+      <div class="h-captcha" data-sitekey="a1c5fab7-71df-4ea4-af75-87a3d07c61de"></div>
+      <script async="" defer="" src="https://hcaptcha.com/1/api.js"></script>
+    </div>
     <input aria-hidden="true" autocomplete="off" name="h[url]" novalidate="" style="display: none" />
     <Button type="submit" large>Subscribe</Button>
   </form>
