@@ -19,28 +19,16 @@ const title = pathname !== '/' ? `${pageTitle} | O░V░E░R░F░L░O░W` 
 
     <title>{title}</title>
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" />
 
     <meta name="description" content={pageDescription ?? 'LATE - POST - ULTRA'} />
 
     <meta property="og:url" content="https://overflow.gallery" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={pageDescription ?? 'LATE - POST - ULTRA'} />
-    <meta
-      property="og:image"
-      content={pageCover ? pageCover.src : 'https://overflow.gallery/assets/og.jpg'}
-    />
-    <meta
-      property="og:image:url"
-      content={pageCover ? pageCover.src : 'https://overflow.gallery/assets/og.jpg'}
-    />
-    <meta
-      property="twitter:image"
-      content={pageCover ? pageCover.src : 'https://overflow.gallery/assets/og.jpg'}
-    />
+    <meta property="og:image" content={pageCover ? pageCover.src : 'https://overflow.gallery/assets/og.jpg'} />
+    <meta property="og:image:url" content={pageCover ? pageCover.src : 'https://overflow.gallery/assets/og.jpg'} />
+    <meta property="twitter:image" content={pageCover ? pageCover.src : 'https://overflow.gallery/assets/og.jpg'} />
 
     <GlobalStyles />
   </head>

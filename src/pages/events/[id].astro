@@ -59,12 +59,12 @@ const { Content } = await render(event);
   }
 </style>
 
-<BaseLayout pageTitle={event.data.title} pageCover={event.data.cover} pageDescription={event.data.artists.join(' / ')}>
+<BaseLayout pageTitle={event.data.title} pageCover={event.data.cover} pageDescription={event.data.artists?.join(' / ')}>
   <section class="event-container with-spacing">
     <Hero
       title={event.data.title}
       above={`${event.data.startDate.toLocaleDateString('fr-BE')} ${event.data.endDate ? `→ ${event.data.endDate.toLocaleDateString('fr-BE')}` : ''}`}
-      below={event.data.artists.join(' / ')}
+      below={event.data.artists?.join(' / ')}
       bg={event.data.cover}
     />
 
@@ -78,6 +78,7 @@ const { Content } = await render(event);
         event.data.ticket && (
           <div class="event-ticket">
             <Button href={event.data.ticket} title="Buy tickets online" large full target="_blank">
+              {event.data.free === true ? 'Free' : ''}
               Tickets ↗
             </Button>
           </div>

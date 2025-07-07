@@ -130,7 +130,7 @@ const getEventLink = (id) => `/events/${id}`;
           <h4 class="event-title">
             <a href={getEventLink(event.id)}>{event.data.title}</a>
           </h4>
-          <p>{event.data.artists.join(' / ')}</p>
+          <p>{event.data.artists?.join(' / ')}</p>
         </div>
 
         <p class="event-cover">
