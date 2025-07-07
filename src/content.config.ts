@@ -7,13 +7,14 @@ const events = defineCollection({
     z.object({
       title: z.string(),
       type: z.string().optional(),
-      artists: z.array(z.string()),
+      artists: z.array(z.string()).optional(),
       startDate: z.coerce.date(),
       endDate: z.coerce.date().optional(),
       schedule: z.string(),
       cover: image(),
       artistWebsite: z.string().url().optional(),
       ticket: z.string().url().optional(),
+      free: z.boolean().optional(),
     }),
 });
 
