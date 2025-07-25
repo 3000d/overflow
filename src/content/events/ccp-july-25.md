@@ -21,8 +21,7 @@ Pour cette première séance on vous propose deux intervenants:
 
 - [Ramiro Polla](https://ffglitch.org/who/) viendra présenter le projet [ascii.jpeg](http://jpeg.ffglitch.org/ascii/),
   un outil permettant de créer des fichiers JPEG avec du texte ascii
-- On discutera des possibilités offertes aux artistes et créateur.ices pour se défendre face au pillage des modèles d’IA
-  générative avec [Edwin Joassart](https://blck.coffee/)
+- On discutera de l'AI slop et de comment il envahit nos espaces numériques et IRL avec [Jonathan Berger](https://www.instagram.com/drskullster/).
 
 A 21h on fera de la place pour une jam audio/vidéo. Ouvert à tout type de bidouille audio/vidéo: live coding, modular
 synth, analog video, patches,..
@@ -46,7 +45,7 @@ For this first session we'll have two speakers:
 - [Ramiro Polla](https://ffglitch.org/who/) will present [ascii.jpeg](http://jpeg.ffglitch.org/ascii/), a tool that
   generates
   JPEG files with ASCII text
-- We will discuss ways that artists can fight back against the AI models plundering their work
+- We will discuss AI slop and how it is eating the world with [Jonathan Berger](https://www.instagram.com/drskullster/).
 
 ⚠️ The format is still experimental, expect a casual and somewhat messy format. Register
 here: https://pretix.3kd.io/overflow/ccp-juillet-25/
