@@ -7,6 +7,8 @@ cover: ./covers/mm.jpg
 free: true
 ---
 
+## 6:30pm - 9:30PM
+
 ## FR
 
 Les Modular Monday sont un nouveau rendez-vous mensuel d'Overflow pour tous les amateurs de synthés, de modulaires, et de bricolages sonores en tout genre.
