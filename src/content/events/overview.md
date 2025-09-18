@@ -4,7 +4,7 @@ type: performance
 artists: ['Matière Humaine', 'SPLX', 'Flor de Fuego', 'LEA']
 startDate: 2025-03-15
 endDate: 2025-04-15
-schedule: Every saturday - 8PM-10PM
+schedule: 8PM - 10PM
 cover: ./covers/overview.png
 artistWebsite: https://espacejungle.com/
 ---

@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Button from '../../components/Button.astro';
 import Hero from '../../components/Hero.astro';
 import LongFormContent from '../../components/LongFormContent.astro';
+import {displayDateTimeSchedule} from '../../utils';
 
 export async function getStaticPaths() {
   const posts = await getCollection('events');
@@ -63,7 +64,7 @@ const { Content } = await render(event);
   <section class="event-container with-spacing">
     <Hero
       title={event.data.title}
-      above={`${event.data.startDate.toLocaleDateString('fr-BE')} ${event.data.endDate ? `→ ${event.data.endDate.toLocaleDateString('fr-BE')}` : ''}`}
+      above={displayDateTimeSchedule(event.data.startDate, event.data.endDate, event.data.schedule)}
       below={event.data.artists?.join(' / ')}
       bg={event.data.cover}
     />

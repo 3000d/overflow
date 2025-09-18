@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import SectionTitle from './SectionTitle.astro';
+import { displayDateTimeSchedule } from '../utils';
 
 interface Props {
   events: CollectionEntry<'events'>;
@@ -124,8 +125,7 @@ const getEventLink = (id) => `/events/${id}`;
       <div class="event with-spacing">
         <div class="event-content">
           <p class="event-date">
-            {event.data.startDate.toLocaleDateString('fr-BE')}
-            {event.data.endDate && `→ ${event.data.endDate.toLocaleDateString('fr-BE')}`}
+            {displayDateTimeSchedule(event.data.startDate, event.data.endDate, event.data.schedule)}
           </p>
           <h4 class="event-title">
             <a href={getEventLink(event.id)}>{event.data.title}</a>
