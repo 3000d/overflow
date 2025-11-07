@@ -1,0 +1,28 @@
+---
+import { CollectionEntry, getCollection, getEntries } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import List from '../components/List.astro';
+import ListItem from '../components/ListItem.astro';
+import Hero from '../components/Hero.astro';
+
+const news = await getCollection('news');
+
+const orderedNews = news.sort((newsA, newsB) => {
+  return newsB.data.date - newsA.data.date;
+});
+---
+
+<BaseLayout pageTitle="News">
+  <Hero title="News" />
+  <List class="with-spacing">
+    {
+      orderedNews.map((news) => (
+        <ListItem>
+          <a href={`/news/${news.id}`} title="Read more">
+            [{news.data.date.toLocaleDateString('en-UK')}] {news.data.title}
+          </a>
+        </ListItem>
+      ))
+    }
+  </List>
+</BaseLayout>
