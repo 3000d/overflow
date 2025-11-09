@@ -93,19 +93,22 @@ const currentPath = pathname.slice(1);
   </button>
 
   <ul class="menu">
-    <li class={currentPath === 'programme/' ? 'active' : ''}>
+    <li class={currentPath.startsWith('programme/') ? 'active' : ''}>
       <a href="/programme/" title="See our future events">Programme</a>
     </li>
-    <li class={currentPath === 'archives/' ? 'active' : ''}>
+    <li class={currentPath.startsWith('archives/') ? 'active' : ''}>
       <a href="/archives/" title="See our past events">Archives</a>
     </li>
-    <li class={currentPath === 'artists/' ? 'active' : ''}>
+    <li class={currentPath.startsWith('artists/') ? 'active' : ''}>
       <a href="/artists/" title="List of artists who participated in one of our events">Artists</a>
     </li>
-    <!--<li class={currentPath === 'about' ? 'active' : ''}>-->
+    <li class={currentPath.startsWith('news/') ? 'active' : ''}>
+      <a href="/news/">News</a>
+    </li>
+    <!--<li class={currentPath.startsWith(about' ? )'active' : ''}>-->
     <!--  <a href="/about" title="Learn more about us">About</a>-->
     <!--</li>-->
-    <li class={currentPath === 'visit/' ? 'active' : ''}>
+    <li class={currentPath.startsWith('visit/') ? 'active' : ''}>
       <a href="/visit/" title="Visit us">Visit us</a>
     </li>
   </ul>
