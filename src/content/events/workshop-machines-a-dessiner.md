@@ -30,6 +30,8 @@ travaux sont présentés sous forme sculpturale ou d’installation. Il mêle le
 en s’appropriant les techniques du métal, de l’électronique et de la fabrication numérique. Il met en place des machines
 autonomes créant leur propre atmosphère que les visiteurs sont invités à explorer.
 
+https://eliebolard.net/Machinedessiné/ 
+
 ## EN
 
 ### Description
@@ -51,3 +53,5 @@ essential role in his work, both from a theoretical and critical point of view a
 machines, endowed with their own intelligence and reactions, lead the viewer to consider them as beings in their own
 right. Everything is in motion, everything is alive, but the human being is no longer invited in, or is reduced to the
 status of producer. 
+
+https://eliebolard.net/Machinedessiné-en/
