@@ -15,6 +15,7 @@ const events = defineCollection({
       artistWebsite: z.string().url().optional(),
       ticket: z.string().url().optional(),
       free: z.boolean().optional(),
+      embedTicketForm: z.boolean().optional(),
     }),
 });
 
