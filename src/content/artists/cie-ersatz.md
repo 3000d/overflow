@@ -1,5 +1,5 @@
 ---
-name: Companie Ersatz
+name: Compagnie Ersatz
 events:
   - hyperboree
 cover: './covers/ersatz.jpeg'
