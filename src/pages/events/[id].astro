@@ -78,10 +78,20 @@ const { Content } = await render(event);
       {
         event.data.ticket && (
           <div class="event-ticket">
-            <Button href={event.data.ticket} title="Buy tickets online" large full target="_blank">
-              {event.data.free === true ? 'Free' : ''}
-              Tickets ↗
-            </Button>
+            {event.data.embedTicketForm ? (
+                <pretix-widget event={event.data.ticket} single-item-select="button"></pretix-widget>
+                <noscript>
+                    <Button href={event.data.ticket} title="Buy tickets online" large full target="_blank">
+                        {event.data.free === true ? 'Free' : ''}
+                        Tickets ↗
+                    </Button>
+                </noscript>
+            ) : (
+                <Button href={event.data.ticket} title="Buy tickets online" large full target="_blank">
+                  {event.data.free === true ? 'Free' : ''}
+                  Tickets ↗
+                </Button>
+            )}
           </div>
         )
       }
