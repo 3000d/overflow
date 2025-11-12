@@ -1,29 +1,27 @@
 ---
 title: Appel à résidence — machines à dessiner
 date: 2025-11-07
-description: We are hosting a one-week residency for artists interested in exploring the medium of pen plotting.
+description: Nous organisons une résidence d'une semaine pour les artistes intéressé•es dans l'exploration du medium des traceurs numériques.
 cover: ../covers/draw-open-call-2.png
 ---
 
-- **Application Deadline:** 30 November
-- **Residency Dates:** 5–9 January 2026
-- **Location:** Liège, Belgium
+- **Date limite:** 30 Novembre
+- **Dates de résidence:** 5–9 Janvier 2026
+- **Lieu:** Overflow — Liège, Belgium
 
-### Who we are
+### Qui sommes-nous ?
 
-Overflow is a venue dedicated to the exploration of the intersection of media, art, politics and technology through
-exhibits,
-workshops, performances, residencies, and more. We like to focus on different thematics, be that societal shifts or
-artistic movements, in quarterly cycles.
+Overflow est un espace dédié à l'exploration de l'intersection entre les médias, l'art, la politique et la technologie
+à travers des expositions, workshops, performances, résidences, et plus. Le projet a vocation à se concentrer sur
+différentes
+thématiques, que ça soit des changements sociétaux ou des courants artistiques, en cycles de 3 mois.
 
-This coming January, we will be hosting **DRAW()**, a cycle focusing on pen plotter art. It will include workshops,
-projections, conferences, a three-week exhibition and an artist residency, which is the subject of this call.
+En janvier nous organisons **DRAW()**, un cycle focus sur l'art fait avec des traceuses numériques (pen plotter). Cela
+comprendra des workshops, projections, conférences, une exposition de trois semaines et une résidence d'artiste, qui est
+le sujet de cet appel.
 
-### Details
-
-We welcome applications from artists of all styles, technical backgrounds, and skill levels. The requirement is
-that your work can be exported to a vector format such as SVG (e.g. from code, visual programming, vector-based software
-like Illustrator or Inkscape,...).
+Les candidats doivent avoir une pratique qui permette l'exportation au format vectoriel (code, programmation visuelle,
+logiciels de graphisme vectoriel tels qu'Illustrator, Inkscape, Affinity).
 
 Selected artist will receive a daily stipend, access to our pen plotters, and our technical expertise on the machines.
 You will also be provided with a dedicated workspace equipped with a variety of tools, including electronics and
@@ -31,26 +29,26 @@ woodworking resources.
 
 The resulting work will be shown during the exhibit that will follow the residency.
 
-### Who should apply
+### Profil recherché
 
-Artists from all backgrounds, artistic styles, and technical skill levels are encouraged to apply.
+L'appel est ouvert aux artistes de tous horizons, styles et de tous niveaux qui souhaitent expérimenter avec les
+traceurs.
 
-### Requirements
+### Critères
 
-Applicants must have a practice that allows for, or can be adapted to, exporting work in a vector format. This can
-include processes based in code, visual programming (e.g. TouchDesigner), or vector graphics software (e.g.
-Adobe Illustrator, Inkscape).
+Les candidats doivent avoir une pratique qui permette l'exportation au format vectoriel (code, programmation visuelle,
+logiciels de graphisme vectoriel tels qu'Illustrator ou Inkscape,...).
 
-### What we provide
+### Nous offrons
 
-- A daily stipend
-- Supplies
-- Access to a range of pen plotters
-- Technical support and expertise on the equipment
-- A dedicated workspace with access to fabrication tools (electronics, woodworking, etc.)
+* Une indemnité journalière
+* Les fournitures
+* L’accès à une gamme de traceurs
+* Une assistance technique et de l'expertise sur l'équipement
+* Un espace de travail dédié avec accès à des outils de fabrication
 
-Note that we don't provide accomodation.
+Veuillez noter que nous n'offrons pas d'hébergement.
 
-### How to apply
+### Comment postuler
 
-Drop us a few lines at drop@overflow.gallery.
+Envoyez-nous un mail à drop@overflow.gallery.

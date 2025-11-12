@@ -7,7 +7,7 @@ cover: ../covers/draw-open-call-2.png
 
 - **Application Deadline:** 30 November
 - **Residency Dates:** 5–9 January 2026
-- **Location:** Liège, Belgium
+- **Location:** Overflow — Liège, Belgium
 
 ### Who we are
 
