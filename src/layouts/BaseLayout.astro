@@ -1,18 +1,21 @@
 ---
-import '../styles/vars.css';
+import '@styles/vars.css';
 
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import GlobalStyles from '../components/GlobalStyles.astro';
-import App from '../components/App.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import GlobalStyles from '@components/GlobalStyles.astro';
+import App from '@components/App.astro';
 
 const pathname = new URL(Astro.request.url).pathname;
 const { pageTitle, pageCover, pageDescription } = Astro.props;
+import { getAlternateURLs } from '@i18n/utils';
 
-const title = pathname !== '/' ? `${pageTitle} | O░V░E░R░F░L░O░W` : pageTitle;
+const title = pathname !== `/${Astro.currentLocale}/` ? `${pageTitle} | O░V░E░R░F░L░O░W` : pageTitle;
+
+const alternateURLs = getAlternateURLs(Astro.url);
 ---
 
-<html lang="en">
+<html lang={Astro.currentLocale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,7 +33,19 @@ const title = pathname !== '/' ? `${pageTitle} | O░V░E░R░F░L░O░W` 
     <meta property="og:image:url" content={pageCover ? pageCover.src : 'https://overflow.gallery/assets/og.jpg'} />
     <meta property="twitter:image" content={pageCover ? pageCover.src : 'https://overflow.gallery/assets/og.jpg'} />
 
-    <link rel="stylesheet" type="text/css" href="https://pretix.3kd.io/overflow/workshop-draw/widget/v1.css" crossorigin>
+    {alternateURLs.length && alternateURLs.map(({ lang, URL }) => <link rel="alternate" hreflang={lang} href={URL} />)}
+    {
+      alternateURLs.length && (
+        <link rel="alternate" hreflang="x-default" href={alternateURLs.find(({ lang }) => lang === 'en').URL} />
+      )
+    }
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pretix.3kd.io/overflow/workshop-draw/widget/v1.css"
+      crossorigin
+    />
     <script type="text/javascript" src="https://pretix.3kd.io/widget/v1.en.js" async crossorigin></script>
 
     <GlobalStyles />

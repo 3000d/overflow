@@ -1,0 +1,59 @@
+---
+import { languages } from '../i18n/ui';
+import { switchLanguageUrl, useTranslations } from '../i18n/utils';
+
+const t = useTranslations(Astro.currentLocale);
+
+// Pre-generate URLs for all languages
+const languageUrls = await Promise.all(
+  Object.entries(languages).map(async ([lang, label]) => {
+    const targetUrl = await switchLanguageUrl(Astro.url, lang);
+    // const translatedLabel = t(`menu.languages.${lang}`);
+    return { lang, label: 'translatedLabel', targetUrl };
+  }),
+);
+---
+
+<style lang="scss">
+  @use '../styles/mq';
+
+  .lang {
+    list-style: none;
+    padding: 0;
+    gap: var(--spacing-m);
+    display: none;
+    margin-left: var(--spacing-l);
+
+    @include mq.desktop {
+      display: flex;
+    }
+
+    a {
+      padding: 0;
+      color: var(--color-text);
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .active a {
+      background-color: transparent;
+      border-bottom: 2px white solid;
+      color: var(--color-text-base);
+      font-weight: bold;
+    }
+  }
+</style>
+
+<ul class="lang">
+  {
+    languageUrls.map(({ lang, label, targetUrl }) => (
+      <li class={lang === Astro.currentLocale ? 'active' : ''}>
+        <a href={targetUrl} title={label}>
+          {lang}
+        </a>
+      </li>
+    ))
+  }
+</ul>

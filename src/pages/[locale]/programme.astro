@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/BaseLayout.astro';
+import EventList from '@components/EventList.astro';
+import { useTranslations, getLocalizedStaticPaths } from '@i18n/utils';
+
+const today = new Date();
+
+const t = useTranslations(Astro.currentLocale);
+
+const events = await getCollection('events', (event) => {
+  const date = event.data.endDate ?? event.data.startDate;
+  return date >= today && event.id.startsWith(Astro.currentLocale + '/');
+});
+
+const eventsSorted = events.sort((a, b) => {
+  return a.data.startDate - b.data.startDate;
+});
+
+export async function getStaticPaths() {
+  return getLocalizedStaticPaths();
+}
+---
+
+<Layout pageTitle="Programme">
+  <EventList title="Programme" events={eventsSorted} fallback={t('event.fallback')} />
+</Layout>

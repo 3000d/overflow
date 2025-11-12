@@ -1,0 +1,17 @@
+---
+import { Content as VisitEN } from '../../content/visit.md';
+import { Content as VisitFR } from '../../content/fr/visit.md';
+import PageLayout from '../../layouts/PageLayout.astro';
+import OverflowImg from '../../assets/overflow.jpg';
+import {getLocalizedStaticPaths, useTranslations} from "../../i18n/utils";
+
+const t = useTranslations(Astro.currentLocale);
+
+export async function getStaticPaths() {
+  return getLocalizedStaticPaths();
+}
+---
+
+<PageLayout pageTitle={t('visit.title')} pageCover={OverflowImg}>
+  {Astro.currentLocale === 'fr' ? <VisitFR /> : <VisitEN />}
+</PageLayout>

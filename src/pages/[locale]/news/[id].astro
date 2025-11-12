@@ -1,0 +1,50 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Hero from '../../../components/Hero.astro';
+import LongFormContent from '../../../components/LongFormContent.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news');
+  return posts.map((news) => {
+    const locale = news.id.split('/')[0];
+    news.id = news.id.replace(`${locale}/`, '');
+    return {
+      params: { id: news.id, locale },
+      props: { news },
+    };
+  });
+}
+
+const { news } = Astro.props;
+const { Content } = await render(news);
+---
+
+<style lang="scss">
+  @use '../../../styles/mq';
+
+  .chapo {
+    margin-bottom: 2rem;
+    font-size: var(--typography-fontsize-l);
+    line-height: 1.5;
+    border-bottom: solid white 1px;
+    padding-bottom: 2rem;
+  }
+</style>
+
+<BaseLayout pageTitle={news.data.title} pageCover={news.data.cover} pageDescription={news.data.description}>
+  <section class="with-spacing">
+    <Hero title={news.data.title} above={news.data.date.toLocaleDateString('en-UK')} bg={news.data.cover} />
+
+    <div class="container">
+      <div class="copy">
+        <LongFormContent>
+          <b class="chapo">
+            {news.data.description}
+          </b>
+          <Content />
+        </LongFormContent>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
