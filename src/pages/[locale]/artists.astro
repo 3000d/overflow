@@ -1,0 +1,33 @@
+---
+import { CollectionEntry, getCollection, getEntries } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import List from '@components/List.astro';
+import ListItem from '@components/ListItem.astro';
+import Hero from '@components/Hero.astro';
+import { useTranslations, getLocalizedStaticPaths } from '@i18n/utils';
+import { getLocaleCollectionUrl } from '../../i18n/utils';
+
+const t = useTranslations(Astro.currentLocale);
+
+const artists = await getCollection('artists', ({ id }) => id.startsWith(`${Astro.currentLocale}`));
+const orderedArtists = artists.sort((artistA, artistB) => {
+  return artistA.data.name < artistB.data.name ? -1 : 1;
+});
+
+export async function getStaticPaths() {
+  return getLocalizedStaticPaths();
+}
+---
+
+<BaseLayout pageTitle={t('artists.title')}>
+  <Hero title={t('artists.title')} />
+  <List class="with-spacing">
+    {
+      orderedArtists.map((artist) => (
+        <ListItem>
+          <a href={getLocaleCollectionUrl(Astro.currentLocale, 'artists', artist.id)}>{artist.data.name}</a>
+        </ListItem>
+      ))
+    }
+  </List>
+</BaseLayout>

@@ -5,6 +5,9 @@ import facebookPicto from '../assets/facebook.svg';
 import { Image } from 'astro:assets';
 import FormControl from './FormControl.astro';
 import Button from './Button.astro';
+import {useTranslations} from "../i18n/utils";
+
+const t = useTranslations(Astro.currentLocale);
 ---
 
 <style lang="scss">
@@ -83,10 +86,9 @@ import Button from './Button.astro';
 
 <footer class="main-footer">
   <form class="mailing-list" action="https://app.keila.io/forms/nfrm_aoRx8LRA" method="post">
-    <h3 class="title">Mailing list</h3>
+    <h3 class="title">{t('footer.newsletter.title')}</h3>
     <p>
-      <strong>Stay informed of our upcoming events.</strong> Expect an email once every few weeks at most. We don’t sell
-      your data, and we don’t use a service that does.
+      <strong>{t('footer.newsletter.header')}</strong> {t('footer.newsletter.text')}
     </p>
     <FormControl>
       <label for="contact_email"> Email </label>
@@ -102,7 +104,7 @@ import Button from './Button.astro';
       <script async="" defer="" src="https://hcaptcha.com/1/api.js"></script>
     </div>
     <input aria-hidden="true" autocomplete="off" name="h[url]" novalidate="" style="display: none" />
-    <Button type="submit" large>Subscribe</Button>
+    <Button type="submit" large>{t('footer.newsletter.subscribe')}</Button>
   </form>
 
   <section class="contact">

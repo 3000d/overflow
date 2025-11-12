@@ -1,5 +1,6 @@
 ---
 import { Content as IntroContent } from '../content/intro.md';
+import { Content as IntroContentFR } from '../content/fr/intro.md';
 import background from '../assets/intro-bg.png';
 ---
 
@@ -42,7 +43,7 @@ import background from '../assets/intro-bg.png';
 
 <section class="intro with-spacing">
   <div class="content">
-    <IntroContent />
+    {Astro.currentLocale === 'fr' ? <IntroContentFR /> : <IntroContent />}
   </div>
   <!--<p>-->
   <!--  <Button href="/visit" title="Learn more about us">Learn more</Button>-->

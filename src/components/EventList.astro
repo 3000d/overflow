@@ -3,13 +3,14 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import SectionTitle from './SectionTitle.astro';
 import { displayDateTimeSchedule } from '../utils';
+import {getLocaleCollectionUrl} from "../i18n/utils";
 
 interface Props {
   events: CollectionEntry<'events'>;
 }
 
 const { events, title, fallback } = Astro.props;
-const getEventLink = (id) => `/events/${id}`;
+const getEventLink = (id) => getLocaleCollectionUrl(Astro.currentLocale, 'events', id);
 ---
 
 <style lang="scss">

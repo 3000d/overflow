@@ -2,6 +2,10 @@
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.svg';
 import Nav from './Nav.astro';
+import { useTranslations } from '../i18n/utils';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const t = useTranslations(Astro.currentLocale);
 ---
 
 <style lang="scss">
@@ -27,7 +31,7 @@ import Nav from './Nav.astro';
 </style>
 
 <header class="header with-spacing">
-  <a href="/" title="Return home" class="home-link">
+  <a href={getRelativeLocaleUrl(Astro.currentLocale, '/')} title={t('nav.home.help')} class="home-link">
     <Image class="logo" src={logo} alt="O V E R F L O W" height="20" />
   </a>
   <Nav />

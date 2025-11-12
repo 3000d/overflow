@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/BaseLayout.astro';
+import EventList from '@components/EventList.astro';
+import { getLocalizedStaticPaths } from '@i18n/utils';
+
+const today = new Date();
+
+const events = await getCollection('events', ({ id, data }) => {
+  const date = data.endDate ?? data.startDate;
+  return date < today && id.startsWith(`${Astro.currentLocale}/`);
+});
+
+const eventsSorted = events.sort((a, b) => {
+  return b.data.startDate - a.data.startDate;
+});
+
+export async function getStaticPaths() {
+  return getLocalizedStaticPaths();
+}
+---
+
+<Layout pageTitle="Archives">
+  <EventList title="Archives" events={eventsSorted} />
+</Layout>

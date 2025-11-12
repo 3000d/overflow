@@ -1,5 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import {useTranslations} from "@i18n/utils";
+
+const t = useTranslations(Astro.currentLocale);
 ---
 
 <style lang="scss">
@@ -43,8 +46,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
   }
 </style>
-<BaseLayout title="Page not found" pageTitle="Page not found">
+<BaseLayout title={t('404.title')} pageTitle={t('404.title')}>
   <div class="container">
-    <h1>Page not found</h1>
+    <h1>{t('404.title')}</h1>
   </div>
 </BaseLayout>
