@@ -23,11 +23,10 @@ le sujet de cet appel.
 Les candidats doivent avoir une pratique qui permette l'exportation au format vectoriel (code, programmation visuelle,
 logiciels de graphisme vectoriel tels qu'Illustrator, Inkscape, Affinity).
 
-Selected artist will receive a daily stipend, access to our pen plotters, and our technical expertise on the machines.
-You will also be provided with a dedicated workspace equipped with a variety of tools, including electronics and
-woodworking resources.
+Nous offrons une indemnité journalière, l'accès à une gamme de traceurs numériques, les fournitures, une assistance
+technique et de l'expertise sur les machines, ainsi qu'un espace dédié avec accès à des outils de fabrication. 
 
-The resulting work will be shown during the exhibit that will follow the residency.
+Le travail produit sera montré lors de l'exposition qui suit la résidence.
 
 ### Profil recherché
 
