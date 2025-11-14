@@ -3,7 +3,7 @@ title: Workshop Machines à Dessiner
 type: workshop
 artists: [ 'Élie Bolard' ]
 startDate: 2025-12-13
-schedule: 9h — 17h
+schedule: 10h — 18h
 cover: ../covers/workshop-machines-a-dessiner.png
 artistWebsite: https://eliebolard.net/
 ticket: https://pretix.3kd.io/overflow/workshop-draw/
