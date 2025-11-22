@@ -2,7 +2,7 @@
 title: Open call for artists — short residency on pen plotter art
 date: 2025-11-07
 description: We are hosting a one-week residency for artists interested in exploring the medium of pen plotting.
-cover: ../covers/draw-open-call-2.png
+cover: ../covers/draw-open-call.png
 ---
 
 - **Application Deadline:** 30 November

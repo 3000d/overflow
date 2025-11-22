@@ -2,7 +2,7 @@
 title: Appel à résidence — machines à dessiner
 date: 2025-11-07
 description: Nous organisons une résidence d'une semaine pour les artistes intéressé•es dans l'exploration du medium des traceurs numériques.
-cover: ../covers/draw-open-call-2.png
+cover: ../covers/draw-open-call.png
 ---
 
 - **Date limite:** 30 Novembre
