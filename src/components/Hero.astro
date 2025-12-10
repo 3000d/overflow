@@ -75,6 +75,12 @@ const { above, title, below, bg, href, lg, sectionTitle } = Astro.props;
       }
     }
 
+    &--below {
+      @include mq.desktop {
+        max-width: 60%;
+      }
+    }
+
     &--above p,
     &--below p,
     &--title h1 {
