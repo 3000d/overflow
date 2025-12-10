@@ -60,13 +60,7 @@ const featureEventsToCome = await getCollection('events', (item) => {
 </style>
 
 <Layout pageTitle="O░V░E░R░F░L░O░W">
-  {
-    featureEventsToCome[0] ? (
-      <FeaturedEvent event={featureEventsToCome[0]} />
-    ) : (
-      <Intro />
-    )
-  }
+  {featureEventsToCome[0] && <FeaturedEvent event={featureEventsToCome[0]} />}
 
   <section class="events">
     <EventList

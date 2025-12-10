@@ -5,7 +5,8 @@ import facebookPicto from '../assets/facebook.svg';
 import { Image } from 'astro:assets';
 import FormControl from './FormControl.astro';
 import Button from './Button.astro';
-import {useTranslations} from "../i18n/utils";
+import { useTranslations } from '../i18n/utils';
+import Intro from './Intro.astro';
 
 const t = useTranslations(Astro.currentLocale);
 ---
@@ -14,118 +15,150 @@ const t = useTranslations(Astro.currentLocale);
   @use '../styles/mq';
 
   .main-footer {
-    border-top: solid 1px var(--color-border-base);
-    margin: var(--spacing-2xl) auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: var(--spacing-2xl) 0 0;
 
-    @include mq.desktop {
-      flex-direction: row;
-    }
-
-    & > * {
-      flex: 1 1 0;
-      padding: var(--spacing-xl);
-    }
-
-    .mailing-list {
-      align-items: baseline;
-      border: solid var(--color-border-base);
-      border-width: 0;
-      border-bottom-width: 1px;
+    &--content {
       display: flex;
       flex-direction: column;
-      gap: var(--spacing-m);
+      align-items: center;
 
-      .title {
-        font-weight: normal;
-        font-size: var(--typography-fontsize-l);
+      @include mq.desktop {
+        flex-direction: row;
+      }
+
+      & > * {
+        flex: 1 1 0;
+        padding: var(--spacing-xl);
+      }
+
+      .mailing-list {
+        align-items: baseline;
+        border: solid var(--color-border-base);
+        border-width: 0;
+        border-bottom-width: 1px;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-m);
+
+        .title {
+          font-weight: normal;
+          text-transform: uppercase;
+          font-size: var(--typography-fontsize-l);
+
+          @include mq.desktop {
+            font-size: var(--typography-fontsize-xl);
+          }
+        }
 
         @include mq.desktop {
-          font-size: var(--typography-fontsize-xl);
+          border-bottom-width: 0;
+          border-right-width: 1px;
         }
       }
 
-      @include mq.desktop {
-        border-bottom-width: 0;
-        border-right-width: 1px;
-      }
-    }
-
-    .contact {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-m);
-      text-transform: uppercase;
-      text-align: center;
-      letter-spacing: 0.1em;
-
-      address {
-        font-style: normal;
-      }
-
-      .pictos {
-        margin: 0 auto;
+      .contact {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        max-width: 80%;
-      }
+        flex-direction: column;
+        gap: var(--spacing-m);
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.1em;
 
-      .social {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        gap: var(--spacing-l);
+        address {
+          font-style: normal;
+        }
+
+        .pictos {
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          max-width: 80%;
+        }
+
+        .social {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          gap: var(--spacing-l);
+        }
       }
     }
   }
 </style>
 
 <footer class="main-footer">
-  <form class="mailing-list" action="https://app.keila.io/forms/nfrm_aoRx8LRA" method="post">
-    <h3 class="title">{t('footer.newsletter.title')}</h3>
-    <p>
-      <strong>{t('footer.newsletter.header')}</strong> {t('footer.newsletter.text')}
-    </p>
-    <FormControl>
-      <label for="contact_email"> Email </label>
+  <Intro />
+  <div class="main-footer--content">
+    <form
+      class="mailing-list"
+      action="https://app.keila.io/forms/nfrm_aoRx8LRA"
+      method="post"
+    >
+      <h3 class="title">{t('footer.newsletter.title')}</h3>
+      <p>
+        <strong>{t('footer.newsletter.header')}</strong>
+        {t('footer.newsletter.text')}
+      </p>
+      <FormControl>
+        <label for="contact_email"> Email </label>
+        <input
+          id="contact_email"
+          name="contact[email]"
+          style="background-color:#ffffff!important;border-color:#6b7280!important;color:#111827!important"
+          type="email"
+        />
+      </FormControl>
+      <div class="flex flex-col">
+        <div
+          class="h-captcha"
+          data-sitekey="a1c5fab7-71df-4ea4-af75-87a3d07c61de"
+        >
+        </div>
+        <script async="" defer="" src="https://hcaptcha.com/1/api.js"></script>
+      </div>
       <input
-        id="contact_email"
-        name="contact[email]"
-        style="background-color:#ffffff!important;border-color:#6b7280!important;color:#111827!important"
-        type="email"
+        aria-hidden="true"
+        autocomplete="off"
+        name="h[url]"
+        novalidate=""
+        style="display: none"
       />
-    </FormControl>
-    <div class="flex flex-col">
-      <div class="h-captcha" data-sitekey="a1c5fab7-71df-4ea4-af75-87a3d07c61de"></div>
-      <script async="" defer="" src="https://hcaptcha.com/1/api.js"></script>
-    </div>
-    <input aria-hidden="true" autocomplete="off" name="h[url]" novalidate="" style="display: none" />
-    <Button type="submit" large>{t('footer.newsletter.subscribe')}</Button>
-  </form>
+      <Button type="submit" large>{t('footer.newsletter.subscribe')}</Button>
+    </form>
 
-  <section class="contact">
-    <figure class="pictos">
-      <Image src={glidePictos} alt="" />
-    </figure>
-    <address>Rue Hongrée 6B — 4000 Liège</address>
-    <p>
-      <a href="mailto:drop@overflow.gallery">drop@overflow.gallery</a>
-    </p>
-    <ul class="social">
-      <li>
-        <a href="https://www.instagram.com/overflow.gallery/" title="Visit our Instagram page">
-          <Image src={instagramPicto} alt="Instagram" width="24" height="24" />
-        </a>
-      </li>
-      <li>
-        <a href="https://www.facebook.com/overflowgallery" title="Visit our Facebook page">
-          <Image src={facebookPicto} alt="Facebook" width="24" height="24" />
-        </a>
-      </li>
-    </ul>
-  </section>
+    <section class="contact">
+      <figure class="pictos">
+        <Image src={glidePictos} alt="" />
+      </figure>
+      <address>Rue Hongrée 6B — 4000 Liège</address>
+      <p>
+        <a href="mailto:drop@overflow.gallery">drop@overflow.gallery</a>
+      </p>
+      <ul class="social">
+        <li>
+          <a
+            href="https://www.instagram.com/overflow.gallery/"
+            title="Visit our Instagram page"
+          >
+            <Image
+              src={instagramPicto}
+              alt="Instagram"
+              width="24"
+              height="24"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/overflowgallery"
+            title="Visit our Facebook page"
+          >
+            <Image src={facebookPicto} alt="Facebook" width="24" height="24" />
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
 </footer>
