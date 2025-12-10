@@ -2,7 +2,7 @@
 name: Digital Panda
 subname: aka. Baxter Lewis & Sans
 events: 
-  - overview
+  - en/overview
 cover: '../covers/digital-panda.jpeg'
 links:
   - label: Instagram // Baxter Lewis

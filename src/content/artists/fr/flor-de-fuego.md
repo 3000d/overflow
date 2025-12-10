@@ -1,7 +1,7 @@
 ---
 name: Flor de Fuego
 events:
-  - overview
+  - fr/overview
 cover: '../covers/flor-de-fuego.jpg'
 links:
   - label: Website

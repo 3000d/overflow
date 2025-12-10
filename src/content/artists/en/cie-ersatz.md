@@ -1,7 +1,7 @@
 ---
 name: Compagnie Ersatz
 events:
-  - hyperboree
+  - en/hyperboree
 cover: '../covers/ersatz.jpeg'
 links:
   - label: Website

@@ -6,7 +6,7 @@ import LongFormContent from "@components/LongFormContent.astro";
 import Hero from "@components/Hero.astro";
 import List from "@components/List.astro";
 import ListItem from "@components/ListItem.astro";
-import {useTranslations} from "../../../i18n/utils";
+import {getLocaleCollectionUrl, useTranslations} from "../../../i18n/utils";
 
 const t = useTranslations(Astro.currentLocale);
 
@@ -15,7 +15,7 @@ export async function getStaticPaths() {
     return posts.map((artist) => {
         const locale = artist.id.split('/')[0];
         artist.id = artist.id.replace(`${locale}/`, '');
-        
+
         return ({
             params: {id: artist.id, locale},
             props: {artist},
@@ -25,38 +25,38 @@ export async function getStaticPaths() {
 
 const {artist} = Astro.props;
 const {Content} = await render(artist);
-const events = await getEntries(artist.data.events);
+const events = artist.data.events ? await getEntries(artist.data.events) : null;
+console.log(events);
 ---
 <style lang="scss">
-    .content {
-      margin-bottom: var(--spacing-l);
-    }
+  .content {
+    margin-bottom: var(--spacing-l);
+  }
 </style>
 
 <BaseLayout pageTitle={artist.data.name} pageCover={artist.data.cover}>
-    <Hero title={artist.data.name} bg={artist.data.cover} below={artist.data.subname} />
-    
+    <Hero title={artist.data.name} bg={artist.data.cover} below={artist.data.subname}/>
+
     <div class="content with-spacing">
         <LongFormContent>
             <Content/>
         </LongFormContent>
     </div>
 
-    <!--
-    {events.length && (
-             <SectionTitle>Participations</SectionTitle>
-    
-             <List class="with-spacing">
-                 {
-                     events?.map((event) => (
-                             <ListItem>
-                                 <a href={`/events/${event.id}`}>{event.data.startDate.getFullYear()} — {event.data.title}</a>
-                             </ListItem>
-                     ))
-                 }
-             </List>
+    {events[0] && (
+            <SectionTitle>Participations</SectionTitle>
+
+            <List class="with-spacing">
+                {
+                    events?.map((event) => (
+                            <ListItem>
+                                <a href={getLocaleCollectionUrl(Astro.currentLocale, 'events', event.id)}>{event.data.startDate.getFullYear()}
+                                    — {event.data.title}</a>
+                            </ListItem>
+                    ))
+                }
+            </List>
     )}
-    -->
 
     {artist.data.links.length && (
             <SectionTitle>{t('labels.links')}</SectionTitle>
