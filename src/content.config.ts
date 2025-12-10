@@ -16,6 +16,8 @@ const events = defineCollection({
       ticket: z.string().url().optional(),
       free: z.boolean().optional(),
       embedTicketForm: z.boolean().optional(),
+      featured: z.boolean().optional(),
+      featureCover: image().optional(),
     }),
 });
 
@@ -26,20 +28,22 @@ const artists = defineCollection({
       name: z.string(),
       subname: z.string().optional(),
       cover: image(),
-      links: z.array(z.object({ url: z.string().url(), label: z.string() })).optional(),
+      links: z
+        .array(z.object({ url: z.string().url(), label: z.string() }))
+        .optional(),
       events: z.array(reference('events')),
     }),
 });
 
 const news = defineCollection({
-    loader: glob({ pattern: '**/*.md', base: './src/content/news'}),
-    schema: ({ image }) => 
-        z.object({
-            title: z.string(),
-            date: z.coerce.date(),
-            cover: image().optional(),
-            description: z.string().optional(),
-        })
-})
+  loader: glob({ pattern: '**/*.md', base: './src/content/news' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      date: z.coerce.date(),
+      cover: image().optional(),
+      description: z.string().optional(),
+    }),
+});
 
 export const collections = { events, artists, news };

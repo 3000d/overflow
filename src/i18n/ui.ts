@@ -23,6 +23,8 @@ export const ui = {
     'artists.title': 'Artists',
     'labels.links': 'Links',
     'nav.home.help': 'Return home',
+    'featured.title.coming': 'Coming cycle',
+    'featured.title.current': 'Current cycle',
   },
   fr: {
     'nav.programme': 'Programme',
@@ -41,5 +43,7 @@ export const ui = {
     'artists.title': 'Artistes',
     'labels.links': 'Liens',
     'nav.home.help': "Retourner à la page d'accueil",
+    'featured.title.coming': 'Prochain cycle',
+    'featured.title.current': 'Cycle en cours',
   },
 } as const;

@@ -3,14 +3,15 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import SectionTitle from './SectionTitle.astro';
 import { displayDateTimeSchedule } from '../utils';
-import {getLocaleCollectionUrl} from "../i18n/utils";
+import { getLocaleCollectionUrl } from '../i18n/utils';
 
 interface Props {
   events: CollectionEntry<'events'>;
 }
 
 const { events, title, fallback } = Astro.props;
-const getEventLink = (id) => getLocaleCollectionUrl(Astro.currentLocale, 'events', id);
+const getEventLink = (id) =>
+  getLocaleCollectionUrl(Astro.currentLocale, 'events', id);
 ---
 
 <style lang="scss">
@@ -126,7 +127,12 @@ const getEventLink = (id) => getLocaleCollectionUrl(Astro.currentLocale, 'events
       <div class="event with-spacing">
         <div class="event-content">
           <p class="event-date">
-            {displayDateTimeSchedule(event.data.startDate, event.data.endDate, event.data.schedule)}
+            {displayDateTimeSchedule(
+              event.data.startDate,
+              event.data.endDate,
+              event.data.schedule,
+              Astro.currentLocale,
+            )}
           </p>
           <h4 class="event-title">
             <a href={getEventLink(event.id)}>{event.data.title}</a>
@@ -136,7 +142,7 @@ const getEventLink = (id) => getLocaleCollectionUrl(Astro.currentLocale, 'events
 
         <p class="event-cover">
           <a href={getEventLink(event.id)}>
-            <Image src={event.data.cover} alt="" height="350" />
+            <Image src={event.data.cover} format="avif" alt="" height="350" />
           </a>
         </p>
 
@@ -145,5 +151,9 @@ const getEventLink = (id) => getLocaleCollectionUrl(Astro.currentLocale, 'events
     ))
   }
 
-  {!events.length && fallback && <p class="fallback with-spacing-left">{fallback}</p>}
+  {
+    !events.length && fallback && (
+      <p class="fallback with-spacing-left">{fallback}</p>
+    )
+  }
 </section>
