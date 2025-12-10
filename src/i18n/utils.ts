@@ -14,12 +14,21 @@ export function getLangFromPath(path: string) {
 
 export function useTranslations(lang: string) {
   return function t(key: keyof (typeof ui)[typeof defaultLang]) {
-    return key in ui[lang as keyof typeof ui] ? (ui[lang as keyof typeof ui] as any)[key] : ui[defaultLang][key];
+    return key in ui[lang as keyof typeof ui]
+      ? (ui[lang as keyof typeof ui] as any)[key]
+      : ui[defaultLang][key];
   };
 }
 
-export function getLocaleCollectionUrl(locale: string, prefix: string, id: string) {
-  return getRelativeLocaleUrl(locale, prefix + '/' + id.replace(`${locale}/`, ''));
+export function getLocaleCollectionUrl(
+  locale: string,
+  prefix: string,
+  id: string,
+) {
+  return getRelativeLocaleUrl(
+    locale,
+    prefix + '/' + id.replace(`${locale}/`, ''),
+  );
 }
 
 export async function getLocalizedStaticPaths() {
@@ -30,7 +39,10 @@ export async function getLocalizedStaticPaths() {
   });
 }
 
-export async function switchLanguageUrl(currentUrl: URL, targetLang: string): Promise<string> {
+export async function switchLanguageUrl(
+  currentUrl: URL,
+  targetLang: string,
+): Promise<string> {
   const pathname = currentUrl.pathname;
   const pathParts = pathname.split('/').filter((p) => p);
 
@@ -52,7 +64,6 @@ export async function switchLanguageUrl(currentUrl: URL, targetLang: string): Pr
 type AlternateURLList = Array<{ lang: string; URL: URL }>;
 
 export function getAlternateURLs(currentUrl: URL): AlternateURLList {
-  console.log(getRelativeLocaleUrlList());
   const pathname = currentUrl.pathname;
   const pathParts = pathname.split('/').filter((p) => p);
 

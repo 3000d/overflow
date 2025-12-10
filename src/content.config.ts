@@ -18,6 +18,8 @@ const events = defineCollection({
       embedTicketForm: z.boolean().optional(),
       featured: z.boolean().optional(),
       featureCover: image().optional(),
+      programme: z.array(reference('events')).optional(),
+      programmeIntro: z.string().optional(),
     }),
 });
 

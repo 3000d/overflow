@@ -9,7 +9,7 @@ interface Props {
   events: CollectionEntry<'events'>;
 }
 
-const { events, title, fallback } = Astro.props;
+const { events, title, fallback, intro } = Astro.props;
 const getEventLink = (id) =>
   getLocaleCollectionUrl(Astro.currentLocale, 'events', id);
 ---
@@ -21,8 +21,6 @@ const getEventLink = (id) =>
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
 
     @include mq.tablet {
       gap: var(--spacing-l);
@@ -34,6 +32,8 @@ const getEventLink = (id) =>
     flex-direction: column-reverse;
     justify-content: space-between;
     position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 
     @include mq.tablet {
       height: 320px;
@@ -118,9 +118,15 @@ const getEventLink = (id) =>
 </style>
 
 <section class="event-list">
-  <SectionTitle>
-    {title}
-  </SectionTitle>
+  {title && <SectionTitle>{title}</SectionTitle>}
+
+  {
+    intro && (
+      <div class="long-form-content">
+        <p class="with-spacing-left">{intro}</p>
+      </div>
+    )
+  }
 
   {
     events.map((event) => (
