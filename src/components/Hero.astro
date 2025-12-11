@@ -1,14 +1,18 @@
 ---
 import { Image } from 'astro:assets';
+import SectionTitle from './SectionTitle.astro';
 
 interface Props {
   title: string;
   above?: string;
   below?: string;
   bg?: object;
+  href?: string;
+  lg?: boolean;
+  sectionTitle?: string;
 }
 
-const { above, title, below, bg } = Astro.props;
+const { above, title, below, bg, href, lg, sectionTitle } = Astro.props;
 ---
 
 <style lang="scss">
@@ -26,10 +30,25 @@ const { above, title, below, bg } = Astro.props;
 
     @include mq.tablet {
       padding-top: var(--spacing-xl);
+      gap: var(--spacing-l);
     }
 
     @include mq.desktop {
       margin-bottom: var(--spacing-2xl);
+    }
+
+    &.is-large {
+      padding-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-xl);
+
+      @include mq.desktop {
+        padding-top: var(--spacing-2xl);
+        margin-bottom: var(--spacing-2xl);
+      }
+
+      /*@include mq.desktop {*/
+      /*  margin-bottom: var(--spacing-2xl);*/
+      /*}*/
     }
 
     &--above {
@@ -48,6 +67,17 @@ const { above, title, below, bg } = Astro.props;
 
       @include mq.desktop {
         font-size: var(--typography-fontsize-2xl);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    &--below {
+      @include mq.desktop {
+        max-width: 60%;
       }
     }
 
@@ -80,26 +110,36 @@ const { above, title, below, bg } = Astro.props;
   }
 </style>
 
-<section class="hero">
+<section class:list={['hero', { 'is-large': lg }]}>
   {
     bg && (
       <picture class="hero--cover">
-        <Image src={bg} alt="" width="1000" />
+        {href ? (
+          <a href={href}>
+            <Image src={bg} format="avif" alt="" width="1000" />
+          </a>
+        ) : (
+          <Image src={bg} format="avif" alt="" width="1000" />
+        )}
       </picture>
     )
   }
 
+  {sectionTitle && <SectionTitle>{sectionTitle}</SectionTitle>}
+
   {
     above && (
-      <div class="hero--above">
+      <div class:list={['hero--above', { 'with-spacing-left': sectionTitle }]}>
         <p>{above}</p>
       </div>
     )
   }
-  <div class="hero--title"><h1>{title}</h1></div>
+  <div class:list={['hero--title', { 'with-spacing-left': sectionTitle }]}>
+    <h1>{href ? <a href={href}>{title}</a> : title}</h1>
+  </div>
   {
     below && (
-      <div class="hero--below">
+      <div class:list={['hero--below', { 'with-spacing-left': sectionTitle }]}>
         <p>{below}</p>
       </div>
     )

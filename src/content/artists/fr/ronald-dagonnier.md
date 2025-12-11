@@ -1,7 +1,7 @@
 ---
 name: Ronald Dagonnier
 events: 
-  - robotino-a
+  - fr/robotino-a
 cover: '../covers/ronald-dagonnier.jpg'
 links:
   - label: Website

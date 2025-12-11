@@ -1,7 +1,7 @@
 ---
 name: Babi Avelino
 events: 
-  - robotino-a
+  - en/robotino-a
 cover: '../covers/babi-avelino.jpg'
 links:
   - label: Instagram

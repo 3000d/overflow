@@ -1,26 +1,29 @@
 ---
-import { getCollection, render } from 'astro:content';
+import {getCollection, render, getEntries} from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Button from '../../../components/Button.astro';
 import Hero from '../../../components/Hero.astro';
 import LongFormContent from '../../../components/LongFormContent.astro';
 import {displayDateTimeSchedule} from '../../../utils';
+import EventList from "../../../components/EventList.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('events');
-  return posts.map((event) => {
-    const locale = event.id.split('/')[0];
-    event.id = event.id.replace(`${locale}/`, '');
+    const posts = await getCollection('events');
+    return posts.map((event) => {
+        const locale = event.id.split('/')[0];
+        event.id = event.id.replace(`${locale}/`, '');
 
-    return ({
-      params: {id: event.id, locale},
-      props: {event},
+        return ({
+            params: {id: event.id, locale},
+            props: {event},
+        });
     });
-  });
 }
 
-const { event } = Astro.props;
-const { Content } = await render(event);
+const {event} = Astro.props;
+const {Content} = await render(event);
+const programme = event.data.programme ? await getEntries(event.data.programme) : null;
+console.log(programme);
 ---
 
 <style lang="scss">
@@ -66,40 +69,46 @@ const { Content } = await render(event);
 </style>
 
 <BaseLayout pageTitle={event.data.title} pageCover={event.data.cover} pageDescription={event.data.artists?.join(' / ')}>
-  <section class="event-container with-spacing">
-    <Hero
-      title={event.data.title}
-      above={displayDateTimeSchedule(event.data.startDate, event.data.endDate, event.data.schedule)}
-      below={event.data.artists?.join(' / ')}
-      bg={event.data.cover}
-    />
+    <section class="event-container with-spacing">
+        <Hero
+                title={event.data.title}
+                above={displayDateTimeSchedule(event.data.startDate, event.data.endDate, event.data.schedule, Astro.currentLocale)}
+                below={event.data.artists?.join(' / ')}
+                bg={event.data.cover}
+        />
 
-    <div class="event-content-container">
-      <div class="event-content copy">
-        <LongFormContent>
-          <Content />
-        </LongFormContent>
-      </div>
-      {
-        event.data.ticket && (
-          <div class="event-ticket">
-            {event.data.embedTicketForm ? (
-                <pretix-widget event={event.data.ticket} single-item-select="button"></pretix-widget>
-                <noscript>
-                    <Button href={event.data.ticket} title="Buy tickets online" large full target="_blank">
-                        {event.data.free === true ? 'Free' : ''}
-                        Tickets ↗
-                    </Button>
-                </noscript>
-            ) : (
-                <Button href={event.data.ticket} title="Buy tickets online" large full target="_blank">
-                  {event.data.free === true ? 'Free' : ''}
-                  Tickets ↗
-                </Button>
-            )}
-          </div>
-        )
-      }
-    </div>
-  </section>
+        <div class="event-content-container">
+            <div class="event-content copy">
+                <LongFormContent>
+                    <Content/>
+                </LongFormContent>
+            </div>
+            {
+                event.data.ticket && (
+                            <div class="event-ticket">
+                                {event.data.embedTicketForm ? (
+                                        <pretix-widget event={event.data.ticket} single-item-select="button"></pretix-widget>
+                                        <noscript>
+                                            <Button href={event.data.ticket} title="Buy tickets online" large full
+                                                    target="_blank">
+                                                {event.data.free === true ? 'Free' : ''}
+                                                Tickets ↗
+                                            </Button>
+                                        </noscript>
+                                ) : (
+                                        <Button href={event.data.ticket} title="Buy tickets online" large full target="_blank">
+                                            {event.data.free === true ? 'Free' : ''}
+                                            Tickets ↗
+                                        </Button>
+                                )}
+                            </div>
+                )
+            }
+        </div>
+    </section>
+    {programme?.length && <EventList
+            title="Programme"
+            intro={event.data.programmeIntro}
+            events={programme}
+    />}
 </BaseLayout>

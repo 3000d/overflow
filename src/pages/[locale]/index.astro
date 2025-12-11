@@ -3,10 +3,12 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/BaseLayout.astro';
 import EventList from '../../components/EventList.astro';
 import Intro from '../../components/Intro.astro';
-import { useTranslations } from '../../i18n/utils';
+import { getLocaleCollectionUrl, useTranslations } from '../../i18n/utils';
 const t = useTranslations(Astro.currentLocale);
-
 import { getLocalizedStaticPaths } from '../../i18n/utils';
+import FeaturedEvent from '../../components/FeaturedEvent.astro';
+import Hero from '../../components/Hero.astro';
+
 export async function getStaticPaths() {
   return getLocalizedStaticPaths();
 }
@@ -17,7 +19,7 @@ const futureEvents = await getCollection('events', (item) => {
   const date = item.data.endDate ?? item.data.startDate;
   const locale = item.id.split('/')[0];
   item.id = item.id.replace(`${locale}/`, '');
-  return date >= today && locale === Astro.currentLocale;
+  return date >= today && locale === Astro.currentLocale && !item.data.featured;
 });
 
 const futureEventsSorted = futureEvents.sort((a, b) => {
@@ -31,6 +33,13 @@ const pastEvents = await getCollection('events', ({ id, data }) => {
 
 const pastEventsSorted = pastEvents.sort((a, b) => {
   return b.data.startDate - a.data.startDate;
+});
+
+const featureEventsToCome = await getCollection('events', (item) => {
+  const date = item.data.endDate ?? item.data.startDate;
+  const locale = item.id.split('/')[0];
+  item.id = item.id.replace(`${locale}/`, '');
+  return date >= today && locale === Astro.currentLocale && item.data.featured;
 });
 ---
 
@@ -51,9 +60,14 @@ const pastEventsSorted = pastEvents.sort((a, b) => {
 </style>
 
 <Layout pageTitle="O░V░E░R░F░L░O░W">
-  <Intro />
+  {featureEventsToCome[0] && <FeaturedEvent event={featureEventsToCome[0]} />}
+
   <section class="events">
-    <EventList title="Programme" events={futureEventsSorted} fallback={t('event.fallback')} />
+    <EventList
+      title="Programme"
+      events={futureEventsSorted}
+      fallback={t('event.fallback')}
+    />
     <EventList title="Archives" events={pastEventsSorted} />
   </section>
 </Layout>

@@ -13,7 +13,7 @@
     "tokens": "style-dictionary build -c style-dictionary.config.json"
   },
   "dependencies": {
-    "astro": "^5.15.4"
+    "astro": "^5.16.5"
   },
   "devDependencies": {
     "prettier": "^3.5.2",

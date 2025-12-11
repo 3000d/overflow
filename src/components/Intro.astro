@@ -8,17 +8,15 @@ import background from '../assets/intro-bg.png';
   @use '../styles/mq';
 
   .intro {
-    background: var(--backgroundUrl) no-repeat top left;
-    background-size: cover;
+    /*background: var(--backgroundUrl) no-repeat top left;*/
+    /*background-size: cover;*/
     display: flex;
     flex-direction: column;
     gap: var(--spacing-m);
     padding-top: var(--spacing-l);
     padding-bottom: var(--spacing-l);
-    line-height: 1.75;
-
-    // compensate margin on main container
-    margin-top: calc(var(--header-bottom-margin) * -1);
+    color: var(--color-text-base);
+    background: var(--color-bg-accent);
 
     @include mq.desktop {
       font-size: var(--typography-fontsize-l);
@@ -29,7 +27,7 @@ import background from '../assets/intro-bg.png';
 
   .content {
     @include mq.desktop {
-      width: 75%;
+      width: 85%;
     }
 
     :global(p) {

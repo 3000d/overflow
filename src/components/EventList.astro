@@ -3,14 +3,15 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import SectionTitle from './SectionTitle.astro';
 import { displayDateTimeSchedule } from '../utils';
-import {getLocaleCollectionUrl} from "../i18n/utils";
+import { getLocaleCollectionUrl } from '../i18n/utils';
 
 interface Props {
   events: CollectionEntry<'events'>;
 }
 
-const { events, title, fallback } = Astro.props;
-const getEventLink = (id) => getLocaleCollectionUrl(Astro.currentLocale, 'events', id);
+const { events, title, fallback, intro } = Astro.props;
+const getEventLink = (id) =>
+  getLocaleCollectionUrl(Astro.currentLocale, 'events', id);
 ---
 
 <style lang="scss">
@@ -20,8 +21,6 @@ const getEventLink = (id) => getLocaleCollectionUrl(Astro.currentLocale, 'events
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
 
     @include mq.tablet {
       gap: var(--spacing-l);
@@ -33,6 +32,8 @@ const getEventLink = (id) => getLocaleCollectionUrl(Astro.currentLocale, 'events
     flex-direction: column-reverse;
     justify-content: space-between;
     position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 
     @include mq.tablet {
       height: 320px;
@@ -117,16 +118,27 @@ const getEventLink = (id) => getLocaleCollectionUrl(Astro.currentLocale, 'events
 </style>
 
 <section class="event-list">
-  <SectionTitle>
-    {title}
-  </SectionTitle>
+  {title && <SectionTitle>{title}</SectionTitle>}
+
+  {
+    intro && (
+      <div class="long-form-content">
+        <p class="with-spacing-left">{intro}</p>
+      </div>
+    )
+  }
 
   {
     events.map((event) => (
       <div class="event with-spacing">
         <div class="event-content">
           <p class="event-date">
-            {displayDateTimeSchedule(event.data.startDate, event.data.endDate, event.data.schedule)}
+            {displayDateTimeSchedule(
+              event.data.startDate,
+              event.data.endDate,
+              event.data.schedule,
+              Astro.currentLocale,
+            )}
           </p>
           <h4 class="event-title">
             <a href={getEventLink(event.id)}>{event.data.title}</a>
@@ -136,7 +148,7 @@ const getEventLink = (id) => getLocaleCollectionUrl(Astro.currentLocale, 'events
 
         <p class="event-cover">
           <a href={getEventLink(event.id)}>
-            <Image src={event.data.cover} alt="" height="350" />
+            <Image src={event.data.cover} format="avif" alt="" height="350" />
           </a>
         </p>
 
@@ -145,5 +157,9 @@ const getEventLink = (id) => getLocaleCollectionUrl(Astro.currentLocale, 'events
     ))
   }
 
-  {!events.length && fallback && <p class="fallback with-spacing-left">{fallback}</p>}
+  {
+    !events.length && fallback && (
+      <p class="fallback with-spacing-left">{fallback}</p>
+    )
+  }
 </section>

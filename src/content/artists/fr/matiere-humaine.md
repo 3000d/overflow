@@ -2,8 +2,8 @@
 name: Matière Humaine
 subname: aka. Vincent Evrard
 events:
-  - memory-lane
-  - overview
+  - fr/memory-lane
+  - fr/overview
 cover: '../covers/matiere-humaine.jpg'
 links:
   - label: Website

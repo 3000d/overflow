@@ -1,7 +1,7 @@
 ---
 name: Félix Luque Sánchez
 events:
-  - memory-lane
+  - fr/memory-lane
 cover: '../covers/felix-luque.jpeg'
 links:
   - label: Website

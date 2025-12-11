@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { getLocaleCollectionUrl, useTranslations } from '../i18n/utils';
+import { displayDateTimeSchedule } from '../utils';
+import Hero from './Hero.astro';
+
+const t = useTranslations(Astro.currentLocale);
+
+interface Props {
+  event: CollectionEntry<'event'>;
+}
+
+const { event }: { event: CollectionEntry<'event'> } = Astro.props;
+---
+
+<style lang="scss">
+  .featured {
+    margin-top: calc(-1 * var(--header-bottom-margin));
+    overflow: hidden;
+  }
+</style>
+<div class="featured">
+  <Hero
+    sectionTitle={t(
+      event.data.startDate < new Date()
+        ? 'featured.title.coming'
+        : 'featured.title.current',
+    )}
+    title={event.data.title}
+    above={displayDateTimeSchedule(
+      event.data.startDate,
+      event.data.endDate,
+      event.data.schedule,
+      Astro.currentLocale,
+    )}
+    below={event.data.artists?.join(' / ')}
+    bg={event.data.cover}
+    href={getLocaleCollectionUrl(Astro.currentLocale, 'events', event.id)}
+    lg
+  />
+</div>
