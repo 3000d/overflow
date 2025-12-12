@@ -125,6 +125,12 @@ const t = useTranslations(Astro.currentLocale);
         novalidate=""
         style="display: none"
       />
+      <input
+        type="hidden"
+        id="contact_data_lang"
+        name="contact[data][lang]"
+        value={Astro.currentLocale}
+      />
       <Button type="submit" large>{t('footer.newsletter.subscribe')}</Button>
     </form>
 
