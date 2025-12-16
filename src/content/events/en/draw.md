@@ -19,6 +19,8 @@ featured: true
 featureCover: ../covers/draw-featured.png
 programme:
   - en/workshop-machines-a-dessiner
+  - en/draw-cineclub
+  - en/draw-meetup
 programmeIntro: |
   As part of this cycle, Overflow will also host a workshop (10/01), a plot party (17/01) and a movie projection (21/01).
   Stay tuned!

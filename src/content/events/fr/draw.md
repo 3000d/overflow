@@ -18,7 +18,9 @@ embedTicketForm: true
 featured: true
 featureCover: ../covers/draw-featured.png
 programme:
-  - fr/workshop-machines-a-dessiner
+  - fr/draw-workshop-machines-a-dessiner
+  - fr/draw-cineclub
+  - fr/draw-meetup
 programmeIntro: |
   En marge de l’exposition, Overflow accueillera également un workshop (10/01), une plot party (17/01) et un 
   ciné-club (21/01). Plus d’infos très bientôt !

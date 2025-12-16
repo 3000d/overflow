@@ -4,7 +4,7 @@ type: workshop
 artists: [ 'Élie Bolard' ]
 startDate: 2026-01-10
 schedule: 9:30AM-5PM
-cover: ../covers/workshop-machines-a-dessiner.png
+cover: ../covers/draw-workshop.png
 artistWebsite: https://eliebolard.net/
 ticket: https://pretix.3kd.io/overflow/workshop-draw/
 embedTicketForm: true 
@@ -30,4 +30,5 @@ machines, endowed with their own intelligence and reactions, lead the viewer to 
 right. Everything is in motion, everything is alive, but the human being is no longer invited in, or is reduced to the
 status of producer. 
 
-https://eliebolard.net/Machinedessiné-en/
+* https://eliebolard.net/Machinedessiné-en/
+* Facebook: https://www.facebook.com/events/1924856558450404 

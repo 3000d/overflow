@@ -4,7 +4,7 @@ type: workshop
 artists: [ 'Élie Bolard' ]
 startDate: 2026-01-10
 schedule: 9h30 — 17h
-cover: ../covers/workshop-machines-a-dessiner.png
+cover: ../covers/draw-workshop.png
 artistWebsite: https://eliebolard.net/
 ticket: https://pretix.3kd.io/overflow/workshop-draw/
 embedTicketForm: true 
@@ -28,4 +28,5 @@ travaux sont présentés sous forme sculpturale ou d’installation. Il mêle le
 en s’appropriant les techniques du métal, de l’électronique et de la fabrication numérique. Il met en place des machines
 autonomes créant leur propre atmosphère que les visiteurs sont invités à explorer.
 
-https://eliebolard.net/Machinedessiné/ 
+* https://eliebolard.net/Machinedessiné-en/
+* Facebook: https://www.facebook.com/events/1924856558450404 
