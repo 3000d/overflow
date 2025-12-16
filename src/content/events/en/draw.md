@@ -18,7 +18,7 @@ embedTicketForm: true
 featured: true
 featureCover: ../covers/draw-featured.png
 programme:
-  - en/workshop-machines-a-dessiner
+  - en/draw-workshop-machines-a-dessiner
   - en/draw-cineclub
   - en/draw-meetup
 programmeIntro: |
