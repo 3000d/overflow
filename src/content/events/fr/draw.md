@@ -23,7 +23,7 @@ programme:
   - fr/draw-meetup
 programmeIntro: |
   En marge de l’exposition, Overflow accueillera également un workshop (10/01), une plot party (17/01) et un 
-  ciné-club (21/01). Plus d’infos très bientôt !
+  ciné-club (21/01). Plus d’infos ci-dessous !
 ---
 
 **Du 13 au 30 janvier, découvrez l’exposition DRAW() à la galerie Overflow !**
