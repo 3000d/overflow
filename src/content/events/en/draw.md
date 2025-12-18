@@ -4,7 +4,7 @@ type: cycle
 artists: [
   'Arno Beck',
   'Daniela Kröhnert',
-  'Frédérik Vanhoutte (wblut)',
+  'Frederik Vanhoutte (wblut)',
   'Jessica In',
   'Joanie Lemercier',
   'Julien Gachadoat (v3ga)',
@@ -53,7 +53,7 @@ Artists:
 
 * [Arno Beck](https://arnobeck.de/)
 * [Daniela Kröhnert](https://www.iamdark.art/)
-* [Frédérik Vanhoutte (wblut)](https://winterbloed.be/)
+* [Frederik Vanhoutte (wblut)](https://winterbloed.be/)
 * [Jessica In](https://www.jessicain.net/)
 * [Joanie Lemercier](https://joanielemercier.com/)
 * [Julien Gachadoat (v3ga)](https://www.v3ga.net/)
