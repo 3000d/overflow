@@ -4,6 +4,9 @@ type: meetup
 startDate: 2026-01-17
 schedule: 1PM — 11PM
 cover: ../covers/draw-creative-coding.png
+ticket: https://pretix.3kd.io/overflow/draw-cc/
+free: true
+embedTicketForm: true 
 ---
 
 We'll meet up in the afternoon with several pen plotters available. If you want to learn how to use them, or if you're
