@@ -28,5 +28,5 @@ travaux sont présentés sous forme sculpturale ou d’installation. Il mêle le
 en s’appropriant les techniques du métal, de l’électronique et de la fabrication numérique. Il met en place des machines
 autonomes créant leur propre atmosphère que les visiteurs sont invités à explorer.
 
-* https://eliebolard.net/Machinedessiné-en/
+* https://eliebolard.net/Machinedessiné/
 * Facebook: https://www.facebook.com/events/1924856558450404 
