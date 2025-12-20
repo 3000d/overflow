@@ -12,13 +12,13 @@ embedTicketForm: true
 
 ### Description
 
-Chaque participant ramène au moins une machine de son quotidien, une machine défectueuse ou inutile de préférence.
+Des machines du quotidien, défectueuses ou inutiles, sont mises à disposition des participant•es.
 Ensuite nous la démontons et découvrons ce qui se cache dans ses entrailles: des moteurs, des câbles, des mécanismes,
 etc.
 
-Une fois tout démonté nous remontons et hybridons les machines entre elles et créons des machine qui bougent,
-crient et dessinent. les participants sont invité a essayer plusieurs outils à dessiner et plusieurs format/support pour
-s'adapter au besoin de leurs machines.
+Une fois tout démonté nous remontons et hybridons les machines entre elles et créons des machines qui bougent,
+crient et dessinent. les participant•es sont invité•es à essayer plusieurs outils à dessiner et plusieurs format/support pour
+s'adapter aux besoins de leurs machines.
 
 ### Le formateur
 
