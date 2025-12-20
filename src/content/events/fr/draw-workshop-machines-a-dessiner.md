@@ -1,5 +1,5 @@
 ---
-title: Workshop Machines à Dessiner
+title: Atelier Machines à Dessiner
 type: workshop
 artists: [ 'Élie Bolard' ]
 startDate: 2026-01-10
