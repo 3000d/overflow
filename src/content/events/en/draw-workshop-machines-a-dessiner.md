@@ -31,4 +31,16 @@ right. Everything is in motion, everything is alive, but the human being is no l
 status of producer. 
 
 * https://eliebolard.net/Machinedessiné-en/
-* Facebook: https://www.facebook.com/events/1924856558450404 
+* Facebook: https://www.facebook.com/events/1924856558450404
+
+![](../draw-workshop-gallery/IMG_20240131_151251.jpg)
+![](../draw-workshop-gallery/IMG_20240202_150451.jpg)
+![](../draw-workshop-gallery/IMG_20240202_151137.jpg)
+
+<video controls>
+    <source src="/VID_408990209_205252_045.mp4" type="video/mp4" />
+</video>
+
+<video controls>
+    <source src="/VID_408990211_035805_483.mp4" type="video/mp4" />
+</video> 
