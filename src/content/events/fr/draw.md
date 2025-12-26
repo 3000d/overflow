@@ -6,7 +6,7 @@ artists: [
     'Daniela Kröhnert',
     'Frederik Vanhoutte (wblut)',
     'Jessica In',
-    'Joanie Lemercier',
+    'Studio Lemercier',
     'Julien Gachadoat (v3ga)',
     'Matt Deslauriers',
 ]
@@ -50,7 +50,7 @@ Artistes:
 * [Daniela Kröhnert](https://www.iamdark.art/)
 * [Frederik Vanhoutte (wblut)](https://winterbloed.be/)
 * [Jessica In](https://www.jessicain.net/)
-* [Joanie Lemercier](https://joanielemercier.com/)
+* [Studio Lemercier (Joanie Lemercier et Juliette Bibasse)](https://joanielemercier.com/)
 * [Julien Gachadoat (v3ga)](https://www.v3ga.net/)
 * [Matt Deslauriers](https://www.mattdesl.com/)
 
