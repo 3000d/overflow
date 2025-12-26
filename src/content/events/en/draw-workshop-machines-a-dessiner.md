@@ -44,3 +44,5 @@ status of producer.
 <video controls>
     <source src="/VID_408990211_035805_483.mp4" type="video/mp4" />
 </video> 
+
+<small>Photos and videos: Élie Bolard</small>
