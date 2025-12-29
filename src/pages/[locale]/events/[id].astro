@@ -23,7 +23,6 @@ export async function getStaticPaths() {
 const {event} = Astro.props;
 const {Content} = await render(event);
 const programme = event.data.programme ? await getEntries(event.data.programme) : null;
-console.log(programme);
 ---
 
 <style lang="scss">
@@ -34,6 +33,12 @@ console.log(programme);
 
     @include mq.tablet {
       margin-top: var(--spacing-xl);
+    }
+  }
+  
+  .ticket-cta {
+    @include mq.desktop {
+      display: none;
     }
   }
 
@@ -68,6 +73,7 @@ console.log(programme);
   }
 </style>
 
+
 <BaseLayout pageTitle={event.data.title} pageCover={event.data.cover} pageDescription={event.data.artists?.join(' / ')}>
     <section class="event-container with-spacing">
         <Hero
@@ -80,6 +86,9 @@ console.log(programme);
         <div class="event-content-container">
             <div class="event-content copy">
                 <LongFormContent>
+                    {event.data.ticket && event.data.embedTicketForm && (
+                            <Button class="ticket-cta" href="#pretix-event-widget">Tickets ↓</Button>
+                    )}
                     <Content/>
                 </LongFormContent>
             </div>
@@ -87,7 +96,7 @@ console.log(programme);
                 event.data.ticket && (
                             <div class="event-ticket">
                                 {event.data.embedTicketForm ? (
-                                        <pretix-widget event={event.data.ticket} single-item-select="button"></pretix-widget>
+                                        <pretix-widget id="pretix-event-widget" event={event.data.ticket} single-item-select="button"></pretix-widget>
                                         <noscript>
                                             <Button href={event.data.ticket} title="Buy tickets online" large full
                                                     target="_blank">
@@ -106,9 +115,10 @@ console.log(programme);
             }
         </div>
     </section>
-    {programme?.length && <EventList
-            title="Programme"
-            intro={event.data.programmeIntro}
-            events={programme}
-    />}
+    {programme?.length &&
+            <EventList
+                    title="Programme"
+                    intro={event.data.programmeIntro}
+                    events={programme}
+            />}
 </BaseLayout>
