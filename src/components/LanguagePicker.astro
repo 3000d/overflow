@@ -2,6 +2,7 @@
 import { languages } from '../i18n/ui';
 import { switchLanguageUrl, useTranslations } from '../i18n/utils';
 
+const { class: className } = Astro.props;
 const t = useTranslations(Astro.currentLocale);
 
 // Pre-generate URLs for all languages
@@ -46,7 +47,7 @@ const languageUrls = await Promise.all(
   }
 </style>
 
-<ul class="lang">
+<ul class={className}>
   {
     languageUrls.map(({ lang, label, targetUrl }) => (
       <li class={lang === Astro.currentLocale ? 'active' : ''}>

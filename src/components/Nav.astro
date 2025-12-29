@@ -1,9 +1,9 @@
 ---
 import BurgerIcon from '../assets/burger-icon.svg';
-import {switchLanguageUrl, useTranslations} from '../i18n/utils';
+import { switchLanguageUrl, useTranslations } from '../i18n/utils';
 import { languages } from '../i18n/ui';
-import {getRelativeLocaleUrl} from "astro:i18n";
-import LanguagePicker from "./LanguagePicker.astro";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import LanguagePicker from './LanguagePicker.astro';
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
@@ -40,7 +40,7 @@ const t = useTranslations(Astro.currentLocale);
       padding: 0;
       gap: var(--spacing-m);
       display: none;
-      
+
       @include mq.desktop {
         display: flex;
       }
@@ -72,7 +72,8 @@ const t = useTranslations(Astro.currentLocale);
         transform: rotate(180deg);
       }
 
-      .menu, .lang {
+      .menu,
+      :global(.lang) {
         background-color: var(--color-bg-base);
         padding: var(--spacing-m);
         position: absolute;
@@ -83,8 +84,8 @@ const t = useTranslations(Astro.currentLocale);
         flex-direction: column;
         z-index: 10;
       }
-      
-      .lang {
+
+      :global(.lang) {
         right: 20px;
       }
     }
@@ -107,21 +108,36 @@ const t = useTranslations(Astro.currentLocale);
 
   <ul class="menu">
     <li class={currentPath.includes('programme/') ? 'active' : ''}>
-      <a href={getRelativeLocaleUrl(Astro.currentLocale, "programme")} title="See our future events">{t('nav.programme')}</a>
+      <a
+        href={getRelativeLocaleUrl(Astro.currentLocale, 'programme')}
+        title="See our future events">{t('nav.programme')}</a
+      >
     </li>
     <li class={currentPath.includes('archives/') ? 'active' : ''}>
-      <a href={getRelativeLocaleUrl(Astro.currentLocale, "archives")} title="See our past events">{t('nav.archives')}</a>
+      <a
+        href={getRelativeLocaleUrl(Astro.currentLocale, 'archives')}
+        title="See our past events">{t('nav.archives')}</a
+      >
     </li>
     <li class={currentPath.includes('artists/') ? 'active' : ''}>
-      <a href={getRelativeLocaleUrl(Astro.currentLocale, "artists")} title="List of artists who participated in one of our events">{t('nav.artists')}</a>
+      <a
+        href={getRelativeLocaleUrl(Astro.currentLocale, 'artists')}
+        title="List of artists who participated in one of our events"
+        >{t('nav.artists')}</a
+      >
     </li>
     <li class={currentPath.includes('news/') ? 'active' : ''}>
-      <a href={getRelativeLocaleUrl(Astro.currentLocale, "news")}>{t('nav.news')}</a>
+      <a href={getRelativeLocaleUrl(Astro.currentLocale, 'news')}
+        >{t('nav.news')}</a
+      >
     </li>
     <li class={currentPath.includes('visit/') ? 'active' : ''}>
-      <a href={getRelativeLocaleUrl(Astro.currentLocale, "visit")} title="Visit us">{t('nav.visit')}</a>
+      <a
+        href={getRelativeLocaleUrl(Astro.currentLocale, 'visit')}
+        title="Visit us">{t('nav.visit')}</a
+      >
     </li>
   </ul>
-  
-  <LanguagePicker />
+
+  <LanguagePicker class="lang" />
 </nav>
