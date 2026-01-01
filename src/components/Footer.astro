@@ -131,6 +131,12 @@ const t = useTranslations(Astro.currentLocale);
         name="contact[data][lang]"
         value={Astro.currentLocale}
       />
+      <input
+        type="hidden"
+        id="contact_data_list"
+        name="contact[data][list]"
+        value="newsletter"
+      />
       <Button type="submit" large>{t('footer.newsletter.subscribe')}</Button>
     </form>
 
