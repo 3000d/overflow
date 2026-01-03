@@ -53,7 +53,7 @@ all its diversity, both in terms of aesthetics and technique.
 Curation: Jonathan Berger / Overflow \
 _With the support of [Vetro Editions](https://vetroeditions.com/) and the Department of Culture of the City of Liège._
 
-### Arno Beck
+### Arno Beck (DE)
 
 Arno Beck’s prints and conceptual paintings evolve around digital aesthetics and focus on analog production of digital
 images. Engaging with the language of digital culture the motifs are based on low resolution computer graphics, games
@@ -63,19 +63,19 @@ https://arnobeck.de/
 
 ![](../draw-workshop-gallery/arno.jpg)
 
-### Daniela Kröhnert
+### Daniela Kröhnert (AT)
 
 https://www.iamdark.art/
 
 ![](../draw-workshop-gallery/daniela.jpg)
 
-### Frederik Vanhoutte (wblut)
+### Frederik Vanhoutte (wblut) (BE)
 
 https://winterbloed.be/
 
 ![](../draw-workshop-gallery/frederik.jpg)
 
-### Jessica In
+### Jessica In (UK)
 
 As an Architect, Designer and Coder, Jessica’s work places a particular emphasis on the expressive potential of
 computation as a means to explore bespoke design. Notions of code, drawing, algorithmic beauty and geometry to explore
@@ -87,13 +87,13 @@ https://www.jessicain.net/
 
 ![](../draw-workshop-gallery/jessica.jpeg)
 
-### Studio Lemercier (Joanie Lemercier et Juliette Bibasse)
+### Studio Lemercier (Joanie Lemercier et Juliette Bibasse) (BE)
 
 https://joanielemercier.com/
 
 ![](../draw-workshop-gallery/studiolemercier.jpg)
 
-### Julien Gachadoat (v3ga)
+### Julien Gachadoat (v3ga) (FR)
 
 Julien Gachadoat (aka v3ga) has been exploring generative drawing for many years. He grew up in the 90s amid the
 avant-garde demo scene, making visuals with code. Ever since, programming languages have been his creative tool.
@@ -111,7 +111,7 @@ https://www.v3ga.net/
 
 <small><i>Credits: Benoît Cary</i></small>
 
-### Matt Deslauriers
+### Matt Deslauriers (UK)
 
 ![](../draw-workshop-gallery/matt.jpg)
 
