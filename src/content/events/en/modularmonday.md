@@ -1,7 +1,7 @@
 ---
 title: Modular Monday
 type: meetup
-startDate: 2025-12-01
+startDate: 2026-01-05
 schedule: 6:30PM - 09:30PM
 cover: ../covers/mm.jpg
 free: true
