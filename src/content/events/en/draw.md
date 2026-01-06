@@ -65,11 +65,44 @@ https://arnobeck.de/
 
 ### Daniela Kröhnert (AT)
 
+Daniela Kröhnert is an architectural researcher and artist specializing in digital fabrication.
+
+She studied architecture at the Karlsruhe Institute of Technology in Germany (2004-2008) and graduated with distinction
+from the University of Applied Arts Vienna (Studio Prix) in 2011. From 2007 to 2014, she gained a wide range of skills,
+practicing with Coop Himmelb(l)au on international projects.
+
+She has been teaching digital design and making for over a decade at the Technical University of Nuremberg, among
+others, and currently at the University of Applied Arts Vienna at both the Department for Art Education in Design and
+Technology / Design, Architecture and Environment, and the Institute of Architecture, besides being responsible for the
+latter’s Digital Design and Production Lab (ddplab).
+Additionally, she has been one of the key researchers of the artistic research project Conceptual Joining - Wood
+Structures from Detail to Utopia, funded by the Austrian Science Fund (FWF), PEEK program.
+
+Her love for CNC technologies and the blurring of digital and physical realms extends into her private practice DARK,
+where she follows her passion for computational drawing and pen plotting, using HP plotters from the ‘80s as well as
+self-built machines.
+
 https://www.iamdark.art/
 
 ![](../draw-workshop-gallery/daniela.jpg)
 
 ### Frederik Vanhoutte (wblut) (BE)
+
+Lorsque les gouttes de pluie frappent le pare-brise, il imagine des particules alpha traçant des chemins à travers les
+cellules. Lorsqu'il tire le
+bouchon de la baignoire, il observe le tourbillon qui se forme. À la table de la cuisine, il joue avec les verres, les
+caustiques qu'ils créent. Lors d'un dîner aux chandelles, il se surprend à fixer la flamme. Parfois, tard dans la nuit,
+il
+s'assoit devant son ordinateur. Quand il finit par cligner des yeux, un enchevêtrement de code génère des structures
+aléatoires
+à l'écran. Il passe le reste de la nuit à les fixer.
+
+Le jour, Frederik dirige le département de physique médicale d'un hôpital universitaire en Belgique, où il collabore
+avec des
+oncologues radiothérapeutes, des physiciens et des infirmières pour transformer des données médicales en traitements
+contre le cancer qui sauvent des vies. La nuit, il est un
+codeur créatif, à cheval entre l'art et la science, l'utilité et la beauté. Poussé par sa curiosité pour les
+systèmes physiques, biologiques et informatiques, il construit des systèmes numériques de création.
 
 https://winterbloed.be/
 
@@ -87,7 +120,26 @@ https://www.jessicain.net/
 
 ![](../draw-workshop-gallery/jessica.jpeg)
 
-### Studio Lemercier (Joanie Lemercier et Juliette Bibasse) (BE)
+### Studio Lemercier (BE)
+
+**Co-directed by Juliette Bibasse and Joanie Lemercier**
+
+Studio Lemercier is co-directed by artist Joanie Lemercier and by independent curator Juliette Bibasse. The duo and
+their team is based in Brussels, working primarily with projections of light in space.
+The studio’s practice seeks to escape from the screen by using unconventional surfaces such as water mist or other
+custom structures. Much of the work is inspired by nature and reflects on the representation of the natural world
+through code, mathematics, sciences, and technologies. This fascination for nature goes hand in hand with Joanie
+Lemercier’s personal commitment to environmental activism, which in turn informs the work of the studio.
+Over the last 15 years, Joanie Lemercier has worked on stage designs, architectural projections, and installations,
+collaborating with artists including Jay-Z, Flying Lotus and Portishead’s Adrian Utley. The first large monographic
+exhibition of the studio, ‘Paisajes de Luz’ was commissioned in 2021 by Fundaćion Telefónica Madrid and has since been
+exhibited in Mexico City, Lima, Arequipa and Le Havre. Studio Lemercier took part in many group exhibitions and light
+festivals worldwide.
+After being an artists producer for over 10 years, Juliette Bibasse is a curator since 2018. She has been invited by
+several international festivals (Eindhoven, Montreal, Barcelona,…). Since 2020, she is curating a light art walk for the
+city of Leuven (BE).
+In 2019 she co-founded SALOON Brussels, an international network of women working in the art. She is as an active member
+of Belgium and France’s digital arts scenes.
 
 https://joanielemercier.com/
 
@@ -111,8 +163,15 @@ https://www.v3ga.net/
 
 <small><i>Credits: Benoît Cary</i></small>
 
-### Matt Deslauriers (UK)
+### Matt Deslauriers (CA / UK)
 
-![](../draw-workshop-gallery/matt.jpg)
+Matt DesLauriers is a Canadian-born artist now based in the United Kingdom. His practice focuses on a playful
+exploration of code as a creative medium, often driven by emergent, generative, and algorithmic processes. His work has
+been exhibited internationally, including at Somerset House in London, Paris Photo in France, Kunsthalle Zürich in
+Switzerland, MoCA Taipei in Taiwan, and Art Basel in Miami and Hong Kong. Matt is active in the open source community
+and has given numerous talks, classes and workshops on creative coding. Matt is now pursuing a PhD at UAL in London,
+researching colour, perception, and machine learning within the context of computer art.
 
 https://www.mattdesl.com/
+
+![](../draw-workshop-gallery/matt.jpg)
