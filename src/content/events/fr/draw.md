@@ -94,6 +94,22 @@ https://www.iamdark.art/
 
 ### Frederik Vanhoutte (wblut) (BE)
 
+Lorsque les gouttes de pluie frappent le pare-brise, il imagine des particules alpha traçant des chemins à travers les
+cellules. Lorsqu'il tire le
+bouchon de la baignoire, il observe le tourbillon qui se forme. À la table de la cuisine, il joue avec les verres, les
+caustiques qu'ils créent. Lors d'un dîner aux chandelles, il se surprend à fixer la flamme. Parfois, tard dans la nuit,
+il
+s'assoit devant son ordinateur. Quand il finit par cligner des yeux, un enchevêtrement de code génère des structures
+aléatoires
+à l'écran. Il passe le reste de la nuit à les fixer.
+
+Le jour, Frederik dirige le département de physique médicale d'un hôpital universitaire en Belgique, où il collabore
+avec des
+oncologues radiothérapeutes, des physiciens et des infirmières pour transformer des données médicales en traitements
+contre le cancer qui sauvent des vies. La nuit, il est un
+codeur créatif, à cheval entre l'art et la science, l'utilité et la beauté. Poussé par sa curiosité pour les
+systèmes physiques, biologiques et informatiques, il construit des systèmes numériques de création.
+
 https://winterbloed.be/
 
 ![](../draw-workshop-gallery/frederik.jpg)
