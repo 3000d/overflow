@@ -16,3 +16,5 @@ lumière. Chaque coup porté transforme l’énergie du geste en impulsions sono
 de souffle, de tension et d’impact.
 
 _Avec le soutien de l’Echevinat de la culture de la ville de Liège._
+
+Plus d'infos sur Facebook: https://www.facebook.com/events/939765302340264

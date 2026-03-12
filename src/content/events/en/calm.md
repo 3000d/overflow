@@ -16,3 +16,5 @@ light. Each blow transforms the energy of the gesture into sound and light impul
 tension, and impact.
 
 _With the support of the Department of Culture of the City of Liège._
+
+More on Facebook: https://www.facebook.com/events/939765302340264
