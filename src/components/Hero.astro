@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import SectionTitle from './SectionTitle.astro';
+import HydraBanner from './HydraBanner.astro';
 
 interface Props {
   title: string;
@@ -10,9 +11,10 @@ interface Props {
   href?: string;
   lg?: boolean;
   sectionTitle?: string;
+  hydraBanner?: boolean;
 }
 
-const { above, title, below, bg, href, lg, sectionTitle } = Astro.props;
+const { above, title, below, bg, href, lg, sectionTitle, hydraBanner } = Astro.props;
 ---
 
 <style lang="scss">
@@ -124,6 +126,7 @@ const { above, title, below, bg, href, lg, sectionTitle } = Astro.props;
       </picture>
     )
   }
+  {hydraBanner && <HydraBanner {title} class:list={['hero--cover']} textMode={true}></HydraBanner>}
 
   {sectionTitle && <SectionTitle>{sectionTitle}</SectionTitle>}
 

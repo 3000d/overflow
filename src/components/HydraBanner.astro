@@ -1,0 +1,63 @@
+---
+const { title, textMode = false, class: list = [] } = Astro.props;
+---
+
+<div class:list={['hydra-banner', list]}>
+  <canvas id="hydra-canvas" data-title={title}></canvas>
+</div>
+
+<script>
+  import Hydra from 'hydra-synth';
+  const canvas = document.getElementById('hydra-canvas') as HTMLCanvasElement;
+  const hydra = new Hydra({ detectAudio: false, canvas });
+  hydra.setResolution(window.innerWidth, window.innerHeight);
+  const textures = [
+    noise(), shape(4, 0.3, 0.2).color(1, 1, 0).scrollX(0.5),
+    osc(3, 0.1).repeat(2).thresh(0.2).kaleid(2).repeat(2).kaleid().scrollX(0.5), 
+    osc(5).kaleid()
+  ];
+  let clickCount = 0;
+  const sketch = (txtIndex=0) => {
+    osc(9, 0.05, 0.2)
+      .color(1, 0, 1)
+      .rotate(() => (hydra.synth.mouse.x / hydra.synth.width) * Math.PI * 0.5)
+      .modulateRotate(osc(3, 0.1), 1)
+      .add(src(o1).scale(1.5, 1.1), 0.9)
+      .modulate(textures.at(txtIndex), 0.7)
+      .out(o0);
+  }
+  onpointerdown = () => {
+    clickCount = ++clickCount % textures.length;
+    sketch(clickCount);
+  };
+  sketch();
+  shape(4, 0.3, 0.2).color(1, 1, 0).out(o1);
+</script>
+{
+  textMode && (
+    <script type="module" src="/src/scripts/hydra-text-mode-config.js" />
+  )
+}
+
+<style>
+  /** class is passed as a prop: making it possible to customize the banner */
+  .hero--cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    @include mq.desktop {
+      /*position: fixed;*/
+      /*top: var(--spacing-2xl);*/
+      /*right: var(--spacing-l);*/
+    }
+
+    canvas {
+      display: block;
+      aspect-ratio: 2/1;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+</style>
