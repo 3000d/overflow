@@ -1,6 +1,7 @@
 ---
 import {getCollection, render, getEntries} from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import OverviewCycleLayout from '../../../layouts/OverviewCycleLayout.astro';
 import Button from '../../../components/Button.astro';
 import Hero from '../../../components/Hero.astro';
 import LongFormContent from '../../../components/LongFormContent.astro';
@@ -21,8 +22,12 @@ export async function getStaticPaths() {
 }
 
 const {event} = Astro.props;
-const {Content} = await render(event);
 const programme = event.data.programme ? await getEntries(event.data.programme) : null;
+// todo : find a more generic way to configure custom layouts from markdown files, instead of hardcoding the overview cycle one here
+const isOverviewCycle = event.id === 'overview-2';
+const showHydraBanner = event.data.cycle && event.data.cycle === 'overview';
+const {Content} = await render(event);
+
 ---
 
 <style lang="scss">
@@ -35,7 +40,7 @@ const programme = event.data.programme ? await getEntries(event.data.programme) 
       margin-top: var(--spacing-xl);
     }
   }
-  
+
   .ticket-cta {
     @include mq.desktop {
       display: none;
@@ -73,14 +78,17 @@ const programme = event.data.programme ? await getEntries(event.data.programme) 
   }
 </style>
 
-
-<BaseLayout pageTitle={event.data.title} pageCover={event.data.cover} pageDescription={event.data.artists?.join(' / ')}>
+{isOverviewCycle ? (
+  <OverviewCycleLayout event={event} programme={programme ?? []} />
+) : (
+  <BaseLayout pageTitle={event.data.title} pageCover={event.data.cover} pageDescription={event.data.artists?.join(' / ')}>
     <section class="event-container with-spacing">
         <Hero
                 title={event.data.title}
                 above={displayDateTimeSchedule(event.data.startDate, event.data.endDate, event.data.schedule, Astro.currentLocale)}
                 below={event.data.artists?.join(' / ')}
                 bg={event.data.cover}
+                hydraBanner={showHydraBanner}
         />
 
         <div class="event-content-container">
@@ -121,4 +129,5 @@ const programme = event.data.programme ? await getEntries(event.data.programme) 
                     intro={event.data.programmeIntro}
                     events={programme}
             />}
-</BaseLayout>
+  </BaseLayout>
+)}
