@@ -1,7 +1,6 @@
 ---
 import {getCollection, render, getEntries} from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import OverviewCycleLayout from '../../../layouts/OverviewCycleLayout.astro';
 import Button from '../../../components/Button.astro';
 import Hero from '../../../components/Hero.astro';
 import LongFormContent from '../../../components/LongFormContent.astro';
@@ -24,7 +23,6 @@ export async function getStaticPaths() {
 const {event} = Astro.props;
 const programme = event.data.programme ? await getEntries(event.data.programme) : null;
 // todo : find a more generic way to configure custom layouts from markdown files, instead of hardcoding the overview cycle one here
-const isOverviewCycle = event.id === 'overview-2';
 const showHydraBanner = event.data.cycle && event.data.cycle === 'overview';
 const {Content} = await render(event);
 ---

@@ -14,6 +14,3 @@ programme:
   - fr/overview-lambda-sonic
 artists: [Osica, Alain Wergifosse, Lambda Sonic, Gijs Gieskes]
 ---
-
-
-
