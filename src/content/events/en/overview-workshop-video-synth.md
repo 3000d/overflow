@@ -8,6 +8,7 @@ schedule: 9h30 — 17h
 artistWebsite: https://gieskes.nl/
 # ticket: https://pretix.3kd.io/overflow/workshop-draw/
 # embedTicketForm: true 
+cover: ../covers/overview2-workshop.webp
 ---
 
 Gijs Gieskes is the kind of artist we love: a highly skilled technician, he has been creating synthesizers modules for over twenty years.

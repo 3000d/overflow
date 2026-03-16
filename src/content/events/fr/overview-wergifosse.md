@@ -5,6 +5,7 @@ cycle: overview
 startDate: 2026-05-02
 schedule: 8:30pm
 artistWebsite: https://alainwergifosse.com/
+cover: ../covers/overview2-alain.webp
 ---
 
 Artiste sonore, vidéaste et photographe expérimental, Alain Wergifosse explore toutes les interactions possibles entre le son, la lumière et la matière dans l’espace-temps.
