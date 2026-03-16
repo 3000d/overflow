@@ -14,7 +14,8 @@ interface Props {
   hydraBanner?: boolean;
 }
 
-const { above, title, below, bg, href, lg, sectionTitle, hydraBanner } = Astro.props;
+const { above, title, below, bg, href, lg, sectionTitle, hydraBanner } =
+  Astro.props;
 ---
 
 <style lang="scss">
@@ -113,20 +114,26 @@ const { above, title, below, bg, href, lg, sectionTitle, hydraBanner } = Astro.p
 </style>
 
 <section class:list={['hero', { 'is-large': lg }]}>
-  {
-    bg && (
-      <picture class="hero--cover">
-        {href ? (
-          <a href={href}>
+  <slot name="bg">
+    {
+      bg && (
+        <picture class="hero--cover">
+          {href ? (
+            <a href={href}>
+              <Image src={bg} format="avif" alt="" width="1000" />
+            </a>
+          ) : (
             <Image src={bg} format="avif" alt="" width="1000" />
-          </a>
-        ) : (
-          <Image src={bg} format="avif" alt="" width="1000" />
-        )}
-      </picture>
+          )}
+        </picture>
+      )
+    }
+  </slot>
+  {
+    hydraBanner && (
+      <HydraBanner {title} class:list={['hero--cover']} textMode={true} />
     )
   }
-  {hydraBanner && <HydraBanner {title} class:list={['hero--cover']} textMode={true}></HydraBanner>}
 
   {sectionTitle && <SectionTitle>{sectionTitle}</SectionTitle>}
 
@@ -140,11 +147,15 @@ const { above, title, below, bg, href, lg, sectionTitle, hydraBanner } = Astro.p
   <div class:list={['hero--title', { 'with-spacing-left': sectionTitle }]}>
     <h1>{href ? <a href={href}>{title}</a> : title}</h1>
   </div>
-  {
-    below && (
-      <div class:list={['hero--below', { 'with-spacing-left': sectionTitle }]}>
-        <p>{below}</p>
-      </div>
-    )
-  }
+  <slot name="below">
+    {
+      below && (
+        <div
+          class:list={['hero--below', { 'with-spacing-left': sectionTitle }]}
+        >
+          <p>{below}</p>
+        </div>
+      )
+    }
+  </slot>
 </section>

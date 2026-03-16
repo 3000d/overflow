@@ -27,7 +27,6 @@ const programme = event.data.programme ? await getEntries(event.data.programme) 
 const isOverviewCycle = event.id === 'overview-2';
 const showHydraBanner = event.data.cycle && event.data.cycle === 'overview';
 const {Content} = await render(event);
-
 ---
 
 <style lang="scss">
@@ -78,10 +77,7 @@ const {Content} = await render(event);
   }
 </style>
 
-{isOverviewCycle ? (
-  <OverviewCycleLayout event={event} programme={programme ?? []} />
-) : (
-  <BaseLayout pageTitle={event.data.title} pageCover={event.data.cover} pageDescription={event.data.artists?.join(' / ')}>
+<BaseLayout pageTitle={event.data.title} pageCover={event.data.cover} pageDescription={event.data.artists?.join(' / ')}>
     <section class="event-container with-spacing">
         <Hero
                 title={event.data.title}
@@ -104,7 +100,8 @@ const {Content} = await render(event);
                 event.data.ticket && (
                             <div class="event-ticket">
                                 {event.data.embedTicketForm ? (
-                                        <pretix-widget id="pretix-event-widget" event={event.data.ticket} single-item-select="button"></pretix-widget>
+                                        <pretix-widget id="pretix-event-widget" event={event.data.ticket}
+                                                       single-item-select="button"></pretix-widget>
                                         <noscript>
                                             <Button href={event.data.ticket} title="Buy tickets online" large full
                                                     target="_blank">
@@ -129,5 +126,4 @@ const {Content} = await render(event);
                     intro={event.data.programmeIntro}
                     events={programme}
             />}
-  </BaseLayout>
-)}
+</BaseLayout>
