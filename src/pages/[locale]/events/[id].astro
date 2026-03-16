@@ -6,6 +6,7 @@ import Hero from '../../../components/Hero.astro';
 import LongFormContent from '../../../components/LongFormContent.astro';
 import {displayDateTimeSchedule} from '../../../utils';
 import EventList from "../../../components/EventList.astro";
+import HydraBanner from "../../../components/HydraBanner.astro";
 
 export async function getStaticPaths() {
     const posts = await getCollection('events');
@@ -82,8 +83,13 @@ const {Content} = await render(event);
                 above={displayDateTimeSchedule(event.data.startDate, event.data.endDate, event.data.schedule, Astro.currentLocale)}
                 below={event.data.artists?.join(' / ')}
                 bg={event.data.cover}
-                hydraBanner={showHydraBanner}
-        />
+        >
+            {showHydraBanner && (
+                    <Fragment slot="bg">
+                        <HydraBanner title={event.data.title} class:list={['hero--cover']} textMode={true}/>
+                    </Fragment>
+            )}
+        </Hero>
 
         <div class="event-content-container">
             <div class="event-content copy">

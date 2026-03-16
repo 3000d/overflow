@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import SectionTitle from './SectionTitle.astro';
-import HydraBanner from './HydraBanner.astro';
 
 interface Props {
   title: string;
@@ -11,11 +10,9 @@ interface Props {
   href?: string;
   lg?: boolean;
   sectionTitle?: string;
-  hydraBanner?: boolean;
 }
 
-const { above, title, below, bg, href, lg, sectionTitle, hydraBanner } =
-  Astro.props;
+const { above, title, below, bg, href, lg, sectionTitle } = Astro.props;
 ---
 
 <style lang="scss">
@@ -129,11 +126,6 @@ const { above, title, below, bg, href, lg, sectionTitle, hydraBanner } =
       )
     }
   </slot>
-  {
-    hydraBanner && (
-      <HydraBanner {title} class:list={['hero--cover']} textMode={true} />
-    )
-  }
 
   {sectionTitle && <SectionTitle>{sectionTitle}</SectionTitle>}
 
