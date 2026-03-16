@@ -1,7 +1,8 @@
 ---
 title: Poetic Computation Club
 type: meetup
-startDate: 2025-07-26
+startDate: 2025-07-26T18:30:00
+endDate: 2025-07-26T23:00:00
 schedule: 6:30PM - 11PM
 cover: ../covers/ccp.jpg
 ticket: https://pretix.3kd.io/overflow/ccp-juillet-25/

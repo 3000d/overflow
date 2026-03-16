@@ -2,7 +2,8 @@
 title: <robotino.a>
 type: performance
 artists: [ 'Babi Avelino', 'Ronald Dagonnier' ]
-startDate: 2025-05-23
+startDate: 2025-05-23T20:00:00
+endDate: 2025-05-23T22:00:00
 schedule: 8PM - 10PM
 cover: ../covers/robotino-a.png
 ---

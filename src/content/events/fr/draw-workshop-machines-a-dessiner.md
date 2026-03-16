@@ -2,7 +2,8 @@
 title: Atelier Machines à Dessiner
 type: workshop
 artists: [ 'Élie Bolard' ]
-startDate: 2026-01-10
+startDate: 2026-01-10T09:30:00
+endDate: 2026-01-10T17:00:00
 schedule: 9h30 — 17h
 cover: ../covers/draw-workshop.png
 artistWebsite: https://eliebolard.net/

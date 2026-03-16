@@ -9,7 +9,7 @@ const events = defineCollection({
       type: z.string().optional(),
       artists: z.array(z.string()).optional(),
       startDate: z.coerce.date(),
-      endDate: z.coerce.date().optional(),
+      endDate: z.coerce.date(),
       schedule: z.string(),
       cover: image(),
       artistWebsite: z.string().url().optional(),
