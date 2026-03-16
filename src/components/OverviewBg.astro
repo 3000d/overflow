@@ -2,13 +2,24 @@
   <canvas id="overview-hydra-canvas"></canvas>
 </div>
 
-<style>
+<style lang="scss">
+  @use '../styles/mq';
+
   .hydra-wrap {
     position: absolute;
     top: 0;
-    width: 100%;
+    right: 0;
     overflow: hidden;
     z-index: -1;
+    left: var(--spacing-m);
+
+    @include mq.tablet {
+      left: var(--spacing-l);
+    }
+
+    @include mq.desktop {
+      left: var(--spacing-xl);
+    }
   }
 
   #overview-hydra-canvas {
