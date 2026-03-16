@@ -6,8 +6,8 @@ startDate: 2026-05-16
 schedule: 9h30 — 17h
 # cover: ../covers/draw-workshop.png
 artistWebsite: https://gieskes.nl/
-# ticket: https://pretix.3kd.io/overflow/workshop-draw/
-# embedTicketForm: true 
+ticket: https://pretix.3kd.io/overflow/overview-video-synth/
+embedTicketForm: true 
 cover: ../covers/overview2-workshop.webp
 ---
 

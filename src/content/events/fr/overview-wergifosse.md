@@ -3,7 +3,7 @@ title: A. Wergifosse
 type: performance
 cycle: overview
 startDate: 2026-05-02
-schedule: 8:30pm
+schedule: 20H30
 artistWebsite: https://alainwergifosse.com/
 cover: ../covers/overview2-alain.webp
 ---

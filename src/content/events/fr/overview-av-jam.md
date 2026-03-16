@@ -1,7 +1,8 @@
 ---
 title: AV Jam
-type: performance
+type: JAM
 cycle: overview
 startDate: 2026-05-16
-schedule: 6pm
+schedule: 18H
+cover: ../covers/overview-2-jam.webp
 ---

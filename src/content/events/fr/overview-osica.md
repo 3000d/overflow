@@ -3,7 +3,7 @@ title: Osica
 type: performance
 cycle: overview
 startDate: 2026-04-18
-schedule: 8:30pm
+schedule: 20H30
 cover: ../covers/overview2-osica.webp
 ---
 
