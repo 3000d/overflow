@@ -1,7 +1,8 @@
 ---
 title: Screening
 type: Cinéclub
-startDate: 2026-01-21
+startDate: 2026-01-21T19:00:00
+endDate: 2026-01-21T22:00:00
 schedule: 7PM
 cover: ../covers/draw-cineclub-tbd.png
 ---

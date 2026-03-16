@@ -2,7 +2,8 @@
 title: CALM
 type: performance
 artists: [ 'Dimitri Geukenne' ]
-startDate: 2026-04-04
+startDate: 2026-04-04T19:30:00
+endDate: 2026-04-04T20:00:00
 schedule: 7:30pm
 cover: ../covers/calm.webp
 artistWebsite: https://www.instagram.com/balkanburgerprod/

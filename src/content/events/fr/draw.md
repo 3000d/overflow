@@ -10,8 +10,8 @@ artists: [
   'Julien Gachadoat (v3ga)',
   'Matt Deslauriers',
 ]
-startDate: 2025-01-13
-endDate: 2026-01-30
+startDate: 2026-01-13T13:00:00
+endDate: 2026-01-30T18:00:00
 schedule: Mar → Sam 13h - 18h
 cover: ../covers/draw-cover.png
 embedTicketForm: true

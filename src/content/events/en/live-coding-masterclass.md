@@ -2,7 +2,8 @@
 title: Live Coding Masterclass
 type: workshop
 artists: ['Flor de Fuego']
-startDate: 2025-03-29
+startDate: 2025-03-29T13:00:00
+endDate: 2025-03-29T17:00:00
 schedule: 1PM
 cover: ../covers/masterclass-hydra.webp
 artistWebsite: https://flordefuego.xyz/

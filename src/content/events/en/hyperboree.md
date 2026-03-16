@@ -2,8 +2,8 @@
 title: Hyperborée
 type: exhibit
 artists: ['Camille Panza', 'Cie Ersatz']
-startDate: 2024-11-02
-endDate: 2024-11-16
+startDate: 2024-11-02T14:00:00
+endDate: 2024-11-16T18:00:00
 schedule: 2PM - 6PM - 20'
 cover: ../covers/hyperboree.webp
 artistWebsite: https://espacejungle.com/

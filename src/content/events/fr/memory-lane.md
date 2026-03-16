@@ -2,8 +2,8 @@
 title: Memory Lane
 type: exhibit
 artists: ['Félix Luque', 'Íñigo Bilbao', 'Damien Gernay']
-startDate: 2024-01-13
-endDate: 2024-01-17
+startDate: 2024-01-13T19:00:00
+endDate: 2024-01-17T22:00:00
 schedule: 24/7
 cover: ../covers/memory-lane.jpg
 artistWebsite: https://felixluque.com/memory-lane
