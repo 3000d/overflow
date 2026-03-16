@@ -17,7 +17,9 @@ const formatDate = (d: Date) =>
   d.toLocaleDateString(currentLocale, { day: 'numeric', month: 'short' });
 ---
 
-<style>
+<style lang="scss">
+  @use '../styles/mq';
+
   .marquee-ticker {
     position: relative;
     overflow: hidden;
@@ -39,9 +41,13 @@ const formatDate = (d: Date) =>
     gap: 0.6rem;
     white-space: nowrap;
     color: var(--color-text-accent);
-    font-size: var(--typography-fontsize-l);
+    font-size: var(--typography-fontsize-m);
     font-weight: 300;
     letter-spacing: 0.08em;
+
+    @include mq.tablet {
+      font-size: var(--typography-fontsize-l);
+    }
   }
 
   .marquee-item + .marquee-item::before {
