@@ -1,11 +1,11 @@
 ---
 title: Workshop Synthé Video DIY avec Gijs Gieskes
 type: workshop
+cycle: overview
 artists: [ 'Gijs Gieskes' ]
 startDate: 2026-05-16T10:00:00
 endDate: 2026-05-16T17:00:00
 schedule: 10h — 17h
-# cover: ../covers/draw-workshop.png
 artistWebsite: https://gieskes.nl/
 ticket: https://pretix.3kd.io/overflow/overview-video-synth/
 embedTicketForm: true 

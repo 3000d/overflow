@@ -1,6 +1,7 @@
 ---
 title: Workshop DIY Video Synth w/ Gijs Gieskes
 type: workshop
+cycle: overview
 artists: [ 'Gijs Gieskes' ]
 startDate: 2026-05-16T10:00:00
 endDate: 2026-05-16T17:00:00

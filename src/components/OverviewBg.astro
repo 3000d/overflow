@@ -53,7 +53,7 @@
 
   osc(9, 0.05, 0.2)
     .color(1, 0, 1)
-    // .rotate(() => (hydra.synth.mouse.x / hydra.synth.width) * Math.PI * 0.5)
+    .rotate(() => (hydra.synth.mouse.x / hydra.synth.width) * Math.PI * 0.1)
     .modulateRotate(osc(3, 0.1), 1)
     .add(src(o1).scale(1.5, 1.1), 0.9)
     .out(o0);

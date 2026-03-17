@@ -1,8 +1,8 @@
 ---
 title: "Overview #2"
 type: cycle
-startDate: 2026-04-18
-endDate: 2026-05-23
+startDate: 2026-04-18T20:30:00
+endDate: 2026-05-23T22:00:00
 schedule: 4 soirées
 featured: true
 cover: ../covers/overview-2.webp
