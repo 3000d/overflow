@@ -11,5 +11,16 @@ artistWebsite: https://gieskes.nl/
 cover: ../covers/overview2-workshop.webp
 ---
 
+## The workshop
+
+Assembling an oscilloscope kit [1](https://gieskes.nl/visual-equipment/?file=oscillatoscope1) or [2](https://gieskes.nl/visual-equipment/?file=oscillatoscope2) in the presence of its designer
+
+## Gijs Gieskes (NL)
+
 Gijs Gieskes is the kind of artist we love: a highly skilled technician, he has been creating synthesizers modules for over twenty years.
 Far removed from the polished (or perhaps sterile?) aesthetic imposed by industrial manufacturers and the flawless design so dear to engineers, Gijs embraces the DIY aspect of his creations. Combining humour and originality, his audio and video modules lean towards chiptune and glitch, seeking to introduce the unexpected into deterministic systems.
+
+
+https://gieskes.nl/
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M4RduDVlupg?si=uxPEjTWJtvhiOkWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
