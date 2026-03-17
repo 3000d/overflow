@@ -111,19 +111,21 @@ const { above, title, below, bg, href, lg, sectionTitle } = Astro.props;
 </style>
 
 <section class:list={['hero', { 'is-large': lg }]}>
-  {
-    bg && (
-      <picture class="hero--cover">
-        {href ? (
-          <a href={href}>
+  <slot name="bg">
+    {
+      bg && (
+        <picture class="hero--cover">
+          {href ? (
+            <a href={href}>
+              <Image src={bg} format="avif" alt="" width="1000" />
+            </a>
+          ) : (
             <Image src={bg} format="avif" alt="" width="1000" />
-          </a>
-        ) : (
-          <Image src={bg} format="avif" alt="" width="1000" />
-        )}
-      </picture>
-    )
-  }
+          )}
+        </picture>
+      )
+    }
+  </slot>
 
   {sectionTitle && <SectionTitle>{sectionTitle}</SectionTitle>}
 
@@ -137,11 +139,15 @@ const { above, title, below, bg, href, lg, sectionTitle } = Astro.props;
   <div class:list={['hero--title', { 'with-spacing-left': sectionTitle }]}>
     <h1>{href ? <a href={href}>{title}</a> : title}</h1>
   </div>
-  {
-    below && (
-      <div class:list={['hero--below', { 'with-spacing-left': sectionTitle }]}>
-        <p>{below}</p>
-      </div>
-    )
-  }
+  <slot name="below">
+    {
+      below && (
+        <div
+          class:list={['hero--below', { 'with-spacing-left': sectionTitle }]}
+        >
+          <p>{below}</p>
+        </div>
+      )
+    }
+  </slot>
 </section>

@@ -1,9 +1,11 @@
 ---
 import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
+import { CollectionEntry, getEntries } from 'astro:content';
 import { getLocaleCollectionUrl, useTranslations } from '../i18n/utils';
 import { displayDateTimeSchedule } from '../utils';
 import Hero from './Hero.astro';
+import Ticker from './Ticker.astro';
+import OverviewBg from './OverviewBg.astro';
 
 const t = useTranslations(Astro.currentLocale);
 
@@ -12,6 +14,9 @@ interface Props {
 }
 
 const { event }: { event: CollectionEntry<'event'> } = Astro.props;
+const programme = event.data.programme
+  ? await getEntries(event.data.programme)
+  : null;
 ---
 
 <style lang="scss">
@@ -24,8 +29,8 @@ const { event }: { event: CollectionEntry<'event'> } = Astro.props;
   <Hero
     sectionTitle={t(
       event.data.startDate < new Date()
-        ? 'featured.title.coming'
-        : 'featured.title.current',
+        ? 'featured.title.current'
+        : 'featured.title.coming',
     )}
     title={event.data.title}
     above={displayDateTimeSchedule(
@@ -38,5 +43,20 @@ const { event }: { event: CollectionEntry<'event'> } = Astro.props;
     bg={event.data.cover}
     href={getLocaleCollectionUrl(Astro.currentLocale, 'events', event.id)}
     lg
-  />
+  >
+    {
+      event.id === 'overview-2' && programme && (
+        <Fragment slot="bg">
+          <OverviewBg />
+        </Fragment>
+      )
+    }
+    {
+      programme && (
+        <Fragment slot="below">
+          <Ticker programme={programme} />
+        </Fragment>
+      )
+    }
+  </Hero>
 </div>

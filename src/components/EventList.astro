@@ -6,11 +6,14 @@ import { displayDateTimeSchedule } from '../utils';
 import { getLocaleCollectionUrl } from '../i18n/utils';
 
 interface Props {
-  events: CollectionEntry<'events'>;
+  events: CollectionEntry<'events'> [];
+  title?: string;
+  fallback?: string;
+  intro?: string;
 }
 
 const { events, title, fallback, intro } = Astro.props;
-const getEventLink = (id) =>
+const getEventLink = (id: string) =>
   getLocaleCollectionUrl(Astro.currentLocale, 'events', id);
 ---
 
@@ -129,7 +132,7 @@ const getEventLink = (id) =>
   }
 
   {
-    events.map((event) => (
+    events?.map((event) => (
       <div class="event with-spacing">
         <div class="event-content">
           <p class="event-date">
@@ -146,12 +149,14 @@ const getEventLink = (id) =>
           <p>{event.data.artists?.join(' / ')}</p>
         </div>
 
-        <p class="event-cover">
-          <a href={getEventLink(event.id)}>
-            <Image src={event.data.cover} format="avif" alt="" height="350" />
-          </a>
-        </p>
-
+        {event.data.cover && (
+          <p class="event-cover">
+            <a href={getEventLink(event.id)}>
+              <Image src={event.data.cover} format="avif" alt="" height="350" />
+            </a>
+          </p>
+        )}
+        
         {event.data.type && <span class="event-type">{event.data.type}</span>}
       </div>
     ))
