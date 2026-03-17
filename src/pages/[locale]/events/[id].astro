@@ -25,6 +25,7 @@ const {event} = Astro.props;
 const programme = event.data.programme ? await getEntries(event.data.programme) : null;
 // todo : find a more generic way to configure custom layouts from markdown files, instead of hardcoding the overview cycle one here
 const showHydraBanner = event.data.cycle && event.data.cycle === 'overview';
+console.log(event.data.cycle);
 const {Content} = await render(event);
 ---
 
@@ -83,13 +84,8 @@ const {Content} = await render(event);
                 above={displayDateTimeSchedule(event.data.startDate, event.data.endDate, event.data.schedule, Astro.currentLocale)}
                 below={event.data.artists?.join(' / ')}
                 bg={event.data.cover}
-        >
-            {showHydraBanner && (
-                    <Fragment slot="bg">
-                        <HydraBanner title={event.data.title} class:list={['hero--cover']} textMode={true}/>
-                    </Fragment>
-            )}
-        </Hero>
+                showHydraBanner={showHydraBanner}
+        />
 
         <div class="event-content-container">
             <div class="event-content copy">
