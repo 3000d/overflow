@@ -4,6 +4,11 @@ export const displayDateTimeSchedule = (
   schedule,
   locale = undefined,
 ) => {
+  let isMultiDays = false;
+  if (endDate.getUTCDate() !== startDate.getUTCDate()) {
+    isMultiDays = true;
+  }
+
   return `░
     ${
       endDate
@@ -13,7 +18,7 @@ export const displayDateTimeSchedule = (
           })
         : startDate.toLocaleDateString(locale)
     }
-    ${endDate ? `→ ${endDate.toLocaleDateString(locale)}` : ''} 
+    ${isMultiDays ? `→ ${endDate.toLocaleDateString(locale)}` : ''} 
     ${schedule ? ` ░ ${schedule}` : ''} ░
     `;
 };

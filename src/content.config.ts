@@ -1,5 +1,6 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, reference, z } from 'astro:content';
+import { toDate } from 'date-fns-tz';
 
 const events = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/events' }),
@@ -9,8 +10,12 @@ const events = defineCollection({
       type: z.string().optional(),
       cycle: z.string().optional(),
       artists: z.array(z.string()).optional(),
-      startDate: z.coerce.date(),
-      endDate: z.coerce.date(),
+      endDate: z.date().transform((date) => {
+        return toDate(date, { timeZone: 'Europe/Brussels' });
+      }),
+      startDate: z.date().transform((date) => {
+        return toDate(date, { timeZone: 'Europe/Brussels' });
+      }),
       schedule: z.string(),
       cover: image().optional(),
       artistWebsite: z.string().url().optional(),
