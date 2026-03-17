@@ -8,6 +8,7 @@ const { title, textMode = false, class: list = [] } = Astro.props;
 
 <script>
   import Hydra from 'hydra-synth';
+  import '../scripts/hydra-text-mode-config';
   const canvas = document.getElementById('hydra-canvas') as HTMLCanvasElement;
   const hydra = new Hydra({ detectAudio: false, canvas });
   hydra.setResolution(window.innerWidth, window.innerHeight);
