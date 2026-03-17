@@ -2,7 +2,8 @@
 title: Lambda Sonic
 type: performance
 cycle: overview
-startDate: 2026-05-23
+startDate: 2026-05-23T20:30:00
+endDate: 2026-05-23T22:30:00
 schedule: 8pm
 cover: ../covers/overview2-lambdasonic.webp
 ---

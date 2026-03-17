@@ -2,7 +2,8 @@
 title: Lambda Sonic
 type: performance
 cycle: overview
-startDate: 2026-05-23
+startDate: 2026-05-23T20:30:30
+endDate: 2026-05-23T22:30:00
 schedule: 20H30
 artistWebsite: https://www.lambdasonic.be/
 cover: ../covers/overview2-lambdasonic.webp
