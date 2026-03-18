@@ -3,9 +3,9 @@ title: Workshop Synthé Video DIY avec Gijs Gieskes
 type: workshop
 cycle: overview
 artists: [ 'Gijs Gieskes' ]
-startDate: 2026-05-16T10:00:00
-endDate: 2026-05-16T17:00:00
-schedule: 10h — 17h
+startDate: 2026-05-16T11:00:00
+endDate: 2026-05-16T16:00:00
+schedule: 11h — 16h
 artistWebsite: https://gieskes.nl/
 ticket: https://pretix.3kd.io/overflow/overview-video-synth/
 embedTicketForm: true 
@@ -15,6 +15,10 @@ cover: ../covers/overview2-workshop.webp
 ## Le workshop
 
 Assemblage d'un kit Oscillatoscope [1](https://gieskes.nl/visual-equipment/?file=oscillatoscope1) ou [2](https://gieskes.nl/visual-equipment/?file=oscillatoscope2) en présence de leur concepteur 
+
+Il est également possible d'assembler le [Schele Mixer](https://gieskes.nl/visual-equipment/?file=schele-mixer), un petit mixer composite. 
+
+(Gijs amènera les kits. Contactez nous si vous souhaitez lui en acheter d'autres)
 
 ## Gijs Gieskes (NL)
 
