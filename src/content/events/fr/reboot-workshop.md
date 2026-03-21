@@ -4,7 +4,6 @@ type: workshop
 artists: [ 'Jodessineunpeu', 'Jonathan Berger' ]
 startDate: 2026-03-28T10:00:00
 endDate: 2026-03-28T16:00:00
-schedule: 10h - 16h
 cover: ../covers/reboot-workshop.webp
 ---
 

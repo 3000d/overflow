@@ -3,7 +3,6 @@ title: Creative Coding Pen Plotter Edition
 type: meetup
 startDate: 2026-01-17T13:00:00
 endDate: 2026-01-17T18:00:00
-schedule: 13h — 18h
 cover: ../covers/draw-creative-coding.png
 ticket: https://pretix.3kd.io/overflow/draw-cc/
 free: true

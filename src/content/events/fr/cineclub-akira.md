@@ -4,7 +4,6 @@ type: cineclub
 artists: ['Matière Humaine']
 startDate: 2026-03-18T18:30:00
 endDate: 2026-03-18T22:00:00
-schedule: 18h30 — 22h
 cover: ../covers/cineclub-akira.webp
 ---
 

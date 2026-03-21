@@ -1,6 +1,7 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, reference, z } from 'astro:content';
-import { toDate } from 'date-fns-tz';
+import { fromZonedTime, toDate } from 'date-fns-tz';
+import { TZDate } from '@date-fns/tz';
 
 const events = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/events' }),
@@ -11,12 +12,14 @@ const events = defineCollection({
       cycle: z.string().optional(),
       artists: z.array(z.string()).optional(),
       endDate: z.date().transform((date) => {
-        return toDate(date, { timeZone: 'Europe/Brussels' });
+        const floatingDateStr = date.toISOString().replace('Z', '');
+        return toDate(floatingDateStr, { timeZone: 'Europe/Brussels' });
       }),
       startDate: z.date().transform((date) => {
-        return toDate(date, { timeZone: 'Europe/Brussels' });
+        const floatingDateStr = date.toISOString().replace('Z', '');
+        return toDate(floatingDateStr, { timeZone: 'Europe/Brussels' });
       }),
-      schedule: z.string(),
+      schedule: z.string().optional(),
       cover: image().optional(),
       artistWebsite: z.string().url().optional(),
       ticket: z.string().url().optional(),

@@ -4,7 +4,6 @@ type: performance
 cycle: overview
 startDate: 2026-04-18T20:30:00
 endDate: 2026-04-18T22:30:00
-schedule: 20H30
 cover: ../covers/overview2-osica.webp
 ---
 

@@ -5,7 +5,6 @@ cycle: overview
 artists: [ 'Gijs Gieskes' ]
 startDate: 2026-05-16T11:00:00
 endDate: 2026-05-16T16:00:00
-schedule: 11h — 16h
 # cover: ../covers/draw-workshop.png
 artistWebsite: https://gieskes.nl/
 # ticket: https://pretix.3kd.io/overflow/workshop-draw/

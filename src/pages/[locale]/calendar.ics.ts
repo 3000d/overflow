@@ -5,6 +5,9 @@ import {
   getLocalizedStaticPaths,
 } from '@i18n/utils.ts';
 import * as ics from 'ics';
+import { fromZonedTime, toDate } from 'date-fns-tz';
+import { TZDate } from '@date-fns/tz';
+import { UTCDate } from '@date-fns/utc';
 
 export async function getStaticPaths() {
   return getLocalizedStaticPaths();
@@ -66,7 +69,6 @@ export async function GET({ params }) {
     } else {
       const diff =
         Math.abs(event.data.endDate - event.data.startDate) / 1000 / 60; // diff in ms then get minutes
-      console.log(event.data.startDate, event.data.endDate, diff);
       const hours = Math.floor(diff / 60);
       const minutes = diff % 60;
 

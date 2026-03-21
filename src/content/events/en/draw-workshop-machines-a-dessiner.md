@@ -4,7 +4,6 @@ type: workshop
 artists: [ 'Élie Bolard' ]
 startDate: 2026-01-10T09:30:00
 endDate: 2026-01-10T17:00:00
-schedule: 9:30AM-5PM
 cover: ../covers/draw-workshop.png
 artistWebsite: https://eliebolard.net/
 ticket: https://pretix.3kd.io/overflow/workshop-draw/

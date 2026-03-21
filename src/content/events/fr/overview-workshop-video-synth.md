@@ -5,7 +5,6 @@ cycle: overview
 artists: [ 'Gijs Gieskes' ]
 startDate: 2026-05-16T11:00:00
 endDate: 2026-05-16T16:00:00
-schedule: 11h — 16h
 artistWebsite: https://gieskes.nl/
 ticket: https://pretix.3kd.io/overflow/overview-video-synth/
 embedTicketForm: true 
