@@ -81,6 +81,14 @@ export async function GET({ params }) {
       };
     }
 
+    // Recurring
+    if (event.data.recurring) {
+      icsData = {
+        ...icsData,
+        recurrenceRule: event.data.recurring,
+      };
+    }
+
     return icsData;
   });
 
