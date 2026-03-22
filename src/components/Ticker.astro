@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { getLocaleCollectionUrl } from '@i18n/utils';
+import { displayDate } from '../utils';
 
 interface Props {
   programme: CollectionEntry<'events'>[];
@@ -11,10 +12,6 @@ const { programme } = Astro.props;
 const sessionsSorted = [...programme].sort(
   (a, b) => a.data.startDate.getTime() - b.data.startDate.getTime(),
 );
-
-const currentLocale = Astro.currentLocale ?? 'en';
-const formatDate = (d: Date) =>
-  d.toLocaleDateString(currentLocale, { day: 'numeric', month: 'short' });
 ---
 
 <style lang="scss">
@@ -86,11 +83,13 @@ const formatDate = (d: Date) =>
       {
         [...sessionsSorted, ...sessionsSorted].map((s) => (
           <span class="marquee-item">
-            <span class="marquee-date">░ {formatDate(s.data.startDate)} ░</span>
+            <span class="marquee-date">
+              ░ {displayDate(s.data.startDate)} ░
+            </span>
             <span class="marquee-time">{s.data.schedule} ░</span>
             <span class="marquee-sep" />
             <a
-              href={getLocaleCollectionUrl(currentLocale, 'events', s.id)}
+              href={getLocaleCollectionUrl(Astro.currentLocale, 'events', s.id)}
               class="marquee-artist"
             >
               {s.data.title}
