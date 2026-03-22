@@ -1,3 +1,13 @@
+import { toZonedTime } from 'date-fns-tz';
+
+export const displayDate = (date, locale = undefined) => {
+  const dateLocal = toZonedTime(date, 'Europe/Brussels');
+  return dateLocal.toLocaleDateString(locale, {
+    day: 'numeric',
+    month: 'short',
+  });
+};
+
 export const displayDateTimeSchedule = (
   startDate,
   endDate,
@@ -5,20 +15,23 @@ export const displayDateTimeSchedule = (
   locale = undefined,
 ) => {
   let isMultiDays = false;
-  if (endDate.getUTCDate() !== startDate.getUTCDate()) {
+  const startDateLocal = toZonedTime(startDate, 'Europe/Brussels');
+  const endDateLocal = toZonedTime(endDate, 'Europe/Brussels');
+
+  if (endDateLocal.getUTCDate() !== startDateLocal.getUTCDate()) {
     isMultiDays = true;
   }
 
   if (!schedule) {
-    schedule = startDate.toLocaleTimeString(locale, {
+    schedule = startDateLocal.toLocaleTimeString(locale, {
       hour: 'numeric',
       minute: 'numeric',
     });
 
-    if (endDate) {
+    if (endDateLocal) {
       schedule +=
         ' — ' +
-        endDate.toLocaleTimeString(locale, {
+        endDateLocal.toLocaleTimeString(locale, {
           hour: 'numeric',
           minute: 'numeric',
         });
@@ -27,14 +40,14 @@ export const displayDateTimeSchedule = (
 
   return `░
     ${
-      endDate
-        ? startDate.toLocaleDateString(locale, {
+      endDateLocal
+        ? startDateLocal.toLocaleDateString(locale, {
             month: 'numeric',
             day: 'numeric',
           })
-        : startDate.toLocaleDateString(locale)
+        : startDateLocal.toLocaleDateString(locale)
     }
-    ${isMultiDays ? `→ ${endDate.toLocaleDateString(locale)}` : ''} 
+    ${isMultiDays ? `→ ${endDateLocal.toLocaleDateString(locale)}` : ''} 
     ${schedule ? ` ░ ${schedule}` : ''} ░
     `;
 };
