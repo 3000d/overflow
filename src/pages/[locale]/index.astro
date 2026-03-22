@@ -2,12 +2,10 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/BaseLayout.astro';
 import EventList from '../../components/EventList.astro';
-import Intro from '../../components/Intro.astro';
-import { getLocaleCollectionUrl, useTranslations } from '../../i18n/utils';
+import { useTranslations } from '../../i18n/utils';
 const t = useTranslations(Astro.currentLocale);
 import { getLocalizedStaticPaths } from '../../i18n/utils';
 import FeaturedEvent from '../../components/FeaturedEvent.astro';
-import Hero from '../../components/Hero.astro';
 
 export async function getStaticPaths() {
   return getLocalizedStaticPaths();
@@ -68,6 +66,6 @@ const featureEventsToCome = await getCollection('events', (item) => {
       events={futureEventsSorted}
       fallback={t('event.fallback')}
     />
-    <EventList title="Archives" events={pastEventsSorted} />
+    <EventList title="Archives" size="small" events={pastEventsSorted} />
   </section>
 </Layout>

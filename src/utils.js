@@ -36,6 +36,7 @@ export const displayDateTimeSchedule = (
   endDate,
   schedule = undefined,
   locale = undefined,
+  withHours = true,
 ) => {
   const startDateLocal = toZonedTime(startDate, 'Europe/Brussels');
   const endDateLocal = toZonedTime(endDate, 'Europe/Brussels');
@@ -53,6 +54,6 @@ export const displayDateTimeSchedule = (
         : startDateLocal.toLocaleDateString(locale)
     }
     ${isMultiDays ? `→ ${endDateLocal.toLocaleDateString(locale)}` : ''} 
-    ${schedule ? ` ░ ${schedule}` : ''} ░
+    ${schedule && withHours ? ` ░ ${schedule}` : ''} ░
     `;
 };

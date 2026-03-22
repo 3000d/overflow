@@ -4,15 +4,17 @@ import type { CollectionEntry } from 'astro:content';
 import SectionTitle from './SectionTitle.astro';
 import { displayDateTimeSchedule } from '../utils';
 import { getLocaleCollectionUrl } from '../i18n/utils';
+import { toZonedTime } from 'date-fns-tz';
 
 interface Props {
-  events: CollectionEntry<'events'> [];
+  events: CollectionEntry<'events'>[];
   title?: string;
   fallback?: string;
   intro?: string;
+  size?: 'medium' | 'small';
 }
 
-const { events, title, fallback, intro } = Astro.props;
+const { events, title, fallback, intro, size } = Astro.props;
 const getEventLink = (id: string) =>
   getLocaleCollectionUrl(Astro.currentLocale, 'events', id);
 ---
@@ -118,9 +120,40 @@ const getEventLink = (id: string) =>
     padding: 0 var(--spacing-2xs);
     pointer-events: none;
   }
+
+  .--small {
+    gap: var(--spacing-m, 0);
+
+    .event {
+      height: inherit;
+    }
+
+    .event-content {
+      display: inline;
+      width: 100%;
+    }
+
+    .event-date {
+      display: inline;
+      font-size: var(--typography-fontsize-m);
+
+      @include mq.tablet {
+        font-size: var(--typography-fontsize-l);
+      }
+    }
+
+    .event-title {
+      display: inline;
+      font-size: var(--typography-fontsize-m);
+
+      @include mq.tablet {
+        font-size: var(--typography-fontsize-l);
+      }
+    }
+  }
 </style>
 
-<section class="event-list">
+<section class:list={['event-list', { '--small': size === 'small' }]}>
   {title && <SectionTitle>{title}</SectionTitle>}
 
   {
@@ -136,28 +169,39 @@ const getEventLink = (id: string) =>
       <div class="event with-spacing">
         <div class="event-content">
           <p class="event-date">
-            {displayDateTimeSchedule(
-              event.data.startDate,
-              event.data.endDate,
-              event.data.schedule,
-              Astro.currentLocale,
-            )}
+            {size !== 'small'
+              ? displayDateTimeSchedule(
+                  event.data.startDate,
+                  event.data.endDate,
+                  event.data.schedule,
+                  Astro.currentLocale,
+                )
+              : toZonedTime(
+                  event.data.startDate,
+                  'Europe/Brussels',
+                ).toLocaleDateString(Astro.currentLocale, {
+                  day: 'numeric',
+                  month: 'numeric',
+                  year: 'numeric',
+                })}
           </p>
           <h4 class="event-title">
             <a href={getEventLink(event.id)}>{event.data.title}</a>
           </h4>
-          <p>{event.data.artists?.join(' / ')}</p>
+          {size !== 'small' && <p>{event.data.artists?.join(' / ')}</p>}
         </div>
 
-        {event.data.cover && (
+        {event.data.cover && size !== 'small' && (
           <p class="event-cover">
             <a href={getEventLink(event.id)}>
               <Image src={event.data.cover} format="avif" alt="" height="350" />
             </a>
           </p>
         )}
-        
-        {event.data.type && <span class="event-type">{event.data.type}</span>}
+
+        {event.data.type && size !== 'small' && (
+          <span class="event-type">{event.data.type}</span>
+        )}
       </div>
     ))
   }
