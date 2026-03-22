@@ -14,13 +14,9 @@ export const displayDateTimeSchedule = (
   schedule = undefined,
   locale = undefined,
 ) => {
-  let isMultiDays = false;
   const startDateLocal = toZonedTime(startDate, 'Europe/Brussels');
   const endDateLocal = toZonedTime(endDate, 'Europe/Brussels');
-
-  if (endDateLocal.getUTCDate() !== startDateLocal.getUTCDate()) {
-    isMultiDays = true;
-  }
+  const isMultiDays = endDateLocal.getUTCDate() !== startDateLocal.getUTCDate();
 
   if (!schedule) {
     schedule = startDateLocal.toLocaleTimeString(locale, {

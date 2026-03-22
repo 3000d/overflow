@@ -19,6 +19,7 @@ const events = defineCollection({
         return toDate(floatingDateStr, { timeZone: 'Europe/Brussels' });
       }),
       schedule: z.string().optional(),
+      recurring: z.string().optional(),
       cover: image().optional(),
       artistWebsite: z.string().url().optional(),
       ticket: z.string().url().optional(),

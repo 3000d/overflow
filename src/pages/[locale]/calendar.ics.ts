@@ -3,94 +3,65 @@ import {
   getLocaleCollectionUrl,
   getLocalizedStaticPaths,
 } from '@i18n/utils.ts';
-import * as ics from 'ics';
+import { ICalCalendar, type ICalEventData } from 'ical-generator';
+import { getVtimezoneComponent } from '@touch4it/ical-timezones';
+import { toZonedTime } from 'date-fns-tz';
+import { start } from 'node:repl';
 
 export async function getStaticPaths() {
   return getLocalizedStaticPaths();
 }
 
 const getEvents = async (locale: string) => {
-  const events: CollectionEntry<'events'>[] = await getCollection(
-    'events',
-    ({ id }) => {
-      return id.startsWith(locale + '/');
-    },
-  );
-
-  return events.sort((a, b) => {
-    return a.data.startDate - b.data.startDate;
+  return await getCollection('events', ({ id }) => {
+    return id.startsWith(locale + '/');
   });
+  // return events.sort((a, b) => {
+  //   return a.data.startDate - b.data.startDate;
+  // });
 };
 
 export async function GET({ params }) {
   const events = await getEvents(params.locale);
 
-  const eventsFormatted = events.map((event) => {
-    // check if event spans on more than one day
-    const isMultipleDays =
-      event.data.startDate.getDate() !== event.data.endDate.getDate();
+  const cal = new ICalCalendar({
+    name: 'Overflow',
+    timezone: {
+      name: 'Europe/Brussels',
+      generator: getVtimezoneComponent,
+    },
+  });
+
+  events.forEach((event) => {
+    const startDateLocal = toZonedTime(event.data.startDate, 'Europe/Brussels');
+    const endDateLocal = toZonedTime(event.data.endDate, 'Europe/Brussels');
 
     const url = `https://overflow.gallery${getLocaleCollectionUrl(params.locale, 'events', event.id)}`;
 
-    let icsData = {
-      title: event.data.title,
-      location: 'Overflow — Rue Hongrée 6B, 4000 Liège',
+    let icalData: ICalEventData = {
+      summary: event.data.title,
+      start: startDateLocal,
+      end: endDateLocal,
+      location: {
+        title: 'Overflow',
+        address: 'Rue Hongrée 6B, 4000 Liège',
+        geo: { lat: 50.646786148958675, lon: 5.581917104144663 },
+      },
       url,
-      geo: { lat: 50.646786148958675, lon: 5.581917104144663 },
-      categories: event.data.type ? [event.data.type] : undefined,
-      status: 'CONFIRMED',
       organizer: { name: 'Overflow', email: 'drop@overflow.gallery' },
-      calName: 'Overflow',
+      timezone: 'Europe/Brussels',
     };
 
-    if (isMultipleDays) {
-      icsData = {
-        ...icsData,
-        description: event.data.schedule,
-        start: [
-          event.data.startDate.getFullYear(),
-          event.data.startDate.getMonth() + 1,
-          event.data.startDate.getDate(),
-          // event.data.startDate.getHours(),
-          // event.data.startDate.getMinutes(),
-        ],
-        end: [
-          event.data.endDate.getFullYear(),
-          event.data.endDate.getMonth() + 1,
-          event.data.endDate.getDate(),
-          // event.data.endDate.getHours(),
-          // event.data.endDate.getMinutes(),
-        ],
-      };
-    } else {
-      const diff =
-        Math.abs(event.data.endDate - event.data.startDate) / 1000 / 60; // diff in ms then get minutes
-      const hours = Math.floor(diff / 60);
-      const minutes = diff % 60;
-
-      icsData = {
-        ...icsData,
-        start: [
-          event.data.startDate.getFullYear(),
-          event.data.startDate.getMonth() + 1,
-          event.data.startDate.getDate(),
-          event.data.startDate.getHours(),
-          event.data.startDate.getMinutes(),
-        ],
-        duration: { hours, minutes },
+    // Recurring
+    if (event.data.recurring) {
+      icalData = {
+        ...icalData,
+        repeating: event.data.recurring,
       };
     }
 
-    return icsData;
+    cal.createEvent(icalData);
   });
 
-  const icsEvents = ics.createEvents(eventsFormatted);
-  //
-  // if (!icsEvents.error) {
-  //   return icsEvents.value;
-  // } else {
-  //   return icsEvents.error.message;
-  // }
-
-  return new Response(icsEvents.value);
+  return new Response(cal.toString());
 }
