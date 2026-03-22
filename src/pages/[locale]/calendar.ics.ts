@@ -1,13 +1,9 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import {
-  getLangFromUrl,
   getLocaleCollectionUrl,
   getLocalizedStaticPaths,
 } from '@i18n/utils.ts';
 import * as ics from 'ics';
-import { fromZonedTime, toDate } from 'date-fns-tz';
-import { TZDate } from '@date-fns/tz';
-import { UTCDate } from '@date-fns/utc';
 
 export async function getStaticPaths() {
   return getLocalizedStaticPaths();
