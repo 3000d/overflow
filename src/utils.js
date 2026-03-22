@@ -8,15 +8,9 @@ export const displayDate = (date, locale = undefined) => {
   });
 };
 
-export const displayDateTimeSchedule = (
-  startDate,
-  endDate,
-  schedule = undefined,
-  locale = undefined,
-) => {
+export const displaySchedule = (startDate, endDate, schedule, locale) => {
   const startDateLocal = toZonedTime(startDate, 'Europe/Brussels');
   const endDateLocal = toZonedTime(endDate, 'Europe/Brussels');
-  const isMultiDays = endDateLocal.getUTCDate() !== startDateLocal.getUTCDate();
 
   if (!schedule) {
     schedule = startDateLocal.toLocaleTimeString(locale, {
@@ -33,6 +27,21 @@ export const displayDateTimeSchedule = (
         });
     }
   }
+
+  return schedule;
+};
+
+export const displayDateTimeSchedule = (
+  startDate,
+  endDate,
+  schedule = undefined,
+  locale = undefined,
+) => {
+  const startDateLocal = toZonedTime(startDate, 'Europe/Brussels');
+  const endDateLocal = toZonedTime(endDate, 'Europe/Brussels');
+  const isMultiDays = endDateLocal.getUTCDate() !== startDateLocal.getUTCDate();
+
+  schedule = displaySchedule(startDateLocal, endDateLocal, schedule, locale);
 
   return `░
     ${
