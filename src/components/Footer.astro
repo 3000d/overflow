@@ -7,6 +7,8 @@ import FormControl from './FormControl.astro';
 import Button from './Button.astro';
 import { useTranslations } from '../i18n/utils';
 import Intro from './Intro.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import CopyContent from './CopyContent.astro';
 
 const t = useTranslations(Astro.currentLocale);
 ---
@@ -31,29 +33,39 @@ const t = useTranslations(Astro.currentLocale);
         padding: var(--spacing-xl);
       }
 
-      .mailing-list {
-        align-items: baseline;
+      .title {
+        font-weight: normal;
+        text-transform: uppercase;
+        font-size: var(--typography-fontsize-l);
+
+        @include mq.desktop {
+          font-size: var(--typography-fontsize-xl);
+        }
+      }
+
+      &--left {
         border: solid var(--color-border-base);
         border-width: 0;
         border-bottom-width: 1px;
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-m);
-
-        .title {
-          font-weight: normal;
-          text-transform: uppercase;
-          font-size: var(--typography-fontsize-l);
-
-          @include mq.desktop {
-            font-size: var(--typography-fontsize-xl);
-          }
-        }
+        gap: var(--spacing-l);
 
         @include mq.desktop {
           border-bottom-width: 0;
           border-right-width: 1px;
         }
+
+        p {
+          margin-bottom: 0.5em;
+        }
+      }
+
+      .mailing-list {
+        display: flex;
+        align-items: baseline;
+        flex-direction: column;
+        gap: var(--spacing-m);
       }
 
       .contact {
@@ -91,54 +103,67 @@ const t = useTranslations(Astro.currentLocale);
 <footer class="main-footer">
   <Intro />
   <div class="main-footer--content">
-    <form
-      class="mailing-list"
-      action="https://app.keila.io/forms/nfrm_aoRx8LRA"
-      method="post"
-    >
-      <h3 class="title">{t('footer.newsletter.title')}</h3>
-      <p>
-        <strong>{t('footer.newsletter.header')}</strong>
-        {t('footer.newsletter.text')}
-      </p>
-      <FormControl>
-        <label for="contact_email"> Email </label>
-        <input
-          id="contact_email"
-          name="contact[email]"
-          style="background-color:#ffffff!important;border-color:#6b7280!important;color:#111827!important"
-          type="email"
-        />
-      </FormControl>
-      <div class="flex flex-col">
-        <div
-          class="h-captcha"
-          data-sitekey="a1c5fab7-71df-4ea4-af75-87a3d07c61de"
-        >
+    <div class="main-footer--content--left">
+      <section class="calendar">
+        <h3 class="title">{t('footer.calendar.title')}</h3>
+        <p>{t('footer.calendar.description')}</p>
+        <p>
+          <CopyContent title={t('footer.calendar.tooltip')}
+            >{
+              `${Astro.url.origin}/${Astro.currentLocale}/calendar.ics`
+            }</CopyContent
+          >
+        </p>
+      </section>
+      <form
+        class="mailing-list"
+        action="https://app.keila.io/forms/nfrm_aoRx8LRA"
+        method="post"
+      >
+        <h3 class="title">{t('footer.newsletter.title')}</h3>
+        <p>
+          <strong>{t('footer.newsletter.header')}</strong>
+          {t('footer.newsletter.text')}
+        </p>
+        <FormControl>
+          <label for="contact_email"> Email </label>
+          <input
+            id="contact_email"
+            name="contact[email]"
+            style="background-color:#ffffff!important;border-color:#6b7280!important;color:#111827!important"
+            type="email"
+          />
+        </FormControl>
+        <div class="flex flex-col">
+          <div
+            class="h-captcha"
+            data-sitekey="a1c5fab7-71df-4ea4-af75-87a3d07c61de"
+          >
+          </div>
+          <script async defer src="https://hcaptcha.com/1/api.js"></script>
         </div>
-        <script async="" defer="" src="https://hcaptcha.com/1/api.js"></script>
-      </div>
-      <input
-        aria-hidden="true"
-        autocomplete="off"
-        name="h[url]"
-        novalidate=""
-        style="display: none"
-      />
-      <input
-        type="hidden"
-        id="contact_data_lang"
-        name="contact[data][lang]"
-        value={Astro.currentLocale}
-      />
-      <input
-        type="hidden"
-        id="contact_data_list"
-        name="contact[data][list]"
-        value="newsletter"
-      />
-      <Button type="submit" large>{t('footer.newsletter.subscribe')}</Button>
-    </form>
+        <input
+          aria-hidden="true"
+          autocomplete="off"
+          name="h[url]"
+          novalidate=""
+          style="display: none"
+        />
+        <input
+          type="hidden"
+          id="contact_data_lang"
+          name="contact[data][lang]"
+          value={Astro.currentLocale}
+        />
+        <input
+          type="hidden"
+          id="contact_data_list"
+          name="contact[data][list]"
+          value="newsletter"
+        />
+        <Button type="submit" large>{t('footer.newsletter.subscribe')}</Button>
+      </form>
+    </div>
 
     <section class="contact">
       <figure class="pictos">

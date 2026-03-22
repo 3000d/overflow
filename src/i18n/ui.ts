@@ -13,6 +13,10 @@ export const ui = {
     'nav.news': 'News',
     'nav.visit': 'Visit us',
     'event.fallback': 'No event at the moment',
+    'footer.calendar.title': 'Calendar',
+    'footer.calendar.description':
+      'If you want to see our events directly in your calendar app of choice, copy the URL below and add it to your app:',
+    'footer.calendar.tooltip': 'Copy URL',
     'footer.newsletter.title': 'Mailing list',
     'footer.newsletter.header': 'Stay informed of our upcoming events.',
     'footer.newsletter.text':
@@ -33,6 +37,10 @@ export const ui = {
     'nav.news': 'Actualités',
     'nav.visit': 'Visiter',
     'event.fallback': "Pas d'événement pour le moment",
+    'footer.calendar.title': 'Calendrier',
+    'footer.calendar.description':
+      "Si vous souhaitez voir nos événements directement dans votre application de calendrier, copiez l'URL ci-dessous et ajoutez-la à votre application:",
+    'footer.calendar.tooltip': "Copier l'URL",
     'footer.newsletter.title': 'Newsletter',
     'footer.newsletter.header': 'Soyez informé des événements à venir.',
     'footer.newsletter.text':
