@@ -41,7 +41,7 @@ export const displayDateTimeSchedule = (
   const endDateLocal = toZonedTime(endDate, 'Europe/Brussels');
   const isMultiDays = endDateLocal.getUTCDate() !== startDateLocal.getUTCDate();
 
-  schedule = displaySchedule(startDateLocal, endDateLocal, schedule, locale);
+  schedule = displaySchedule(startDate, endDate, schedule, locale);
 
   return `░
     ${
