@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://overflow.gallery',
     i18n: {
         locales: ['en', 'fr'],
         defaultLocale: 'fr',
