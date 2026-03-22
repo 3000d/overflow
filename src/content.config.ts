@@ -1,7 +1,6 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, reference, z } from 'astro:content';
-import { fromZonedTime, toDate } from 'date-fns-tz';
-import { TZDate } from '@date-fns/tz';
+import { toDate } from 'date-fns-tz';
 
 const events = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/events' }),
