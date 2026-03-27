@@ -126,9 +126,9 @@ const t = useTranslations(Astro.currentLocale);
         >{t('nav.artists')}</a
       >
     </li>
-    <li class={currentPath.includes('news/') ? 'active' : ''}>
-      <a href={getRelativeLocaleUrl(Astro.currentLocale, 'news')}
-        >{t('nav.news')}</a
+    <li class={currentPath.includes('articles/') ? 'active' : ''}>
+      <a href={getRelativeLocaleUrl(Astro.currentLocale, 'articles')}
+        >{t('nav.articles')}</a
       >
     </li>
     <li class={currentPath.includes('visit/') ? 'active' : ''}>

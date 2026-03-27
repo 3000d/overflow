@@ -5,19 +5,19 @@ import Hero from '../../../components/Hero.astro';
 import LongFormContent from '../../../components/LongFormContent.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('news');
-  return posts.map((news) => {
-    const locale = news.id.split('/')[0];
-    news.id = news.id.replace(`${locale}/`, '');
+  const posts = await getCollection('articles');
+  return posts.map((article) => {
+    const locale = article.id.split('/')[0];
+    article.id = article.id.replace(`${locale}/`, '');
     return {
-      params: { id: news.id, locale },
-      props: { news },
+      params: { id: article.id, locale },
+      props: { article },
     };
   });
 }
 
-const { news } = Astro.props;
-const { Content } = await render(news);
+const { article } = Astro.props;
+const { Content } = await render(article);
 ---
 
 <style lang="scss">
@@ -32,15 +32,23 @@ const { Content } = await render(news);
   }
 </style>
 
-<BaseLayout pageTitle={news.data.title} pageCover={news.data.cover} pageDescription={news.data.description}>
+<BaseLayout
+  pageTitle={article.data.title}
+  pageCover={article.data.cover}
+  pageDescription={article.data.description}
+>
   <section class="with-spacing">
-    <Hero title={news.data.title} above={news.data.date.toLocaleDateString('en-UK')} bg={news.data.cover} />
+    <Hero
+      title={article.data.title}
+      above={article.data.date.toLocaleDateString('en-UK')}
+      bg={article.data.cover}
+    />
 
     <div class="container">
       <div class="copy">
         <LongFormContent>
           <b class="chapo">
-            {news.data.description}
+            {article.data.description}
           </b>
           <Content />
         </LongFormContent>

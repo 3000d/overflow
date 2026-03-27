@@ -1,0 +1,44 @@
+---
+import { CollectionEntry, getCollection, getEntries } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import List from '@components/List.astro';
+import ListItem from '@components/ListItem.astro';
+import Hero from '@components/Hero.astro';
+import { getRelativeLocaleUrl, getRelativeLocaleUrlList } from 'astro:i18n';
+import { getLocaleCollectionUrl, getLocalizedStaticPaths } from '@i18n/utils';
+
+const articles = await getCollection('articles', ({ id }) => {
+  return id.startsWith(Astro.currentLocale + '/');
+});
+
+const orderedArticles = articles.sort((articleA, articleB) => {
+  return articleB.data.date - articleA.data.date;
+});
+
+export async function getStaticPaths() {
+  return getLocalizedStaticPaths();
+}
+---
+
+<BaseLayout pageTitle="Articles">
+  <Hero title="Articles" />
+  <List class="with-spacing">
+    {
+      orderedArticles.map((article) => (
+        <ListItem>
+          <a
+            href={getLocaleCollectionUrl(
+              Astro.currentLocale,
+              'articles',
+              article.id,
+            )}
+            title="Read more"
+          >
+            [{article.data.date.toLocaleDateString(Astro.currentLocale)}]{' '}
+            {article.data.title}
+          </a>
+        </ListItem>
+      ))
+    }
+  </List>
+</BaseLayout>
