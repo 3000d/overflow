@@ -13,8 +13,8 @@ cover: ../covers/draw-open-call.png
 
 #### Codé maison 
 
-* Glitch Brush: https://editor.p5js.org/drskullster/sketches/-bFtP3Y-3
-* Tweak waves: https://editor.p5js.org/drskullster/sketches/oZpVQgcZN
+* Glitch Brush: https://editor.p5js.org/drskullster/full/-bFtP3Y-3
+* Tweak waves: https://editor.p5js.org/drskullster/full/oZpVQgcZN
 
 #### Logiciels
 
