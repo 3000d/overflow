@@ -18,7 +18,8 @@ cover: ../covers/draw-open-call.png
 
 #### Logiciels
 
-* https://drawingbotv3.com/
+* Drawingbot v3: https://drawingbotv3.com/
+* Makelangelo: https://www.marginallyclever.com/products/makelangelo-software/
 
 #### Outils en ligne
 
@@ -30,9 +31,9 @@ cover: ../covers/draw-open-call.png
 
 #### Texte
 
-* https://msurguy.github.io/cnc-text-tool/
+* CNC Text Tool: https://msurguy.github.io/cnc-text-tool/
 
 #### Ressources
 
-* https://thecodingtrain.com
+* The Coding Train: https://thecodingtrain.com
 * Extension inkscape pour l'iDraw H SE: https://drive.google.com/drive/folders/1pxr9rFZ-b4ZA4jJlUhNjo_SPpSscNs7Y
