@@ -1,5 +1,5 @@
 ---
-title: A. Wergifosse
+title: Alain Wergifosse
 type: performance
 cycle: overview
 startDate: 2026-05-02T20:30:00
