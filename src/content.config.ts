@@ -20,6 +20,7 @@ const events = defineCollection({
       }),
       schedule: z.string().optional(),
       recurring: z.string().optional(),
+      recurringHumanReadable: z.string().optional(),
       cover: image().optional(),
       artistWebsite: z.string().url().optional(),
       ticket: z.string().url().optional(),

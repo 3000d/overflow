@@ -11,12 +11,34 @@ interface Props {
   title?: string;
   fallback?: string;
   intro?: string;
-  size?: 'medium' | 'small';
+  size?: 'medium' | 'small' | 'meetup';
 }
 
 const { events, title, fallback, intro, size } = Astro.props;
 const getEventLink = (id: string) =>
   getLocaleCollectionUrl(Astro.currentLocale, 'events', id);
+
+const getEventDisplayDateTime = (event) => {
+  if (size === 'medium' || !size) {
+    return displayDateTimeSchedule(
+      event.data.startDate,
+      event.data.endDate,
+      event.data.schedule,
+      Astro.currentLocale,
+    );
+  }
+
+  if (size === 'small') {
+    return toZonedTime(
+      event.data.startDate,
+      'Europe/Brussels',
+    ).toLocaleDateString(Astro.currentLocale, {
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric',
+    });
+  }
+};
 ---
 
 <style lang="scss">
@@ -153,7 +175,7 @@ const getEventLink = (id: string) =>
   }
 </style>
 
-<section class:list={['event-list', { '--small': size === 'small' }]}>
+<section class:list={['event-list', `--${size}`]}>
   {title && <SectionTitle>{title}</SectionTitle>}
 
   {
@@ -168,23 +190,7 @@ const getEventLink = (id: string) =>
     events?.map((event) => (
       <div class="event with-spacing">
         <div class="event-content">
-          <p class="event-date">
-            {size !== 'small'
-              ? displayDateTimeSchedule(
-                  event.data.startDate,
-                  event.data.endDate,
-                  event.data.schedule,
-                  Astro.currentLocale,
-                )
-              : toZonedTime(
-                  event.data.startDate,
-                  'Europe/Brussels',
-                ).toLocaleDateString(Astro.currentLocale, {
-                  day: 'numeric',
-                  month: 'numeric',
-                  year: 'numeric',
-                })}
-          </p>
+          <p class="event-date">{getEventDisplayDateTime(event)}</p>
           <h4 class="event-title">
             <a href={getEventLink(event.id)}>{event.data.title}</a>
           </h4>
