@@ -8,7 +8,11 @@ const today = new Date();
 
 const events = await getCollection('events', ({ id, data }) => {
   const date = data.endDate ?? data.startDate;
-  return date < today && id.startsWith(`${Astro.currentLocale}/`);
+  return (
+    date < today &&
+    id.startsWith(`${Astro.currentLocale}/`) &&
+    !data.recurringHumanReadable
+  );
 });
 
 const eventsSorted = events.sort((a, b) => {

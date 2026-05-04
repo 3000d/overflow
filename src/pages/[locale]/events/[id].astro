@@ -81,7 +81,7 @@ const {Content} = await render(event);
     <section class="event-container with-spacing">
         <Hero
                 title={event.data.title}
-                above={displayDateTimeSchedule(event.data.startDate, event.data.endDate, event.data.schedule, Astro.currentLocale)}
+                above={event.data.recurringHumanReadable ?? displayDateTimeSchedule(event.data.startDate, event.data.endDate, event.data.schedule, Astro.currentLocale)}
                 below={event.data.artists?.join(' / ')}
                 bg={event.data.cover}
                 showHydraBanner={showHydraBanner}
