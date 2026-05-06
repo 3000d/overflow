@@ -17,3 +17,6 @@ Tous deux membres du collectif [Lambdasonic](https://www.lambdasonic.be), ils fo
 Lambdasonic a été fondé en 2014, lorsque les premières algoraves en Belgique ont eu lieu à Anvers. Nous avons continué à organiser des événements tels que la première rencontre internationale de livecoding à Gand, toujours en 2014 https://lambdasonic2014.halic.be/ (on y était !)
 
 https://halic.be/
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EZkVw5UeQlU?si=Rg8xuM5jdGDvkPaR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
