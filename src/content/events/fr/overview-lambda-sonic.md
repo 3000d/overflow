@@ -1,5 +1,5 @@
 ---
-title: Lambda Sonic
+title: H.AL.I.C
 type: performance
 cycle: overview
 startDate: 2026-05-23T20:30:30
