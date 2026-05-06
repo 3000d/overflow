@@ -8,6 +8,12 @@ artistWebsite: https://www.lambdasonic.be/
 cover: ../covers/overview2-lambdasonic.webp
 ---
 
-Lambdasonic a été fondé en 2014, année où les premières « algoraves » belges ont eu lieu à Anvers. Ils ont continué à organiser des événements tels que la première rencontre internationale de livecoding à Gand, toujours en 2014 (on y était!)
+H.AL.I.C est l'acronyme de « Heuristic ALgoritmic Interactive Computing ».
+C'est un duo gantois de livecoders musique [sondervan](https://www.lambdasonic.be/coders/sondervan) et visuels [kaotec](https://www.lambdasonic.be/coders/kaotec).
 
-https://www.lambdasonic.be/ 
+Tous deux membres du collectif [Lambdasonic](https://www.lambdasonic.be), ils font partie des pionniers du livecoding en Belgique depuis 2013.
+
+
+Lambdasonic a été fondé en 2014, lorsque les premières algoraves en Belgique ont eu lieu à Anvers. Nous avons continué à organiser des événements tels que la première rencontre internationale de livecoding à Gand, toujours en 2014 https://lambdasonic2014.halic.be/ (on y était !)
+
+https://halic.be/
