@@ -6,7 +6,6 @@ import {
 import { ICalCalendar, type ICalEventData } from 'ical-generator';
 import { getVtimezoneComponent } from '@touch4it/ical-timezones';
 import { toZonedTime } from 'date-fns-tz';
-import { start } from 'node:repl';
 
 export async function getStaticPaths() {
   return getLocalizedStaticPaths();
@@ -36,12 +35,17 @@ export async function GET({ params }) {
     const startDateLocal = toZonedTime(event.data.startDate, 'Europe/Brussels');
     const endDateLocal = toZonedTime(event.data.endDate, 'Europe/Brussels');
 
+    const diffInHours =
+      Math.abs(endDateLocal.getTime() - startDateLocal.getTime()) /
+      (60 * 60 * 1000);
+
     const url = `https://overflow.gallery${getLocaleCollectionUrl(params.locale, 'events', event.id)}`;
 
     let icalData: ICalEventData = {
       summary: event.data.title,
       start: startDateLocal,
       end: endDateLocal,
+      allDay: diffInHours > 24,
       location: {
         title: 'Overflow',
         address: 'Rue Hongrée 6B, 4000 Liège',
