@@ -8,7 +8,7 @@ cover: ../covers/city-sonic-transe-formations.webp
 artistWebsite: https://citysonic.be/festival2026/liege/
 ---
 
-# 20h - Transe-Formations
+## 20h - Transe-Formations
 _Isa*Belle ; Stéphane Kozik ; Natalia de Mello_ 
 
 La performance naît de la voix de Philippe Franck, fondateur de Transcultures et de City Sonic, figure majeure du développement des arts sonores et numériques en Belgique, disparu en 2025. Autour de cette présence enregistrée viennent progressivement se greffer les créations sonores d’Isa*Belle Vrammout et Stéphane Kozik et l’univers visuel de Natalia de Mello.
@@ -17,7 +17,7 @@ Parti d’un hommage, Transe-Formations se déploie peu à peu en un univers den
 
 Cette transformation fait écho à une démarche chère à Philippe Franck : faire se rencontrer les pratiques, les artistes et les matières sonores pour ouvrir de nouveaux espaces d’écoute. L’image, créée et manipulée en temps réel, prolonge ce dialogue entre mémoire, son et perception. 
 
-# 21h - Scratch my back
+## 21h - Scratch my back
 _Raymond Delepierre_
 
 SCRATCH MY BACK est un projet de Raymond Delepierre conçu autour d’un vinyle-objet dont l’écoute transforme progressivement la matière. Placé dans un étui aux surfaces abrasives, le disque se raye au fil des manipulations : ces altérations deviennent autant de nouvelles traces sonores, faisant de l’usure, du geste et de l’accident des éléments constitutifs de l’œuvre.

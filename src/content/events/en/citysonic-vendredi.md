@@ -8,10 +8,10 @@ cover: ../covers/city-sonic-transe-formations.webp
 artistWebsite: https://citysonic.be/festival2026/liege/
 ---
 
-# 20h - Transe-Formations
+## 20h - Transe-Formations
 _Isa*Belle ; Stéphane Kozik ; Natalia de Mello_ 
 
-# 21h - Scratch my back
+## 21h - Scratch my back
 _Raymond Delepierre_
 
 --- 

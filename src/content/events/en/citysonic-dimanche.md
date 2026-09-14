@@ -8,16 +8,16 @@ cover: ../covers/city-sonic-sahara.webp
 artistWebsite: https://citysonic.be/festival2026/liege/
 ---
 
-# 14h30 - Sahara
+## 14h30 - Sahara
 _Thanas Kas_ 
 
-# 15h15 - Pastoral - Suspended night
+## 15h15 - Pastoral - Suspended night
 _Christophe Bailleau O’Farrell - Philippe Franck_
 
-# 16h30 - A limb
+## 16h30 - A limb
 _Didié Nietzsche_
 
-# Life is a lab
+## Life is a lab
 _ Katia Vonna Beltran_
 
 --- 

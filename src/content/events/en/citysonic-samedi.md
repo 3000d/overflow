@@ -8,10 +8,10 @@ cover: ../covers/city-sonic-maree-sans-etoile.webp
 artistWebsite: https://citysonic.be/festival2026/liege/
 ---
 
-# 20h - La marée sans étoile
+## 20h - La marée sans étoile
 _Roxane Rajic_ 
 
-# 21h - Quattrophage
+## 21h - Quattrophage
 _Matthieu Safatly, Pierre Dellacherie, Olivier Hüe, Nicolas Lelièvre_
 
 --- 
