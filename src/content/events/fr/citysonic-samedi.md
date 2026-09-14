@@ -1,6 +1,6 @@
 ---
 title: "City Sonic: La marée sans étoile & Quattrophage"
-type: concerts
+type: concert
 artists: [ 'Roxane Rajic', 'Matthieu Safatly', 'Pierre Dellacherie', 'Olivier Hüe', 'Nicolas Lelièvre' ]
 startDate: 2026-09-19T20:00:00
 endDate: 2026-09-19T23:00:00

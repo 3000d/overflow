@@ -1,6 +1,6 @@
 ---
 title: "City Sonic: Sahara; Pastoral - Suspended night; A limb & Life is a lab"
-type: concerts
+type: concert
 artists: [ 'Thanas Kas', 'Christophe Bailleau O’Farrell', 'Philippe Franck', 'Didié Nietzsche', 'Katia Vonna Beltran' ]
 startDate: 2026-09-20T14:30:00
 endDate: 2026-09-20T18:00:00

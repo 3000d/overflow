@@ -1,6 +1,6 @@
 ---
 title: "City Sonic: Transe-Formations & Scratch my back"
-type: concerts
+type: concert
 artists: [ 'Isa*Belle', 'Stéphane Kozik', 'Natalia de Mello', 'Raymond Delepierre' ]
 startDate: 2026-09-18T20:00:00
 endDate: 2026-09-18T23:00:00
