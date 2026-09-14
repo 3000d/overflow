@@ -1,9 +1,9 @@
 {
-  "name": "extraterrestrial-earth",
+  "name": "Overflow",
   "type": "module",
   "version": "0.0.1",
   "engines": {
-    "node": ">= 20"
+    "node": ">= 22"
   },
   "scripts": {
     "dev": "npm run tokens && astro dev",
