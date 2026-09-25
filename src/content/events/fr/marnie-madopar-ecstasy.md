@@ -12,7 +12,7 @@ Sur deux écrans LED, le quotidien d'un home et d’un festival de musique. Les 
 91 ans se réveille. Deux environnements s’entrechoquent.
 
 * Du 16 octobre au 1er novembre 2026
-* Visites: du jeudi au samedi entre 14h et 18h
+* Visites: du jeudi au dimanche entre 14h et 18h
 * Entrée libre
 * Vernissage: le 15 octobre 2026 à 18h30
 * Adresse: Rue Hongrée 6B, 4000 Liège
