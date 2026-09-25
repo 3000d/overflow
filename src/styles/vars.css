@@ -5,9 +5,9 @@
 :root {
   --color-bg-accent: #5cff85;
   --color-bg-inverse: #ffffff;
-  --color-bg-base: #000000;
+  --color-bg-base: #3000d0;
   --color-text-base: #ffffff;
-  --color-text-inverse: #000000;
+  --color-text-inverse: #3000d0;
   --color-text-subtle: rgba(255, 255, 255, 0.5);
   --color-text-accent: #5cff85;
   --color-border-base: rgba(255, 255, 255, 0.3);
