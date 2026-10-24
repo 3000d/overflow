@@ -5,7 +5,7 @@ artists: ['BuboBubo (Raphaël Forment)']
 startDate: 2026-11-12T13:00:00
 endDate: 2026-11-12T17:00:00
 artistWebsite: https://raphaelforment.fr
-ticket: https://pretix.3kd.io/
+ticket: https://pretix.3kd.io/overflow/cagire-r-forment/
 embedTicketForm: true 
 # cover: ../covers/overview2-workshop.webp
 ---
