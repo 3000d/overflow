@@ -7,7 +7,7 @@ endDate: 2026-11-15T18:00:00
 artistWebsite: https://www.v3ga.net/  
 ticket: https://pretix.3kd.io/overflow/recoding-v3ga/
 embedTicketForm: true 
-# cover: ../covers/overview2-workshop.webp
+cover: ../covers/workshop-recoding.jpg
 ---
 
 Julien Gachadoat (alias v3ga) explore le dessin génératif depuis de nombreuses années. Il a grandi dans les années 90 au milieu de la demo scene, créant des visuels à partir de code. Depuis lors, les langages de programmation sont son outil de création. Créant des œuvres uniques à l’aide d’algorithmes, il travaille sur l’émergence de formes abstraites. Combinant des formes géométriques monochromes, il joue avec la répétition, utilisat des opérations aléatoires pour générer un élément de surprise. Julien Gachadoat utilise l’ ordinateur - « cet interprète unique » (Vera Molnár) - pour développer ses propres outils créatifs basés sur des règles graphiques simples, puis explorer les possibilités formelles qui en découlent. 
