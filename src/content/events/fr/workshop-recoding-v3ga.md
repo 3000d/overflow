@@ -39,3 +39,5 @@ développer ses propres outils créatifs basés sur des règles graphiques simpl
 qui en découlent.
 
 https://www.v3ga.net/
+
+_Photo: Workshop Recoding à MAGBa3 — Orígens à Barcelone_
