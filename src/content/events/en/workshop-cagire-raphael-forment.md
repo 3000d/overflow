@@ -7,7 +7,7 @@ endDate: 2026-11-22T17:00:00
 artistWebsite: https://raphaelforment.fr
 ticket: https://pretix.3kd.io/overflow/cagire-r-forment/
 embedTicketForm: true 
-# cover: ../covers/overview2-workshop.webp
+cover: ../covers/workshop-cagire.webp
 ---
 
 **Cagire** is a free and open-source digital musical instrument. It combines a step sequencer, a synthesizer, and a creative programming environment. Cagire is designed for composition as well as performance and improvisation. It offers a unique approach to *live coding*, where code is directly integrated into the operation of a sequencer. Each step can contain a short program, written in a language inspired by Forth, which executes when the playhead reaches it. This interaction between programming and sequencing allows users to build and transform rhythmic, melodic, or harmonic structures in real time, without interrupting the flow of sound. Sequences can overlap, evolve according to algorithmic rules, incorporate randomness, and give rise to generative compositions. Thanks to its built-in audio engine, Cagire also allows users to synthesize, record, loop, and transform sounds. Its compatibility with MIDI and OSC protocols opens the instrument up to interaction with synthesizers, software, and other electronic devices, enabling the creation of hybrid stage setups where code becomes the central instrument of performance.

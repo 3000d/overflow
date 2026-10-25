@@ -10,14 +10,27 @@ embedTicketForm: true
 cover: ../covers/workshop-recoding.jpg
 ---
 
-Julien Gachadoat (aka v3ga) has been exploring generative drawing for many years. He grew up in the 90s amid the avant-garde demo scene, making visuals with code. Ever since, programming languages have been his creative tool. Creating unique art with algorithms, he works with the emergence of abstract form. Combining monochrome, geometric shapes, he plays with repetition, using random operations to generate an element of surprise. Julien Gachadoat uses the computer - “this unique performer” (Vera Molnár) - to develop his own creative tools based on simple graphic rules, and then to explore the formal possibilities that ensue.
+## Workshop
 
-Schedule :
+Using p5.js (an in-browser programming environment) and pen plotters, revisit the seminal works of the pioneers of generative art from the 1960s and 1970s: Colette and Charles Bangart, Frieder Nake, Georg Nees, Michael Noll, Vera Molnár, and others.
+
+Basic programming knowledge required.
+
+ℹ️ Participants will need their own computers to attend the workshop (please contact us if you don't have one)
+
+## Schedule
+
 - 10:00 a.m. – 10:45 a.m.: Presentation by Julien + tools (p5js, AxiDraw and Roland DXY plotters)
 - 11:00 a.m. – 1:00 p.m.: Start of the session; template provided for guidance
 - 2:00 p.m. – 4:30 p.m.: Iterations, creations
 - 4:30 p.m. – 6:00 p.m.: Printing + display
 
 
-```
-ℹ️ Participants will need their own computers to attend the workshop (please contact us if you don't have one)
+## Instructor
+
+Julien Gachadoat (aka v3ga) has been exploring generative drawing for many years. He grew up in the 90s amid the avant-garde demo scene, making visuals with code. Ever since, programming languages have been his creative tool. Creating unique art with algorithms, he works with the emergence of abstract form. Combining monochrome, geometric shapes, he plays with repetition, using random operations to generate an element of surprise. Julien Gachadoat uses the computer - “this unique performer” (Vera Molnár) - to develop his own creative tools based on simple graphic rules, and then to explore the formal possibilities that ensue.
+
+https://www.v3ga.net/
+
+
+_Picture: Workshop Recoding at MAGBa3 — Orígens (Barcelone)_
