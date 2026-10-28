@@ -1,7 +1,7 @@
 ---
 title: Recoding - Aux origines de l’art génératif
 type: workshop
-artists: [ 'V3ga (Julien Gadoachat)' ]
+artists: [ 'V3ga (Julien Gachadoat)' ]
 startDate: 2026-11-15T10:00:00
 endDate: 2026-11-15T18:00:00
 artistWebsite: https://www.v3ga.net/
