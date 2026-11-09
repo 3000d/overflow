@@ -16,8 +16,6 @@ A l’aide de p5.js (environnement de programmation dans le navigateur) et de pe
 des pionniers de l'art génératif des années 1960 et 1970: Colette et Charles Bangart, Frieder Nake, Georg Nees, Michael
 Noll, Vera Molnár et d’autres.
 
-Notions de programmation requise.
-
 **ℹ️ Les participants devront disposer de leur propre ordinateur pour participer à l'atelier (n'hésitez pas à nous
 contacter si vous n'en avez pas).**
 

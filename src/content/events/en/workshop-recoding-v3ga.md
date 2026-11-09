@@ -14,8 +14,6 @@ cover: ../covers/workshop-recoding.jpg
 
 Using p5.js (an in-browser programming environment) and pen plotters, revisit the seminal works of the pioneers of generative art from the 1960s and 1970s: Colette and Charles Bangart, Frieder Nake, Georg Nees, Michael Noll, Vera Molnár, and others.
 
-Basic programming knowledge required.
-
 ℹ️ Participants will need their own computers to attend the workshop (please contact us if you don't have one)
 
 ## Schedule
